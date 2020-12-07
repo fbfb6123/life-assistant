@@ -12,6 +12,6 @@
 
       <div id="example"></div>
 
-      <script src="{{asser('/js/app.js')}}"></script>
+      <script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>            
