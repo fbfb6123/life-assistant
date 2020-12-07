@@ -10,7 +10,7 @@
       <h1>Hello</h1>
       <p>{{$msg}}</p>
 
-      <div id="example"></div>
+      <div id="mycomponent"></div>
 
       <script src="{{asset('/js/app.js')}}"></script>
 </body>
