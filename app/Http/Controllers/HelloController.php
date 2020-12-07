@@ -8,8 +8,10 @@ class HelloController extends Controller
 {
     public function index()
     {
+        $data = [
+            'msg' =>'これはReactのアプリケーションです'
+        ]
 
-
-        return view('hello.index');
+        return view('hello.index' $data);
     }
 }
