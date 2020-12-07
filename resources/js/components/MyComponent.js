@@ -28,6 +28,10 @@ export default class MyComponent extends Component {
                onChange={this.doChange} />
         </div>
       </div>
-    )
+    );
   }
+}
+
+if (document.getElementById('mycomponent')) {
+  ReactDOM.render(<MyComponent />, document.getElementById('mycomponent'));
 }
