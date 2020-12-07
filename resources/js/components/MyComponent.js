@@ -11,5 +11,23 @@ export default class MyComponent extends Component {
     this.doChange = this.doChange.bind(this);
   }
 
-  
+  doChange(event) {
+    let n = event.target.value;
+    this.setState((state)=>({
+      num: n,
+      msg: 'count: ' +n,
+    }));
+  }
+
+  render() {
+    return (
+      <div className="container">
+        <p>{this.state.msg}</p>
+        <div>
+          <input type="number" id="num"
+               onChange={this.doChange} />
+        </div>
+      </div>
+    )
+  }
 }
