@@ -27,7 +27,7 @@ export default class MyComponent extends Component {
     }));
     Axios.get('/hello/json/' + this.state.num)
          .then(response =>{
-           let person = responce.data;
+           let person = response.data;
            let msg = person.id + ':' + person.name
            + '[' + person.email + '] ('
            + person.age + ')';

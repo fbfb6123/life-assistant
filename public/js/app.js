@@ -65975,7 +65975,7 @@ var MyComponent = /*#__PURE__*/function (_Component) {
         };
       });
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/hello/json/' + this.state.num).then(function (response) {
-        var person = responce.data;
+        var person = response.data;
         var msg = person.id + ':' + person.name + '[' + person.email + '] (' + person.age + ')';
 
         _this2.setState(function (state) {

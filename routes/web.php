@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/hello', [HelloController::class, 'index']);
+Route::get('/hello/json/{id}', [HelloController::class, 'json']);
