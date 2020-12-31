@@ -7,7 +7,7 @@ export default class MyComponent extends Component {
     super(props);
     this.state = {
       num:0,
-      msg:'OK',
+      msg:'てすと',
     };
     this.doChange = this.doChange.bind(this);
     this.doAction = this.doAction.bind(this);
@@ -25,11 +25,11 @@ export default class MyComponent extends Component {
     this.setState((state)=>({
       msg:'wait...',
     }));
-    axios.get('/hello/json/' + this.state.num)
+    Axios.get('/hello/json/' + this.state.num)
          .then(response =>{
            let person = responce.data;
            let msg = person.id + ':' + person.name
-           + '[' + person.mail + '] ('
+           + '[' + person.email + '] ('
            + person.age + ')';
            this.setState((state)=>({
              person:person,
