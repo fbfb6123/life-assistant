@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
+use App\Http\Controllers\BudgetController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,7 @@ Route::get('/', function () {
 
 Route::get('/hello', [HelloController::class, 'index']);
 Route::get('/hello/json/{id}', [HelloController::class, 'json']);
+
+
+Route::get('/budget', [BudgetController::class, 'index']);
+Route::get('/budget/json/{id}', [BudgetController::class, 'json']);
