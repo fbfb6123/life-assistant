@@ -15,6 +15,9 @@ class CreateSpendingsTable extends Migration
     {
         Schema::create('spendings', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->comment('名前');
+            $table->integer('num')->nullable()->comment('金額');
+            $table->string('status')->default(1)->comment('フラグ');
             $table->timestamps();
         });
     }
