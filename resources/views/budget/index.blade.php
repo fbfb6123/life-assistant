@@ -14,7 +14,7 @@
       <h1>Hello</h1>
       <p>{{$msg}}</p>
 
-      <div id="todoApp"></div>
+      <div id="mycomponent"></div>
 
       <script src="{{asset('/js/app.js')}}"></script>
 </body>
