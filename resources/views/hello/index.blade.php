@@ -1,3 +1,7 @@
+@extends('layout')
+
+
+@section('content')
 <!doctype html>
 <html lang="ja">
 <head>
@@ -15,3 +19,4 @@
       <script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>            
+@endsection
