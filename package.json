@@ -20,11 +20,14 @@
         "popper.js": "^1.12",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
+        "redux-devtools": "^3.7.0",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"
     },
     "dependencies": {
+        "react-redux": "^7.2.2",
+        "redux": "^4.0.5",
         "redux-persist": "^6.0.0"
     }
 }
