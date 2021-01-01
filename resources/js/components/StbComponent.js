@@ -7,7 +7,7 @@ export default class StbComponent extends Component {
     super(props);
     this.state = {
       num:0,
-      msg:'てすと',
+      msg:'すたぶ',
     };
     this.doChange = this.doChange.bind(this);
     this.doAction = this.doAction.bind(this);
@@ -54,5 +54,5 @@ export default class StbComponent extends Component {
 
 ReactDOM.render (
   <StbComponent />,
-  document.getElementById('mycomponent')
+  document.getElementById('stbcomponent')
 )

@@ -66066,7 +66066,7 @@ var StbComponent = /*#__PURE__*/function (_Component) {
     _this = _super.call(this, props);
     _this.state = {
       num: 0,
-      msg: 'てすと'
+      msg: 'すたぶ'
     };
     _this.doChange = _this.doChange.bind(_assertThisInitialized(_this));
     _this.doAction = _this.doAction.bind(_assertThisInitialized(_this));
@@ -66125,7 +66125,7 @@ var StbComponent = /*#__PURE__*/function (_Component) {
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(StbComponent, null), document.getElementById('mycomponent'));
+react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(StbComponent, null), document.getElementById('stbcomponent'));
 
 /***/ }),
 
