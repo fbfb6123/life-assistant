@@ -2,7 +2,7 @@ import Axios from 'axios';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-export default class MyComponent extends Component {
+export default class StbComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,6 +53,6 @@ export default class MyComponent extends Component {
 }
 
 ReactDOM.render (
-  <MyComponent />,
+  <StbComponent />,
   document.getElementById('mycomponent')
 )
