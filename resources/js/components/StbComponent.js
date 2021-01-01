@@ -2,7 +2,7 @@ import Axios from 'axios';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-export default class StbComponent extends Component {
+class StbComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -52,7 +52,4 @@ export default class StbComponent extends Component {
   }
 }
 
-ReactDOM.render (
-  <StbComponent />,
-  document.getElementById('stbcomponent')
-)
+export default StbComponent;
