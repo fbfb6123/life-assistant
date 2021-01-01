@@ -10,8 +10,7 @@
       <h1>Hello</h1>
       <p>{{$msg}}</p>
 
-      <div id="stbcomponent"></div>
-      <div id="mycomponent"></div>
+      <div id="todoApp"></div>
 
       <script src="{{asset('/js/app.js')}}"></script>
 </body>

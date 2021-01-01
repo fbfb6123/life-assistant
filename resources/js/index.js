@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 
-//表示をレンダリング
+import { Provider, connect } from 'react-redux';
+import createStore from './createStore';
+import TodoApp from './components/TodoApp';
+
+
+const store = createStore();
+
 ReactDOM.render(
-
-  document.getElementById('mycomponent')
-)
+    <Provider store={store}>
+        <TodoApp />
+    </Provider>,
+    document.getElementById('todoApp')
+);
