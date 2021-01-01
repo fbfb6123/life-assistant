@@ -70626,8 +70626,8 @@ __webpack_require__.r(__webpack_exports__);
 
  //表示をレンダリング
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyComponent__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById('mycomponent')); // const store = createStore();
-// ReactDOM.render(
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_MyComponent__WEBPACK_IMPORTED_MODULE_3__["default"], null), document.getElementById('mycomponent'));
+var store = Object(_createStore__WEBPACK_IMPORTED_MODULE_4__["default"])(); // ReactDOM.render(
 //     <Provider store={store}>
 //         <TodoApp />
 //     </Provider>,

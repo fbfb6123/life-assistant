@@ -11,7 +11,7 @@ ReactDOM.render(
   document.getElementById('mycomponent')
 )
 
-// const store = createStore();
+const store = createStore();
 
 // ReactDOM.render(
 //     <Provider store={store}>

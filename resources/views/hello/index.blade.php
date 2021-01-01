@@ -13,6 +13,11 @@
 <body style="padding:10px;">
       <h1>Hello</h1>
       <p>{{$msg}}</p>
+      <ol>
+    @foreach($person as $item)
+        <li>{{$item->name}} [{{$item->email}},{{$item->age}}]</li>
+    @endforeach
+      </ol>
 
       <div id="todoApp"></div>
 
