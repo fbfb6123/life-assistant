@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSpendingsTable extends Migration
+class CreateExpensesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSpendingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('spendings', function (Blueprint $table) {
+        Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->string('text')->comment('名前');
             $table->integer('amount')->nullable()->comment('金額');
@@ -29,6 +29,6 @@ class CreateSpendingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('spendings');
+        Schema::dropIfExists('expenses');
     }
 }
