@@ -70925,10 +70925,14 @@ var MyComponent = /*#__PURE__*/function (_Component) {
   }]);
 
   return MyComponent;
-}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_1__["Component"]); // ReactDOM.render (
+//   <MyComponent />,
+//   document.getElementById('mycomponent')
+// )
+// export default connect() (MyComponent);
 
 
-react_dom__WEBPACK_IMPORTED_MODULE_2___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(MyComponent, null), document.getElementById('mycomponent'));
+
 
 /***/ }),
 

@@ -53,8 +53,9 @@ export default class MyComponent extends Component {
   }
 }
 
-ReactDOM.render (
-  <MyComponent />,
-  document.getElementById('mycomponent')
-)
+// ReactDOM.render (
+//   <MyComponent />,
+//   document.getElementById('mycomponent')
+// )
 
+// export default connect() (MyComponent);
