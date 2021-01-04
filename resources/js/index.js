@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import MyComponent from './components/MyComponent';
 import createStore from './createStore';
-import TodoApp from './components/TodoApp';
+// import TodoApp from './components/TodoApp';
+import App from './components/App';
 
 //表示をレンダリング
 ReactDOM.render(
-  <MyComponent />,
+  <App />,
   document.getElementById('mycomponent')
 )
 

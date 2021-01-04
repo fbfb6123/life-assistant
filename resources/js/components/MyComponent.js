@@ -1,6 +1,7 @@
 import Axios from 'axios';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import connect from 'react-redux/lib/connect/connect';
 
 export default class MyComponent extends Component {
   constructor(props) {
@@ -56,3 +57,4 @@ ReactDOM.render (
   <MyComponent />,
   document.getElementById('mycomponent')
 )
+
