@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider, connect } from 'react-redux';
-import MyComponent from './components/MyComponent';
-import createStore from './createStore';
+import { Provider } from 'react-redux';
 // import TodoApp from './components/TodoApp';
 import App from './components/App';
+import ExpenceStore from './components/Store';
 
 //表示をレンダリング
 ReactDOM.render(
-  <App />,
+  <Provider store={ExpenceStore}>
+    <App />,
+  </Provider>,
   document.getElementById('mycomponent')
 )
 
-const store = createStore();
+// const store = createStore();
 
 // ReactDOM.render(
 //     <Provider store={store}>

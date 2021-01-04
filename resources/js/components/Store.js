@@ -1,5 +1,4 @@
-import { crrateStore } from 'redux';
-import createStore from '../createStore';
+import { createStore } from 'redux';
 
 const initData = {
   data:[{message:'Store.jsのコンポーネント', created:new Date()}],
