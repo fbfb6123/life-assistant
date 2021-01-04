@@ -1,4 +1,5 @@
 import { crrateStore } from 'redux';
+import createStore from '../createStore';
 
 const initData = {
   data:[{message:'Store.jsのコンポーネント', created:new Date()}],
@@ -58,4 +59,45 @@ function findReduce(state, action) {
     fdata:fdata
   };
 }
+
+//削除のレデュース処理
+function deleteReduce(state, action) {
+  let newdata = state.data.slice();
+  newdata.splice(action.index, 1);
+  return {
+    data:newdata,
+    message:'delete"' + action.index + '":',
+    mode:'delete',
+    fdata:[]
+  }
+}
+
+//アクションクリエーター
+
+//追加のアクション
+export function addExpense(text) {
+  return {
+    type: 'ADD',
+    message:text
+  }
+}
+
+//削除のアクション
+export function deleteExpense(num) {
+  return {
+    type:'DELETE',
+    index:num
+  }
+}
+
+//検索のアクション
+export function findExpense(text) {
+  return {
+    type:'FIND',
+    find:text
+  }
+}
+
+//ストアを作成
+export default createStore(homeReducer);
 
