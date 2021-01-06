@@ -1,7 +1,7 @@
-//追加処理
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addExpense } from './components/Store';
+import { addExpense } from '../components/Store';
+
 
 
 class AddForm extends Component {
@@ -50,7 +50,7 @@ class AddForm extends Component {
   render() {
     return (
       <div>
-       
+       <h1>テスト</h1>
         <p style={this.message}>{this.props.message}</p>
         <form onSubmit={this.doAction}>
           <input type="text" size="40" onChange={this.doChange}
@@ -61,4 +61,8 @@ class AddForm extends Component {
     );
   }
 }
+// ReactDOM.render (
+//   <MyComponent />,
+//   document.getElementById('mycomponent')
+// )
 export default connect((state)=>state)(AddForm);
