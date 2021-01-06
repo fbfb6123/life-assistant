@@ -8,7 +8,7 @@ import ExpenceStore from './components/Store';
 //表示をレンダリング
 ReactDOM.render(
   <Provider store={ExpenceStore}>
-    <App />,
+    <App />
   </Provider>,
   document.getElementById('mycomponent')
 )
