@@ -4,7 +4,7 @@ import Item from './Item';
 
 class Counter extends Component {
 
-  
+
 }
 
-export default App;
+export default Counter;
