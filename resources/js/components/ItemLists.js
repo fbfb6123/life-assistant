@@ -1,12 +1,12 @@
 //収支リストコンポーネント
 
 import React from 'react';
+import React, {Component} from 'react';
 import { IncomeItem } from './IncomeItem';
 import { ExpenseItem } from './ExpenseItem';
 
-
-export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseItems, incomeTotal, selectedMonth, thisMonth}) => {
-
+class ItemLists extends Component {
+  render(){
   return (
     <div className="list-container">
       <div className="income-list">
@@ -28,3 +28,5 @@ export const ItemsList = ({ deleteIncome, deleteExpense, incomeItems, expenseIte
     </div>
   )
 }
+}
+export default ItemLists;
