@@ -69894,7 +69894,7 @@ var Item = /*#__PURE__*/function (_Component) {
       backgroundColor: "blue",
       color: "white",
       padding: "5px 10px",
-      width: "50px"
+      width: "85px"
     });
 
     _defineProperty(_assertThisInitialized(_this), "td", {

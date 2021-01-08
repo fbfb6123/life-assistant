@@ -8,7 +8,7 @@ class Item extends Component {
     backgroundColor:"blue",
     color:"white",
     padding:"5px 10px",
-    width:"50px"
+    width:"85px"
   }
 
   td = {
