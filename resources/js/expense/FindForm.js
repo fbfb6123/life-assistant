@@ -32,7 +32,7 @@ class FindForm extends Component {
 
   doAction(e) {
     e.preventDefault();
-    let action = findExpense(this.state.number);
+    let action = findExpense(this.state.find);
     this.props.dispatch(action); //Storeのレデューサーにactionが送られる
   }
 

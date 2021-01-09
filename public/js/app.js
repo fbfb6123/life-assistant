@@ -70051,7 +70051,7 @@ var FindForm = /*#__PURE__*/function (_Component) {
     key: "doAction",
     value: function doAction(e) {
       e.preventDefault();
-      var action = Object(_components_Store__WEBPACK_IMPORTED_MODULE_2__["findExpense"])(this.state.number);
+      var action = Object(_components_Store__WEBPACK_IMPORTED_MODULE_2__["findExpense"])(this.state.find);
       this.props.dispatch(action); //Storeのレデューサーにactionが送られる
     }
   }, {
