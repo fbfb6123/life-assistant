@@ -35,5 +35,15 @@ class FindForm extends Component {
     let action = findExpense(this.state.number);
     this.props.dispatch(action); //Storeのレデューサーにactionが送られる
   }
+
+  render(){
+    return (
+      <form onSubmit={this.doAction}>
+        <input type="text" size="10" onChange={this.doChange}
+        style={this.input} value={this.state.message} />
+        <input type="submit" style={this.btn} value="Find"/>
+      </form>
+    );
+  }
 }
 export default connect((state)=>state)(FindForm);
