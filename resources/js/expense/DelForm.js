@@ -33,7 +33,7 @@ class DelForm extends Component {
 
   doAction(e) {
     e.preventDefault();
-    let action = deleteMemo(this.state.number);
+    let action = deleteExpense(this.state.number);
     this.props.dispatch(action); //Storeのレデューサーにactionが送られる
     this.setState({
       number: 0
@@ -49,7 +49,10 @@ class DelForm extends Component {
       <div>
         <form onSubmit={this.doAction}>
           <select onChange={this.doChange}
-          defaultValue="-1" style={this.btn} value="Del"/>
+          defaultValue="-1" style={this.input}>
+            {items}
+          </select> 
+          <input type="submit" style={this.btn} value="Del"/> 
         </form>
       </div>
     );
