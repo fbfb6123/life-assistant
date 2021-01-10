@@ -62,6 +62,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 やることリスト
 
-データを表示するコンポーネント生成(値の管理はExpenceStoreとしてindex.jsにimport済み)
-削除・検索コンポーネント生成
+レイアウト生成
+認証機能Auth
 Redux Persistによるデータの永続化
