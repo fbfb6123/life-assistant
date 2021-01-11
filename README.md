@@ -64,4 +64,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 レイアウト生成
 認証機能Auth
-Redux Persistによるデータの永続化
+axiosでのバックエンド連携（AddForm,DelForm）

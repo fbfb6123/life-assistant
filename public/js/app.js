@@ -70478,10 +70478,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 
 var initData = {
-  data: [{
-    message: 'Store.jsのコンポーネント',
-    created: new Date()
-  }],
+  data: [],
   message: 'please type message:',
   mode: 'default',
   fdata: []
@@ -70508,9 +70505,11 @@ function homeReducer() {
 //追加のレデュース処理
 
 function addReduce(state, action) {
+  var d = new Date();
+  var f = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
   var data = {
     message: action.message,
-    created: new Date()
+    created: f
   };
   var newdata = state.data.slice();
   newdata.unshift(data);
@@ -71149,15 +71148,13 @@ var Item = /*#__PURE__*/function (_Component) {
   _createClass(Item, [{
     key: "render",
     value: function render() {
-      var d = this.props.value.created;
-      var f = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         style: this.th
       }, "No, ", this.props.index), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         style: this.td
       }, this.props.value.message), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         style: this.date
-      }, f));
+      }, this.props.value.created));
     }
   }]);
 
@@ -71172,7 +71169,7 @@ var Item = /*#__PURE__*/function (_Component) {
 /*!*******************************!*\
   !*** ./resources/js/index.js ***!
   \*******************************/
-/*! no exports provided */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71181,27 +71178,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.js");
-/* harmony import */ var _components_Store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Store */ "./resources/js/components/Store.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/App */ "./resources/js/components/App.js");
 /* harmony import */ var redux_persist__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! redux-persist */ "./node_modules/redux-persist/es/index.js");
 /* harmony import */ var redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! redux-persist/lib/storage */ "./node_modules/redux-persist/lib/storage/index.js");
 /* harmony import */ var redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! redux-persist/integration/react */ "./node_modules/redux-persist/es/integration/react.js");
+/* harmony import */ var _components_Store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Store */ "./resources/js/components/Store.js");
+
 
 
  // import TodoApp from './components/TodoApp';
 
 
 
-
  //storageに保存
 
- //表示をレンダリング
 
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__["Provider"], {
-  store: _components_Store__WEBPACK_IMPORTED_MODULE_4__["default"]
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_3__["default"], null)), document.getElementById('mycomponent')); // const store = createStore();
+ // Redux Persistの設定
+
+var persistConfig = {
+  key: 'expence',
+  storage: redux_persist_lib_storage__WEBPACK_IMPORTED_MODULE_6___default.a
+}; //パーシスとレデューサーの作成
+
+var persistedReducer = Object(redux_persist__WEBPACK_IMPORTED_MODULE_5__["persistReducer"])(persistConfig, _components_Store__WEBPACK_IMPORTED_MODULE_8__["homeReducer"]); //ストア、パーシスターの作成
+
+var store = Object(redux__WEBPACK_IMPORTED_MODULE_2__["createStore"])(persistedReducer);
+var pstore = Object(redux_persist__WEBPACK_IMPORTED_MODULE_5__["persistStore"])(store); //表示をレンダリング
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_3__["Provider"], {
+  store: store
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(redux_persist_integration_react__WEBPACK_IMPORTED_MODULE_7__["PersistGate"], {
+  loading: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "loading..."),
+  persistor: pstore
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_App__WEBPACK_IMPORTED_MODULE_4__["default"], null))), document.getElementById('mycomponent'));
+/* harmony default export */ __webpack_exports__["default"] = (pstore); // const store = createStore();
 // ReactDOM.render(
 //     <Provider store={store}>
 //         <TodoApp />
