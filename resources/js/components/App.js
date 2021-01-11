@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import MyComponent from './MyComponent';
+// import MyComponent from './MyComponent';
 import AddForm from '../expense/AddForm'
 import DelForm from '../expense/DelForm'
 import FindForm from '../expense/FindForm'
@@ -7,6 +7,13 @@ import Counter from '../expense/Counter';
 
   //Appコンポーネント
 class App extends Component {
+  td = {
+    width:"250px"
+  }
+
+  constructor(props){
+    super(props);
+  }
 
   render(){
     return (
@@ -17,9 +24,9 @@ class App extends Component {
         <table><tbody><tr>
           <td style ={this.td}><FindForm /></td>
           <td style ={this.td}><DelForm /></td>
-          <td><Counter /></td>
         </tr></tbody></table>
-        <MyComponent />
+        <Counter />
+        {/* <MyComponent /> */}
       </div>
     );
   }
