@@ -4,6 +4,10 @@ import { Provider } from 'react-redux';
 // import TodoApp from './components/TodoApp';
 import App from './components/App';
 import ExpenceStore from './components/Store';
+import { PersistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';//storageに保存
+import { PersistGate } from 'redux-persist/integration/react';
+
 
 //表示をレンダリング
 ReactDOM.render(
