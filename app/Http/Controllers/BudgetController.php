@@ -33,4 +33,12 @@ class BudgetController extends Controller
             return Person::find($id)->toJson();
         }
     }
+
+    public function getTodos()
+    {
+        $people = Person::all();
+        Log::info($people);
+        return $people;
+    }
+
 }

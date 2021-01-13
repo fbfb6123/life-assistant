@@ -26,3 +26,4 @@ Route::get('/hello/json/{id}', [HelloController::class, 'json']);
 
 Route::get('/budget', [BudgetController::class, 'index']);
 Route::get('/budget/json/{id}', [BudgetController::class, 'json']);
+

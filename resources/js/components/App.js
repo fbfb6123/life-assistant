@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import AddForm from '../expense/AddForm'
 import DelForm from '../expense/DelForm'
 import FindForm from '../expense/FindForm'
-import Counter from '../expense/Counter';
+/*import Counter from '../expense/Counter';*/
+import Stb from './Stb';
 import Header from './Header';
 import Balance from './Balance';
 import IncomeExpense from './IncomeExpense';
@@ -28,7 +29,7 @@ class App extends Component {
         <Balance />
         <IncomeExpense />
         </div>
-        
+
         <h1>家計簿</h1>
         <AddForm />
         <hr />
@@ -36,7 +37,8 @@ class App extends Component {
           <td style ={this.td}><FindForm /></td>
           <td style ={this.td}><DelForm /></td>
         </tr></tbody></table>
-        <Counter />
+          <Stb />
+        {/*<Counter />*/}
         {/* <MyComponent /> */}
       </div>
     );
