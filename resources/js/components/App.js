@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import MyComponent from './MyComponent';
 import AddForm from '../expense/AddForm'
+import Test from './Test';
 import DelForm from '../expense/DelForm'
 import FindForm from '../expense/FindForm'
 /*import Counter from '../expense/Counter';*/
@@ -32,6 +33,7 @@ class App extends Component {
 
         <h1>家計簿</h1>
         <AddForm />
+        <Test />
         <hr />
         <table><tbody><tr>
           <td style ={this.td}><FindForm /></td>
