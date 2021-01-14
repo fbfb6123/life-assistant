@@ -37,7 +37,20 @@ class BudgetController extends Controller
     public function getTodos()
     {
         $people = Person::all();
+        return $people;
+    }
+
+    public function postTodos(Request $request)
+    {
+        $people = new Person();
         Log::info($people);
+
+        $people->name = $request->name;
+        $people->email = $request->email;
+        $people->age = $request->age;
+
+        $people->save();
+
         return $people;
     }
 

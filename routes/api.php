@@ -23,4 +23,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/budget/getTodos', [BudgetController::class, 'getTodos']);
 
+Route::post('/budget/postTodos', [BudgetController::class, 'postTodos']);
 /*Route::match(['get', 'post'], '/csv/upload_regist', [CsvDownloadController::class, 'upload_regist']);*/
