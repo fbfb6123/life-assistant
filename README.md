@@ -62,6 +62,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 やることリスト
 
+関数コンポーネントhooksに切り替え
 レイアウト生成
 認証機能Auth
 axiosでのバックエンド連携（AddForm,DelForm）
