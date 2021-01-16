@@ -13,4 +13,22 @@ employee.listEmployee = async () => {
 }
 
 
+// employee.list = async () => {
+//   const urlList = baseUrl+"/create"
+//   const res = await axios.get(urlList)
+//   .then(response=>{ return response.data; })
+//   .catch(error=>{ return error; })
+//   return res;
+// }
+
+//Formのcreateaction定義
+employee.save = async (data) => {
+  const urlSave = baseUrl+"/create"
+  const res = await axios.post(urlSave,data)
+  .then(response=>{ return response.data; })
+  .catch(error=>{ return error; })
+  return res;
+}
+
+
 export default employee
