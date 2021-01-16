@@ -74709,26 +74709,28 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+var baseUrl = "http://localhost:8000/api/employee";
 var employee = {}; //...//
 
 employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  var res;
+  var urlList, res;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.next = 2;
-          return axios.get('api/employee/list').then(function (response) {
+          urlList = baseUrl + "/list";
+          _context.next = 3;
+          return axios.get(urlList).then(function (response) {
             return response.data;
           })["catch"](function (error) {
             return error;
           });
 
-        case 2:
+        case 3:
           res = _context.sent;
           return _context.abrupt("return", res);
 
-        case 4:
+        case 5:
         case "end":
           return _context.stop();
       }
@@ -74783,6 +74785,7 @@ function List() {
       setListEmployee = _useState2[1];
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
     function fetchDataEmployee() {
       return _fetchDataEmployee.apply(this, arguments);
     }
