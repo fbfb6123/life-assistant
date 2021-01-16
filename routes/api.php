@@ -31,4 +31,4 @@ Route::post('/budget/postTodos', [BudgetController::class, 'postTodos']);
 
 Route::get('/employee/list', [EmployeeController::class, 'list']);
 
-Route::post('/employee/create', [EmployeeController::class, 'list']);
+Route::post('/employee/create', [EmployeeController::class, 'create']);
