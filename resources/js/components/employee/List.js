@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
 import employeeServices from "./Employee"
-
 import { Link } from "react-router-dom";
 
 function List(){
@@ -10,6 +8,7 @@ function List(){
 
   useEffect(()=>{
 
+    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
     async function fetchDataEmployee(){
       const res = await employeeServices.listEmployee();
       console.log(res.data);
