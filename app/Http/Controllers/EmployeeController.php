@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Person;
 
 class EmployeeController extends Controller
 {
@@ -10,7 +11,7 @@ class EmployeeController extends Controller
 
         try {
   
-          $data = Employee::with("role")->get();
+          $data = Person::all();
           $response['data'] = $data;
           $response['success'] = true;
   
