@@ -11,7 +11,7 @@ class EmployeeController extends Controller
 
         try {
   
-          $data = Person::all();
+          $data = Person::get();
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -21,5 +21,25 @@ class EmployeeController extends Controller
         }
         return $response;
   
+      }
+
+      public function create(Request $request){
+
+        try {
+  
+            $insert[''] = $request['name'];
+            $insert[''] = $request['email'];
+            $insert[''] = $request['age'];
+
+            Person::insert($insert);
+
+            $response['message'] = '成功';
+            $response['success'] = true;
+    
+          } catch (\Exception $e) {
+            $response['message'] = $e->getMessage();
+            $response['success'] = false;
+          }
+          return $response;
       }
 }
