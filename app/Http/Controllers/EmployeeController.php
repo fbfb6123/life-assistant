@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
@@ -24,17 +26,26 @@ class EmployeeController extends Controller
       }
 
       public function create(Request $request){
-
+          
         try {
   
-            $insert[''] = $request['name'];
-            $insert[''] = $request['email'];
-            $insert[''] = $request['age'];
+            $insert['name'] = $request['name'];
+            $insert['email'] = $request['email'];
+            $insert['age'] = $request['age'];
 
-            Person::insert($insert);
+            Log::info($insert);
+
+            DB::table('people')->insert($insert);
 
             $response['message'] = '成功';
             $response['success'] = true;
+
+            // $people = new Person();
+            // $people->name = $request->name;
+            // $people->email = $request->email;
+            // $people->age = $request->age;
+
+            // $people->save();
     
           } catch (\Exception $e) {
             $response['message'] = $e->getMessage();
