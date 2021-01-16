@@ -5,6 +5,7 @@ import Test from './Test';
 import DelForm from '../expense/DelForm'
 import FindForm from '../expense/FindForm'
 import Counter from '../expense/Counter';
+import List from './employee/List';
 // import Stb from './Stb';
 import Header from './Header';
 import Balance from './Balance';
@@ -39,8 +40,9 @@ class App extends Component {
           <td style ={this.td}><FindForm /></td>
           <td style ={this.td}><DelForm /></td>
         </tr></tbody></table>
+        <List />
           {/* <Stb /> */}
-        <Counter />
+        {/* <Counter /> */}
         {/* <MyComponent /> */}
       </div>
     );
