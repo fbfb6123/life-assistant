@@ -74738,14 +74738,14 @@ employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runt
       }
     }
   }, _callee);
-})); //AddFormのaction定義
-// employee.list = async () => {
+})); // employee.list = async () => {
 //   const urlList = baseUrl+"/create"
 //   const res = await axios.get(urlList)
 //   .then(response=>{ return response.data; })
 //   .catch(error=>{ return error; })
 //   return res;
 // }
+//Formのcreateaction定義
 
 employee.save = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
@@ -74797,6 +74797,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Employee__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Employee */ "./resources/js/components/employee/Employee.js");
+/* harmony import */ var _List__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./List */ "./resources/js/components/employee/List.js");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -74818,6 +74819,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 function Form() {
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
@@ -74832,7 +74834,41 @@ function Form() {
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       _useState6 = _slicedToArray(_useState5, 2),
       age = _useState6[0],
-      setAge = _useState6[1]; // const [ ListRol, setListRol] = useState([]);
+      setAge = _useState6[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
+    function fetchDataEmployee() {
+      return _fetchDataEmployee.apply(this, arguments);
+    }
+
+    function _fetchDataEmployee() {
+      _fetchDataEmployee = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save();
+
+              case 2:
+                res = _context.sent;
+                console.log(res.data);
+                setListEmployee(res.data);
+
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+      return _fetchDataEmployee.apply(this, arguments);
+    }
+
+    fetchDataEmployee();
+  }, []); // const [ ListRol, setListRol] = useState([]);
   // useEfect(()=>{
   //   async function featchDataRol(){
   //     const res = await employeeServices.list();
@@ -74842,31 +74878,30 @@ function Form() {
   //   featchDataRol();
   // },[])
 
-
   var saveEmployee = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
       var data, res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
               data = {
                 name: name,
                 email: email,
                 age: age
               };
-              _context.next = 3;
+              _context2.next = 3;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save(data);
 
             case 3:
-              res = _context.sent;
+              res = _context2.sent;
 
             case 4:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     }));
 
     return function saveEmployee() {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import employeeServices from "./Employee";
+import List from "./List";
 
 function Form(){
 
@@ -7,6 +8,19 @@ function Form(){
   const [ name, setName ] = useState(null);
   const [ email, setEmail ] = useState(null);
   const [ age, setAge ] = useState(null);
+
+  useEffect(()=>{
+
+    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
+    async function fetchDataEmployee(){
+      const res = await employeeServices.save();
+      console.log(res.data);
+      setListEmployee(res.data)
+    }
+
+    fetchDataEmployee();
+
+  },[])
 
   // const [ ListRol, setListRol] = useState([]);
 
