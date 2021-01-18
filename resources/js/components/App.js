@@ -7,7 +7,7 @@ import FindForm from '../expense/FindForm'
 import Counter from '../expense/Counter';
 import List from './employee/List';
 import Form from './employee/Form';
-// import Stb from './Stb';
+import Main from './employee/Main';
 import Header from './Header';
 import Balance from './Balance';
 import IncomeExpense from './IncomeExpense';
@@ -20,14 +20,10 @@ class App extends Component {
     width:"250px"
   }
 
-  constructor(props){
-    super(props);
-  }
-
   render(){
     return (
       <div>
-        <div className="top">
+        {/* <div className="top">
         <Header />
         <Balance />
         <IncomeExpense />
@@ -40,12 +36,12 @@ class App extends Component {
         <table><tbody><tr>
           <td style ={this.td}><FindForm /></td>
           <td style ={this.td}><DelForm /></td>
-        </tr></tbody></table>
+        </tr></tbody></table> */}
         
           {/* <Stb /> */}
         {/* <Counter /> */}
         {/* <MyComponent /> */}
-        <Form />
+        <Main />
       </div>
     );
   }
