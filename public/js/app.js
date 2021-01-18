@@ -74229,7 +74229,7 @@ var App = /*#__PURE__*/function (_Component) {
         style: this.td
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_expense_FindForm__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", {
         style: this.td
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_expense_DelForm__WEBPACK_IMPORTED_MODULE_3__["default"], null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_employee_List__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_employee_Form__WEBPACK_IMPORTED_MODULE_7__["default"], null));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_expense_DelForm__WEBPACK_IMPORTED_MODULE_3__["default"], null))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_employee_Form__WEBPACK_IMPORTED_MODULE_7__["default"], null));
     }
   }]);
 
@@ -74836,6 +74836,11 @@ function Form() {
       age = _useState6[0],
       setAge = _useState6[1];
 
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      listEmployee = _useState8[0],
+      setListEmployee = _useState8[1];
+
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
     function fetchDataEmployee() {
@@ -74850,14 +74855,15 @@ function Form() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save();
+                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].listEmployee();
 
               case 2:
                 res = _context.sent;
                 console.log(res.data);
+                console.log("Forom\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
                 setListEmployee(res.data);
 
-              case 5:
+              case 6:
               case "end":
                 return _context.stop();
             }
@@ -74868,19 +74874,11 @@ function Form() {
     }
 
     fetchDataEmployee();
-  }, []); // const [ ListRol, setListRol] = useState([]);
-  // useEfect(()=>{
-  //   async function featchDataRol(){
-  //     const res = await employeeServices.list();
-  //     console.log(res.data);
-  //     setListRol(res.data)
-  //   }
-  //   featchDataRol();
-  // },[])
+  }, []);
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-      var data, res;
+      var data, res, hoge;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -74895,8 +74893,17 @@ function Form() {
 
             case 3:
               res = _context2.sent;
+              console.log(res.data);
+              _context2.next = 7;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].listEmployee();
 
-            case 4:
+            case 7:
+              hoge = _context2.sent;
+              console.log(hoge.data);
+              console.log("save/\u518D\u30EC\u30F3\u30C0\u30FC");
+              setListEmployee(hoge.data);
+
+            case 11:
             case "end":
               return _context2.stop();
           }
@@ -74958,7 +74965,23 @@ function Form() {
     onClick: function onClick() {
       return saveEmployee();
     }
-  }, "Save"))));
+  }, "Save"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("table", {
+    className: "table"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("thead", {
+    className: "thead-dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    scope: "col"
+  }, "#"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    scope: "col"
+  }, "Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    scope: "col"
+  }, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("th", {
+    scope: "col"
+  }, "Age"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tbody", null, listEmployee.map(function (person) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("tr", {
+      key: person.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, person.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, person.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, person.email), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("td", null, person.age));
+  })))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Form);
@@ -75027,9 +75050,10 @@ function List() {
               case 2:
                 res = _context.sent;
                 console.log(res.data);
+                console.log("\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
                 setListEmployee(res.data);
 
-              case 5:
+              case 6:
               case "end":
                 return _context.stop();
             }

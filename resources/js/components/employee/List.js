@@ -12,6 +12,7 @@ function List(){
     async function fetchDataEmployee(){
       const res = await employeeServices.listEmployee();
       console.log(res.data);
+      console.log(`再レンダーされました`);
       setListEmployee(res.data)
     }
 
