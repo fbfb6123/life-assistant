@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import employeeServices from "./Employee";
 import List from "./List";
 
+
 function Form(){
 
   
@@ -14,6 +15,7 @@ function Form(){
 
     //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
     async function fetchDataEmployee(){
+      
       const res = await employeeServices.listEmployee();
       console.log(res.data);
       console.log(`Foromの再レンダーされました`);
@@ -22,7 +24,8 @@ function Form(){
 
     fetchDataEmployee();
 
-  },[name])
+  },[])
+  
 
   const saveEmployee = async () => {
 
@@ -32,7 +35,11 @@ function Form(){
 
     const res = await employeeServices.save(data);
     console.log(res.data);
-    setListEmployee(res.data)
+
+    const hoge = await employeeServices.listEmployee();
+      console.log(hoge.data);
+      console.log(`save/再レンダー`);
+      setListEmployee(hoge.data)
     
   }
 
