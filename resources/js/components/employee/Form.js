@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import employeeServices from "./Employee";
-import List from "./List";
 
-
-function Form(){
+// function Form(){
 
   
-  const [ name, setName ] = useState(null);
-  const [ email, setEmail ] = useState(null);
-  const [ age, setAge ] = useState(null);
-  const [ listEmployee, setListEmployee ] = useState([]);
+//   const [ name, setName ] = useState(null);
+//   const [ email, setEmail ] = useState(null);
+//   const [ age, setAge ] = useState(null);
+//   const [ listEmployee, setListEmployee ] = useState([]);
 
-  useEffect(()=>{
-
-    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
-    async function fetchDataEmployee(){
-      
-      const res = await employeeServices.listEmployee();
-      console.log(res.data);
-      console.log(`Foromの再レンダーされました`);
-      setListEmployee(res.data)
-    }
-
-    fetchDataEmployee();
-
-  },[])
+  export const Form = ({ name, setName, email, setEmail, age, setAge, listEmployee, setListEmployee}) => {
   
 
   const saveEmployee = async () => {
@@ -34,11 +19,12 @@ function Form(){
     }
 
     const res = await employeeServices.save(data);
+    console.log('create!!');
     console.log(res.data);
 
     const hoge = await employeeServices.listEmployee();
       console.log(hoge.data);
-      console.log(`save/再レンダー`);
+      console.log(`list/再レンダー`);
       setListEmployee(hoge.data)
     
   }
@@ -113,5 +99,4 @@ function Form(){
     
   )
 }
-
-export default Form
+export default Form;
