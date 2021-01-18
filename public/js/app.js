@@ -74713,6 +74713,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var baseUrl = "http://localhost:8000/api/employee";
 var employee = {}; //...//
+//List一覧表示
+//await employeeServices.listEmployee()でアクセス
 
 employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
   var urlList, res;
@@ -74738,14 +74740,8 @@ employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runt
       }
     }
   }, _callee);
-})); // employee.list = async () => {
-//   const urlList = baseUrl+"/create"
-//   const res = await axios.get(urlList)
-//   .then(response=>{ return response.data; })
-//   .catch(error=>{ return error; })
-//   return res;
-// }
-//Formのcreateaction定義
+})); //Formのcreateaction定義
+//await employeeServices.save(data)でアクセス
 
 employee.save = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
