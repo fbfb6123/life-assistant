@@ -37,6 +37,7 @@ class EmployeeController extends Controller
 
             DB::table('people')->insert($insert);
 
+            $response['data'] = $insert;
             $response['message'] = '成功';
             $response['success'] = true;
 

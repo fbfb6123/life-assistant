@@ -8,32 +8,21 @@ function Form(){
   const [ name, setName ] = useState(null);
   const [ email, setEmail ] = useState(null);
   const [ age, setAge ] = useState(null);
+  const [ listEmployee, setListEmployee ] = useState([]);
 
   useEffect(()=>{
 
     //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
     async function fetchDataEmployee(){
-      const res = await employeeServices.save();
+      const res = await employeeServices.listEmployee();
       console.log(res.data);
+      console.log(`Foromの再レンダーされました`);
       setListEmployee(res.data)
     }
 
     fetchDataEmployee();
 
-  },[])
-
-  // const [ ListRol, setListRol] = useState([]);
-
-  // useEfect(()=>{
-
-  //   async function featchDataRol(){
-  //     const res = await employeeServices.list();
-  //     console.log(res.data);
-  //     setListRol(res.data)
-  //   }
-
-  //   featchDataRol();
-  // },[])
+  },[name])
 
   const saveEmployee = async () => {
 
@@ -42,12 +31,9 @@ function Form(){
     }
 
     const res = await employeeServices.save(data);
-
-    // if(res.success) {
-    //   alert(res,message)
-    // } else {
-    //   alert(res,message)
-    // }
+    console.log(res.data);
+    setListEmployee(res.data)
+    
   }
 
   return(
@@ -77,6 +63,7 @@ function Form(){
       </div>
 
 
+
       <div className="row">
         <div className="col-md-6 mb-3">
           <button
@@ -84,7 +71,39 @@ function Form(){
           onClick={()=>saveEmployee()}>Save</button>
         </div>
       </div>
+      
+
+      <section>
+      <table className="table">
+        <thead className="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        {
+          listEmployee.map((person)=>{
+            return(
+              <tr key={person.id}>
+                <td>{person.id}</td>
+                <td>{person.name}</td>
+                <td>{person.email}</td>
+                <td>{person.age}</td>
+            </tr>
+            )
+          })
+        }
+        
+        </tbody>
+      </table>
+    </section>
     </div>
+
+    
   )
 }
 
