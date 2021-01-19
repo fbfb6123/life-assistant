@@ -1,16 +1,6 @@
 import React, { Component } from 'react';
-// import MyComponent from './MyComponent';
-import AddForm from '../expense/AddForm'
-import Test from './Test';
-import DelForm from '../expense/DelForm'
-import FindForm from '../expense/FindForm'
-import Counter from '../expense/Counter';
-import List from './employee/List';
-import Form from './employee/Form';
 import Main from './employee/Main';
-import Header from './Header';
-import Balance from './Balance';
-import IncomeExpense from './IncomeExpense';
+
 
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
