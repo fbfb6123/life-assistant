@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
+use App\Models\Income;
+use App\Models\Expennse;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +15,7 @@ class EmployeeController extends Controller
 
         try {
   
-          $data = Person::get();
+          $data = Income::get();
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -29,13 +31,11 @@ class EmployeeController extends Controller
           
         try {
   
-            $insert['name'] = $request['name'];
-            $insert['email'] = $request['email'];
-            $insert['age'] = $request['age'];
-
+            $insert['text'] = $request['text'];
+            $insert['amount'] = $request['amount'];
             Log::info($insert);
 
-            DB::table('people')->insert($insert);
+            DB::table('incomes')->insert($insert);
 
             $response['data'] = $insert;
             $response['message'] = '成功';
