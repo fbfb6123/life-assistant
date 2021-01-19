@@ -5,6 +5,8 @@ import List from "./List";
 import Header from './Header';
 import Balance from './Balance';
 import IncomeExpense from './IncomeExpense';
+import Income from './Income';
+import Expense from './Expense';
 
 
 
@@ -64,7 +66,17 @@ return(
           
       />
 
-        <Form 
+      <IncomeExpense 
+       
+      />
+
+        
+        {/* <List 
+          incomeTotal={incomeTotal}
+          expenseItems={expenseItems}
+        /> */}
+    </div>
+      <Form 
           saveEmployee={saveEmployee}
           text={text}
           setText={setText}
@@ -72,33 +84,10 @@ return(
           setAmount={setAmount}
           listEmployee={listEmployee}
           setListEmployee={setListEmployee}
-        />
-        {/* <List 
-          incomeTotal={incomeTotal}
-          expenseItems={expenseItems}
-        /> */}
-      </div>
-      {/* <AddItem
-          addIncome={addIncome}
-          addExpense={addExpense}
-          inputText={inputText}
-          setInputText={setInputText}
-          inputAmount={inputAmount}
-          setInputAmount={setInputAmount}
-          type={type}
-          setType={setType}
-          selectedMonth={selectedMonth}
-          thisMonth={thisMonth}
-        />
-        <ItemsList 
-          deleteIncome={deleteIncome}
-          deleteExpense={deleteExpense}
-          incomeTotal={incomeTotal}
-          incomeItems={incomeItems} 
-          expenseItems={expenseItems}
-          selectedMonth={selectedMonth}
-          thisMonth={thisMonth}
-        /> */}
+      />
+      {/* <IncomeExpense 
+       
+      /> */}
   </div>
 
 
