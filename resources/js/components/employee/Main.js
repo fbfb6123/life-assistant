@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import employeeServices from "./Employee";
 import Form from "./Form";
 import List from "./List";
+import Header from './Header';
+import Balance from './Balance';
+import IncomeExpense from './IncomeExpense';
 
 
 
@@ -53,7 +56,15 @@ const saveEmployee = async () => {
 }
 
 return(
-<div className="top">
+  <div className="container">
+    <div className="top">
+      <Header 
+          
+      />
+      <Balance 
+          
+      />
+
         <Form 
           saveEmployee={saveEmployee}
           name={name}
@@ -70,6 +81,30 @@ return(
           expenseItems={expenseItems}
         /> */}
       </div>
+      {/* <AddItem
+          addIncome={addIncome}
+          addExpense={addExpense}
+          inputText={inputText}
+          setInputText={setInputText}
+          inputAmount={inputAmount}
+          setInputAmount={setInputAmount}
+          type={type}
+          setType={setType}
+          selectedMonth={selectedMonth}
+          thisMonth={thisMonth}
+        />
+        <ItemsList 
+          deleteIncome={deleteIncome}
+          deleteExpense={deleteExpense}
+          incomeTotal={incomeTotal}
+          incomeItems={incomeItems} 
+          expenseItems={expenseItems}
+          selectedMonth={selectedMonth}
+          thisMonth={thisMonth}
+        /> */}
+  </div>
+
+
 
 )
       }

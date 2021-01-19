@@ -1,17 +1,19 @@
+
+
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 
-class Header extends Component {
+class IncomeExpense extends Component {
   render() {
     return (
       <div className="container">
         <div>
-          <h1>ヘッダー</h1>   
+          <h1>収入・支出</h1>   
         </div>
       </div>
     );
   }
 }
 
-export default Header;
+export default IncomeExpense;
