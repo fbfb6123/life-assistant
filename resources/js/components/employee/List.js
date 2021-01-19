@@ -34,13 +34,12 @@ function List(){
         <tbody>
 
         {
-          listEmployee.map((person)=>{
+          listEmployee.map((income)=>{
             return(
-              <tr key={person.id}>
-                <td>{person.id}</td>
-                <td>{person.name}</td>
-                <td>{person.email}</td>
-                <td>{person.age}</td>
+              <tr key={income.id}>
+                <td>{income.id}</td>
+                <td>{income.text}</td>
+                <td>{income.amount}</td>
             </tr>
             )
           })

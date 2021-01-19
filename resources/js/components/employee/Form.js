@@ -9,13 +9,13 @@ import employeeServices from "./Employee";
 //   const [ age, setAge ] = useState(null);
 //   const [ listEmployee, setListEmployee ] = useState([]);
 
-  export const Form = ({ name, setName, email, setEmail, age, setAge, listEmployee, setListEmployee}) => {
+  export const Form = ({ text, setText, amount, setAmount, listEmployee, setListEmployee}) => {
   
 
   const saveEmployee = async () => {
 
     const data = {
-      name, email, age
+      text, amount
     }
 
     const res = await employeeServices.save(data);
@@ -33,25 +33,17 @@ import employeeServices from "./Employee";
     <div>
       <div className="row">
         <div className="col-md-6 mb-3">
-          <label htmlFor="firstName">Name</label>
+          <label htmlFor="firstName">内容</label>
           <input type="text" className="form-control" placeholder="Name"
-            onChange={(event)=>setName(event.target.value)}/>
+            onChange={(event)=>setText(event.target.value)}/>
         </div>
       </div>
 
       <div className="row">
         <div className="col-md-6 mb-3">
-          <label htmlFor="email">Email</label>
-          <input type="email" className="form-control" placeholder="you@example.com"
-          onChange={(event)=>setEmail(event.target.value)}/>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="col-md-6 mb-3">
-          <label htmlFor="address">Age</label>
+          <label htmlFor="address">金額</label>
           <input type="text" className="form-control" placeholder="1234 Main St"
-          onChange={(event)=>setAge(event.target.value)}/>
+          onChange={(event)=>setAmount(event.target.value)}/>
         </div>
       </div>
 
@@ -70,22 +62,19 @@ import employeeServices from "./Employee";
       <table className="table">
         <thead className="thead-dark">
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Age</th>
+            <th scope="col">収入</th>
+           
           </tr>
         </thead>
         <tbody>
 
         {
-          listEmployee.map((person)=>{
+          listEmployee.map((income)=>{
             return(
-              <tr key={person.id}>
-                <td>{person.id}</td>
-                <td>{person.name}</td>
-                <td>{person.email}</td>
-                <td>{person.age}</td>
+              <tr key={income.id}>
+                <td>{income.id}</td>
+                <td>{income.text}</td>
+                <td>{income.amount}</td>
             </tr>
             )
           })

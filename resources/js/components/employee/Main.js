@@ -10,9 +10,8 @@ import IncomeExpense from './IncomeExpense';
 
 function Main () {
 
-const [ name, setName ] = useState(null);
-const [ email, setEmail ] = useState(null);
-const [ age, setAge ] = useState(null);
+const [ text, setText ] = useState(null);
+const [ amount, setAmount ] = useState(null);
 const [ listEmployee, setListEmployee ] = useState([]);
 
 // useEffect(()=>{
@@ -41,7 +40,7 @@ useEffect(()=>{
 const saveEmployee = async () => {
 
   const data = {
-    name, email, age
+    text, amount
   }
 
   const res = await employeeServices.save(data);
@@ -67,12 +66,10 @@ return(
 
         <Form 
           saveEmployee={saveEmployee}
-          name={name}
-          setName={setName}
-          email={email}
-          setEmail={setEmail}
-          age={age}
-          setAge={setAge}
+          text={text}
+          setText={setText}
+          amount={amount}
+          setAmount={setAmount}
           listEmployee={listEmployee}
           setListEmployee={setListEmployee}
         />
