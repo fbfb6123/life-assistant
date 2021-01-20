@@ -84,6 +84,14 @@ return(
           saveEmployee={saveEmployee}
       />
       <List 
+      saveEmployee={saveEmployee}
+      text={text}
+      setText={setText}
+      amount={amount}
+      setAmount={setAmount}
+      listEmployee={listEmployee}
+      setListEmployee={setListEmployee}
+      saveEmployee={saveEmployee}
         />
   </div>
 

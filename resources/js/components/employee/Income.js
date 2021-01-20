@@ -1,23 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import employeeServices from "./Employee";
 
-function Income(){
-
-  const [ listEmployee, setListEmployee ] = useState([]);
-
-  useEffect(()=>{
-
-    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
-    async function fetchDataEmployee(){
-      const res = await employeeServices.listEmployee();
-      console.log(res.data);
-      console.log(`Income/再レンダーされました`);
-      setListEmployee(res.data)
-    }
-
-    fetchDataEmployee();
-
-  },[])
+export const Income = ({listEmployee, setListEmployee}) => {
 
   return (
     <section>
