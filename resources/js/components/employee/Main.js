@@ -71,8 +71,7 @@ return(
       />
 
         
-        <List 
-        />
+        
     </div>
       <Form 
           saveEmployee={saveEmployee}
@@ -82,10 +81,10 @@ return(
           setAmount={setAmount}
           listEmployee={listEmployee}
           setListEmployee={setListEmployee}
+          saveEmployee={saveEmployee}
       />
-      {/* <IncomeExpense 
-       
-      /> */}
+      <List 
+        />
   </div>
 
 
