@@ -11,7 +11,7 @@ function Expense(){
     async function fetchDataEmployee(){
       const res = await employeeServices.listEmployee();
       console.log(res.data);
-      console.log(`Income/再レンダーされました`);
+      console.log(`Expence/再レンダーされました`);
       setListEmployee(res.data)
     }
 

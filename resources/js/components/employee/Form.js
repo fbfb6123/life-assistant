@@ -9,25 +9,26 @@ import employeeServices from "./Employee";
 //   const [ age, setAge ] = useState(null);
 //   const [ listEmployee, setListEmployee ] = useState([]);
 
-  export const Form = ({ text, setText, amount, setAmount, listEmployee, setListEmployee}) => {
+  export const Form = ({ text, setText, amount, setAmount, listEmployee, setListEmployee, saveEmployee}) => {
   
 
-  const saveEmployee = async () => {
+  // const saveEmployee = async () => {
 
-    const data = {
-      text, amount
-    }
+  //   const data = {
+  //     text, amount
+  //   }
 
-    const res = await employeeServices.save(data);
-    console.log('create!!');
-    console.log(res.data);
+  //   //createアクション
+  //   const res = await employeeServices.save(data);
+  //   console.log('create!!');
+  //   console.log(res.data);
 
-    const hoge = await employeeServices.listEmployee();
-      console.log(hoge.data);
-      console.log(`list/再レンダー`);
-      setListEmployee(hoge.data)
+  //   const hoge = await employeeServices.listEmployee();
+  //     console.log(hoge.data);
+  //     console.log(`list/再レンダー`);
+  //     setListEmployee(hoge.data)
     
-  }
+  // }
 
   return(
     <div>
