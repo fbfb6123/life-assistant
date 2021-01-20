@@ -71,10 +71,8 @@ return(
       />
 
         
-        {/* <List 
-          incomeTotal={incomeTotal}
-          expenseItems={expenseItems}
-        /> */}
+        <List 
+        />
     </div>
       <Form 
           saveEmployee={saveEmployee}

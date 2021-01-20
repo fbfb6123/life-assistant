@@ -1,53 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import employeeServices from "./Employee"
-import { Link } from "react-router-dom";
+import React from 'react';
+import Income from './Income';
+import Expense from './Expense';
 
-function List(){
-
-  const [ listEmployee, setListEmployee ] = useState([]);
-
-  useEffect(()=>{
-
-    //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
-    async function fetchDataEmployee(){
-      const res = await employeeServices.listEmployee();
-      console.log(res.data);
-      console.log(`再レンダーされました`);
-      setListEmployee(res.data)
-    }
-
-    fetchDataEmployee();
-
-  },[])
+export const List = ({ listEmployee, setListEmployee }) => {
 
   return (
-    <section>
-      <table className="table">
-        <thead className="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Age</th>
-          </tr>
-        </thead>
-        <tbody>
-
-        {
-          listEmployee.map((income)=>{
-            return(
-              <tr key={income.id}>
-                <td>{income.id}</td>
-                <td>{income.text}</td>
-                <td>{income.amount}</td>
-            </tr>
-            )
-          })
-        }
-        
-        </tbody>
-      </table>
-    </section>
+    <div className="list-container">
+      <div className="income-list">
+        <h3>収入一覧</h3>
+          <ul className="list">
+              <Income
+                listEmployee={listEmployee}
+                setListEmployee={setListEmployee}
+             
+              />
+          </ul>
+      </div>
+      <div className="expense-list">
+        <h3>支出一覧</h3>
+        <ul className="list">
+              <Expense
+              listEmployee={listEmployee}
+              setListEmployee={setListEmployee}
+                
+              />
+          </ul>
+      </div>
+    </div>
   )
 }
 
