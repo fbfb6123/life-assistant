@@ -13,31 +13,10 @@ class App extends Component {
   render(){
     return (
       <div>
-        {/* <div className="top">
-        <Header />
-        <Balance />
-        <IncomeExpense />
-        </div>
-
-        <h1>家計簿</h1>
-        <AddForm />
-        <Test />
-        <hr />
-        <table><tbody><tr>
-          <td style ={this.td}><FindForm /></td>
-          <td style ={this.td}><DelForm /></td>
-        </tr></tbody></table> */}
-        
-          {/* <Stb /> */}
-        {/* <Counter /> */}
-        {/* <MyComponent /> */}
         <Main />
       </div>
     );
   }
 }
-// ReactDOM.render (
-//   <App />,
-//   document.getElementById('mycomponent')
-// )
+
 export default App;

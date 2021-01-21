@@ -25,11 +25,9 @@ const [ listEmployee, setListEmployee ] = useState([]);
 //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
 useEffect(()=>{
 
-  //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
   async function fetchDataEmployee(){
     
     const res = await employeeServices.listEmployee();
-    console.log(res.data);
     console.log(`listの再レンダーされました`);
     setListEmployee(res.data)
   }
@@ -57,7 +55,7 @@ const saveEmployee = async () => {
 }
 
 return(
-  <div className="container">
+  <div className="maincontainer">
     <div className="top">
       <Header 
           
