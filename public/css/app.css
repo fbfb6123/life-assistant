@@ -10903,7 +10903,40 @@ a.text-dark:focus {
   }
 }
 
+.maincontainer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #b6c9c9;
+}
+
 .table {
+  display: flex;
   color: red;
+}
+
+.list-container {
+  display: flex;
+  background-color: aqua;
+  width: 70vw;
+  height: 70vh;
+}
+
+.income-list {
+  background-color: #15ff00;
+  width: 35vw;
+  height: 35vh;
+}
+
+.expense-list {
+  background-color: #c58817;
+  width: 35vw;
+  height: 35vh;
+}
+
+.income-item {
+  display: flex;
 }
 

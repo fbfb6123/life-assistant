@@ -7,7 +7,44 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+.maincontainer {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(182, 201, 201);
+}
+
+//income/expense
 .table {
-  
+  display: flex;
   color: red;
+}
+
+//list.js
+.list-container{
+  display: flex;
+  background-color: aqua;
+  width: 70vw;
+  height: 70vh;
+}
+
+.income-list{
+  background-color: rgb(21, 255, 0);
+  width: 35vw;
+  height: 35vh;
+}
+
+.expense-list{
+  background-color: rgb(197, 136, 23);
+  width: 35vw;
+  height: 35vh;
+}
+
+
+//income.js 20~23
+.income-item{
+  display: flex;
 }
