@@ -74432,7 +74432,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var baseUrl = "http://localhost:8000/api/employee";
+var baseUrl = "http://localhost/api/employee"; //"http://localhost:8000/api/employee" local用
+
 var employee = {}; //...//
 //List一覧表示
 //await employeeServices.listEmployee()でアクセス
@@ -74939,11 +74940,10 @@ function Main() {
 
               case 2:
                 res = _context.sent;
-                console.log(res.data);
                 console.log("list\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
                 setListEmployee(res.data);
 
-              case 6:
+              case 5:
               case "end":
                 return _context.stop();
             }
