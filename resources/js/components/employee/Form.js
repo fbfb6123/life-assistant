@@ -32,31 +32,7 @@ import employeeServices from "./Employee";
       </div>
       
 
-      <section>
-      <table className="table">
-        <thead className="thead-dark">
-          <tr>
-            <th scope="col">収入</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-
-        {
-          listEmployee.map((income)=>{
-            return(
-              <tr key={income.id}>
-                <td>{income.id}</td>
-                <td>{income.text}</td>
-                <td>{income.amount}</td>
-            </tr>
-            )
-          })
-        }
-        
-        </tbody>
-      </table>
-    </section>
+      
     </div>
 
     

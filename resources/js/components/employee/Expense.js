@@ -6,21 +6,15 @@ export const Expense = ({listEmployee, setListEmployee}) => {
   return (
     <section>
       <div className="table">
-        <div className="thead-dark">
-          <div className="thead-dark-item">
-            <div className="thead-dark-text">Name</div>
-            <div className="thead-dark-amount"></div>
-          </div>
-        </div>
         <div className="tbody">
 
         {
           listEmployee.map((income)=>{
             return(
-              <ul key={income.id}>
-                <li>{income.text}</li>
-                <li>{income.amount}</li>
-              </ul>
+              <div className="income-item" key={income.id}>
+                <div className="income-item-text">{income.text}</div>
+                <div className="income-item-amount">{income.amount}</div>
+              </div>
             )
           })
         }

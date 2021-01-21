@@ -7,7 +7,9 @@ export const List = ({ text, setText, amount, setAmount, listEmployee, setListEm
   return (
     <div className="list-container">
       <div className="income-list">
+        <div className="thead-dark">
         <h3>収入一覧</h3>
+        </div>
           <ul className="list">
          
               <Income
