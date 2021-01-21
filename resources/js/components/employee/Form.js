@@ -4,7 +4,7 @@ import employeeServices from "./Employee";
   export const Form = ({ text, setText, amount, setAmount, listEmployee, setListEmployee, saveEmployee}) => {
 
   return(
-    <div>
+    <div className="form-container">
       <div className="row">
         <div className="col-md-6 mb-3">
           <label htmlFor="firstName">内容</label>

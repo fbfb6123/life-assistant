@@ -74561,7 +74561,9 @@ var Form = function Form(_ref) {
       listEmployee = _ref.listEmployee,
       setListEmployee = _ref.setListEmployee,
       saveEmployee = _ref.saveEmployee;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "form-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-6 mb-3"
@@ -74679,7 +74681,7 @@ var Header = function Header(_ref) {
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h1", null, "\u30D8\u30C3\u30C0\u30FC")));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "\u30D8\u30C3\u30C0\u30FC"));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 

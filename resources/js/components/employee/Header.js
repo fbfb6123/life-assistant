@@ -32,7 +32,7 @@ import employeeServices from "./Employee";
   return (
     <div className="container">
       <div>
-        <h1>ヘッダー</h1>   
+        ヘッダー   
       </div>
     </div>
   );

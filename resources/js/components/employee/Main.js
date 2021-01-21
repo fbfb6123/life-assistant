@@ -72,14 +72,14 @@ return(
         
     </div>
       <Form 
-          saveEmployee={saveEmployee}
-          text={text}
-          setText={setText}
-          amount={amount}
-          setAmount={setAmount}
-          listEmployee={listEmployee}
-          setListEmployee={setListEmployee}
-          saveEmployee={saveEmployee}
+      saveEmployee={saveEmployee}
+      text={text}
+      setText={setText}
+      amount={amount}
+      setAmount={setAmount}
+      listEmployee={listEmployee}
+      setListEmployee={setListEmployee}
+      saveEmployee={saveEmployee}
       />
       <List 
       saveEmployee={saveEmployee}
