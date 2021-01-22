@@ -5,15 +5,23 @@ const employee = {};
 
 //...//
 //List一覧表示
-//await employeeServices.listEmployee()でアクセス
-employee.listEmployee = async () => {
-  const urlList = baseUrl+"/list"
+//Main.js/await employeeServices.income()でアクセス
+employee.income = async () => {
+  const urlList = baseUrl+"/income"
   const res = await  axios.get(urlList)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;
 }
 
+//Main.js/await employeeServices.expense()でアクセス
+employee.expense = async () => {
+  const urlList = baseUrl+"/expense"
+  const res = await  axios.get(urlList)
+  .then(response=>{ return response.data; })
+  .catch(error=>{ return error; })
+  return res;
+}
 
 //Formのcreateaction定義
 //await employeeServices.save(data)でアクセス

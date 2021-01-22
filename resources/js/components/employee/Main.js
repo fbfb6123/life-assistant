@@ -14,7 +14,9 @@ function Main () {
 
 const [ text, setText ] = useState(null);
 const [ amount, setAmount ] = useState(null);
-const [ listEmployee, setListEmployee ] = useState([]);
+const [ incomelist, setIncomelist ] = useState([]);
+const [ expenselist, setExpenselist ] = useState([]);
+const [type, setType] = useState("inc")
 
 // useEffect(()=>{
 
@@ -22,17 +24,26 @@ const [ listEmployee, setListEmployee ] = useState([]);
 
 // },[])
 
-//EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
+//Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
 useEffect(()=>{
 
-  async function fetchDataEmployee(){
+  async function fetchDataIncome(){
     
-    const res = await employeeServices.listEmployee();
+    const res = await employeeServices.income();
     console.log(`listの再レンダーされました`);
-    setListEmployee(res.data)
+    setIncomelist(res.data)
   }
 
-  fetchDataEmployee();
+  fetchDataIncome();
+
+  async function fetchDataExpense(){
+    
+    const res = await employeeServices.expense();
+    console.log(`expenseレンダーされました`);
+    setExpenselist(res.data)
+  }
+
+  fetchDataExpense();
 
 },[])
 
@@ -47,10 +58,10 @@ const saveEmployee = async () => {
   console.log('create!!');
   console.log(res.data);
 
-  const hoge = await employeeServices.listEmployee();
+  const hoge = await employeeServices.income();
     console.log(hoge.data);
     console.log(`list/再レンダー`);
-    setListEmployee(hoge.data)
+    setIncomelist(hoge.data)
 
 }
 
@@ -77,9 +88,11 @@ return(
       setText={setText}
       amount={amount}
       setAmount={setAmount}
-      listEmployee={listEmployee}
-      setListEmployee={setListEmployee}
+      incomelist={incomelist}
+      setIncomelist={setIncomelist}
       saveEmployee={saveEmployee}
+      type={type}
+      setType={setType}
       />
       <List 
       saveEmployee={saveEmployee}
@@ -87,8 +100,10 @@ return(
       setText={setText}
       amount={amount}
       setAmount={setAmount}
-      listEmployee={listEmployee}
-      setListEmployee={setListEmployee}
+      incomelist={incomelist}
+      setIncomelist={setIncomelist}
+      expenselist={expenselist}
+      setExpenselist={setExpenselist}
       saveEmployee={saveEmployee}
         />
   </div>
