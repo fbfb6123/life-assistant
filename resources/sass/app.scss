@@ -8,7 +8,7 @@
 // @import '~bootstrap/scss/bootstrap';
 
 
-
+//PCサイズ
 .maincontainer {
   width: 100%;
   padding-right: 15px;
@@ -60,6 +60,7 @@
   height: 35vh;
 }
 
+
 .expense-list{
   background-color: rgb(197, 136, 23);
   width: 35vw;
@@ -71,3 +72,68 @@
 .income-item{
   display: flex;
 }
+
+//スマホサイズ
+@media screen and (max-width: 480px) { 
+
+
+.maincontainer {
+  width: 480px;
+  padding-right: 15px;
+  padding-left: 15px;
+  
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(30, 105, 105);
+}
+
+.maincontainer-item{
+
+}
+
+.top {
+  width: 350px;
+  height: 250px;
+  background-color: bisque;
+  margin-left: auto;
+  margin-right: auto;
+}
+//income/expense
+.table {
+  color: rgb(25, 0, 255);
+}
+
+.form-container{
+  display: flex;
+  justify-content: center;
+  width: 450px;
+}
+
+//list.js
+.list-container{
+  background-color: rgb(255, 60, 0);
+  display: block;
+  width: 70vw;
+  height: 40vh;
+}
+
+.income-list{
+  background-color: rgb(21, 255, 0);
+  width: 70vw;
+  height: 25vh;
+}
+
+.expense-list{
+  background-color: rgb(197, 136, 23);
+  width: 70vw;
+  height: 25vh;
+}
+
+
+//income.js 20~23
+.income-item{
+  display: flex;
+}
+
+}
+

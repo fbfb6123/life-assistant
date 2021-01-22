@@ -55,3 +55,55 @@
   display: flex;
 }
 
+@media screen and (max-width: 480px) {
+  .maincontainer {
+    width: 480px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #1e6969;
+  }
+
+  .top {
+    width: 350px;
+    height: 250px;
+    background-color: bisque;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .table {
+    color: #1900ff;
+  }
+
+  .form-container {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+  }
+
+  .list-container {
+    background-color: #ff3c00;
+    display: block;
+    width: 70vw;
+    height: 40vh;
+  }
+
+  .income-list {
+    background-color: #15ff00;
+    width: 70vw;
+    height: 25vh;
+  }
+
+  .expense-list {
+    background-color: #c58817;
+    width: 70vw;
+    height: 25vh;
+  }
+
+  .income-item {
+    display: flex;
+  }
+}
+
