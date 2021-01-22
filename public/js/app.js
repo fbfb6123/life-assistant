@@ -74844,9 +74844,11 @@ var List = function List(_ref) {
     setListEmployee: setListEmployee
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "expense-list"
-  }, "\u652F\u51FA\u4E00\u89A7", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "expense-list-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "thead-dark"
+  }, "\u652F\u51FA\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
     listEmployee: listEmployee,
     setListEmployee: setListEmployee
   }))));

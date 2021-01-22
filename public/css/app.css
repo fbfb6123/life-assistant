@@ -42,7 +42,7 @@
 }
 
 .income-list {
-  background-color: #15ff00;
+  background-color: #c58817;
   width: 35vw;
   height: 35vh;
 }
@@ -93,8 +93,8 @@
   }
 
   .income-list {
-    width: 300px;
     height: 240px;
+    width: 100%;
     margin: 2em 0;
     font-weight: bold;
   }
@@ -111,9 +111,21 @@
   }
 
   .expense-list {
-    background-color: #c58817;
-    width: 70vw;
-    height: 25vh;
+    height: 240px;
+    width: 100%;
+    margin: 2em 0;
+    font-weight: bold;
+  }
+
+  .expense-list-item {
+    border: solid 4px #eef1f5;
+    /*線*/
+    border-radius: 15px;
+    /*角の丸み*/
+    height: 230px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
   }
 
   .thead-dark {
