@@ -74835,17 +74835,17 @@ var List = function List(_ref) {
     className: "list-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "income-list"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "income-list-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "thead-dark"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u53CE\u5165\u4E00\u89A7")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Income__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "\u53CE\u5165\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Income__WEBPACK_IMPORTED_MODULE_1__["default"], {
     listEmployee: listEmployee,
     setListEmployee: setListEmployee
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "expense-list"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "\u652F\u51FA\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "list"
+  }, "\u652F\u51FA\u4E00\u89A7", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "expense-list-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
     listEmployee: listEmployee,
     setListEmployee: setListEmployee

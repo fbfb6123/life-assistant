@@ -7,10 +7,11 @@ export const List = ({ text, setText, amount, setAmount, listEmployee, setListEm
   return (
     <div className="list-container">
       <div className="income-list">
-        <div className="thead-dark">
-        <h3>収入一覧</h3>
-        </div>
-          <ul className="list">
+        
+          <ul className="income-list-item">
+            <div className="thead-dark">
+                  収入一覧
+            </div>
          
               <Income
               listEmployee={listEmployee}
@@ -20,8 +21,8 @@ export const List = ({ text, setText, amount, setAmount, listEmployee, setListEm
           </ul>
       </div>
       <div className="expense-list">
-        <h3>支出一覧</h3>
-        <ul className="list">
+        支出一覧
+        <ul className="expense-list-item">
               <Expense
               listEmployee={listEmployee}
               setListEmployee={setListEmployee}
