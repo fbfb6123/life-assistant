@@ -1,10 +1,22 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-  export const Form = ({ text, setText, amount, setAmount, listEmployee, setListEmployee, saveEmployee}) => {
+  export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType,}) => {
+
+
+    const typeHandler = (e) => {
+      setType(e.target.value);
+    }
 
   return(
     <div className="form-container">
+      <div className="row">
+        <select onChange={typeHandler}>
+          <option value="inc">+</option>
+          <option value="exp">-</option>
+        </select>
+      </div>  
+
       <div className="row">
         <div className="col-md-6 mb-3">
           <label htmlFor="firstName">内容</label>

@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-export const Income = ({listEmployee, setListEmployee}) => {
+export const Income = ({incomelist, setIncomelist}) => {
 
   return (
     <section>
@@ -9,7 +9,7 @@ export const Income = ({listEmployee, setListEmployee}) => {
         <div className="tbody">
 
         {
-          listEmployee.map((income)=>{
+          incomelist.map((income)=>{
             return(
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
