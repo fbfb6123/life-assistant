@@ -74436,15 +74436,15 @@ var baseUrl = "http://localhost/api/employee"; //"http://localhost:8000/api/empl
 
 var employee = {}; //...//
 //List一覧表示
-//await employeeServices.listEmployee()でアクセス
+//Main.js/await employeeServices.income()でアクセス
 
-employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+employee.income = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
   var urlList, res;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          urlList = baseUrl + "/list";
+          urlList = baseUrl + "/income";
           _context.next = 3;
           return axios.get(urlList).then(function (response) {
             return response.data;
@@ -74462,18 +74462,44 @@ employee.listEmployee = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runt
       }
     }
   }, _callee);
+})); //Main.js/await employeeServices.expense()でアクセス
+
+employee.expense = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+  var urlList, res;
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          urlList = baseUrl + "/expense";
+          _context2.next = 3;
+          return axios.get(urlList).then(function (response) {
+            return response.data;
+          })["catch"](function (error) {
+            return error;
+          });
+
+        case 3:
+          res = _context2.sent;
+          return _context2.abrupt("return", res);
+
+        case 5:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _callee2);
 })); //Formのcreateaction定義
 //await employeeServices.save(data)でアクセス
 
 employee.save = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(data) {
     var urlSave, res;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
       while (1) {
-        switch (_context2.prev = _context2.next) {
+        switch (_context3.prev = _context3.next) {
           case 0:
             urlSave = baseUrl + "/create";
-            _context2.next = 3;
+            _context3.next = 3;
             return axios.post(urlSave, data).then(function (response) {
               return response.data;
             })["catch"](function (error) {
@@ -74481,19 +74507,19 @@ employee.save = /*#__PURE__*/function () {
             });
 
           case 3:
-            res = _context2.sent;
-            return _context2.abrupt("return", res);
+            res = _context3.sent;
+            return _context3.abrupt("return", res);
 
           case 5:
           case "end":
-            return _context2.stop();
+            return _context3.stop();
         }
       }
-    }, _callee2);
+    }, _callee3);
   }));
 
   return function (_x) {
-    return _ref2.apply(this, arguments);
+    return _ref3.apply(this, arguments);
   };
 }();
 
@@ -74517,21 +74543,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Expense = function Expense(_ref) {
-  var listEmployee = _ref.listEmployee,
-      setListEmployee = _ref.setListEmployee;
+  var expenselist = _ref.expenselist,
+      setExpenselist = _ref.setExpenselist;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tbody"
-  }, listEmployee.map(function (income) {
+  }, expenselist.map(function (expense) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "income-item",
-      key: income.id
+      key: expense.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "income-item-text"
-    }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    }, expense.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "income-item-amount"
-    }, income.amount));
+    }, expense.amount));
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Expense);
@@ -74558,12 +74584,25 @@ var Form = function Form(_ref) {
       setText = _ref.setText,
       amount = _ref.amount,
       setAmount = _ref.setAmount,
-      listEmployee = _ref.listEmployee,
-      setListEmployee = _ref.setListEmployee,
-      saveEmployee = _ref.saveEmployee;
+      saveEmployee = _ref.saveEmployee,
+      type = _ref.type,
+      setType = _ref.setType;
+
+  var typeHandler = function typeHandler(e) {
+    setType(e.target.value);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    onChange: typeHandler
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "inc"
+  }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    value: "exp"
+  }, "-"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-6 mb-3"
@@ -74703,13 +74742,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Income = function Income(_ref) {
-  var listEmployee = _ref.listEmployee,
-      setListEmployee = _ref.setListEmployee;
+  var incomelist = _ref.incomelist,
+      setIncomelist = _ref.setIncomelist;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "tbody"
-  }, listEmployee.map(function (income) {
+  }, incomelist.map(function (income) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "income-item",
       key: income.id
@@ -74828,8 +74867,10 @@ var List = function List(_ref) {
       setText = _ref.setText,
       amount = _ref.amount,
       setAmount = _ref.setAmount,
-      listEmployee = _ref.listEmployee,
-      setListEmployee = _ref.setListEmployee,
+      incomelist = _ref.incomelist,
+      setIncomelist = _ref.setIncomelist,
+      expenselist = _ref.expenselist,
+      setExpenselist = _ref.setExpenselist,
       fetchDataEmployee = _ref.fetchDataEmployee;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-container"
@@ -74840,8 +74881,8 @@ var List = function List(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "thead-dark"
   }, "\u53CE\u5165\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Income__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    listEmployee: listEmployee,
-    setListEmployee: setListEmployee
+    incomelist: incomelist,
+    setIncomelist: setIncomelist
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "expense-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -74849,8 +74890,8 @@ var List = function List(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "thead-dark"
   }, "\u652F\u51FA\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    listEmployee: listEmployee,
-    setListEmployee: setListEmployee
+    expenselist: expenselist,
+    setExpenselist: setExpenselist
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (List);
@@ -74909,6 +74950,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Main() {
+  var _React$createElement;
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       _useState2 = _slicedToArray(_useState, 2),
       text = _useState2[0],
@@ -74921,31 +74964,41 @@ function Main() {
 
   var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
       _useState6 = _slicedToArray(_useState5, 2),
-      listEmployee = _useState6[0],
-      setListEmployee = _useState6[1]; // useEffect(()=>{
+      incomelist = _useState6[0],
+      setIncomelist = _useState6[1];
+
+  var _useState7 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])([]),
+      _useState8 = _slicedToArray(_useState7, 2),
+      expenselist = _useState8[0],
+      setExpenselist = _useState8[1];
+
+  var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("inc"),
+      _useState10 = _slicedToArray(_useState9, 2),
+      type = _useState10[0],
+      setType = _useState10[1]; // useEffect(()=>{
   // },[])
-  //EmployeeのlistEmployeeにアクセスしてaxiosでレコード取得。setListEmployeeでstateをセット
+  //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
 
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    function fetchDataEmployee() {
-      return _fetchDataEmployee.apply(this, arguments);
+    function fetchDataIncome() {
+      return _fetchDataIncome.apply(this, arguments);
     }
 
-    function _fetchDataEmployee() {
-      _fetchDataEmployee = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    function _fetchDataIncome() {
+      _fetchDataIncome = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].listEmployee();
+                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
 
               case 2:
                 res = _context.sent;
                 console.log("list\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
-                setListEmployee(res.data);
+                setIncomelist(res.data);
 
               case 5:
               case "end":
@@ -74954,45 +75007,76 @@ function Main() {
           }
         }, _callee);
       }));
-      return _fetchDataEmployee.apply(this, arguments);
+      return _fetchDataIncome.apply(this, arguments);
     }
 
-    fetchDataEmployee();
+    fetchDataIncome();
+
+    function fetchDataExpense() {
+      return _fetchDataExpense.apply(this, arguments);
+    }
+
+    function _fetchDataExpense() {
+      _fetchDataExpense = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
+
+              case 2:
+                res = _context2.sent;
+                console.log("expense\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
+                setExpenselist(res.data);
+
+              case 5:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+      return _fetchDataExpense.apply(this, arguments);
+    }
+
+    fetchDataExpense();
   }, []); //createアクション
 
   var saveEmployee = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
       var data, res, hoge;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               data = {
                 text: text,
                 amount: amount
               };
-              _context2.next = 3;
+              _context3.next = 3;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save(data);
 
             case 3:
-              res = _context2.sent;
+              res = _context3.sent;
               console.log('create!!');
               console.log(res.data);
-              _context2.next = 8;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].listEmployee();
+              _context3.next = 8;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
 
             case 8:
-              hoge = _context2.sent;
+              hoge = _context3.sent;
               console.log(hoge.data);
               console.log("list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setListEmployee(hoge.data);
+              setIncomelist(hoge.data);
 
             case 12:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }));
 
     return function saveEmployee() {
@@ -75004,22 +75088,24 @@ function Main() {
     className: "maincontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "top"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], _defineProperty({
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], (_React$createElement = {
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
     amount: amount,
     setAmount: setAmount,
-    listEmployee: listEmployee,
-    setListEmployee: setListEmployee
-  }, "saveEmployee", saveEmployee)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], _defineProperty({
+    incomelist: incomelist,
+    setIncomelist: setIncomelist
+  }, _defineProperty(_React$createElement, "saveEmployee", saveEmployee), _defineProperty(_React$createElement, "type", type), _defineProperty(_React$createElement, "setType", setType), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], _defineProperty({
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
     amount: amount,
     setAmount: setAmount,
-    listEmployee: listEmployee,
-    setListEmployee: setListEmployee
+    incomelist: incomelist,
+    setIncomelist: setIncomelist,
+    expenselist: expenselist,
+    setExpenselist: setExpenselist
   }, "saveEmployee", saveEmployee)));
 }
 

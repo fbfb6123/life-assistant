@@ -5,17 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Person;
 use App\Models\Income;
-use App\Models\Expennse;
+use App\Models\Expense;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
-    public function list(){
+    public function incomelist(){
 
         try {
   
           $data = Income::get();
+          $response['data'] = $data;
+          $response['success'] = true;
+  
+        } catch (\Exception $e) {
+          $response['message'] = $e->getMessage();
+          $response['success'] = false;
+        }
+        return $response;
+  
+      }
+
+    public function expenselist(){
+
+        try {
+  
+          $data = Expense::get();
           $response['data'] = $data;
           $response['success'] = true;
   
