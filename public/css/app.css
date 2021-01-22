@@ -24,7 +24,8 @@
 }
 
 .table {
-  color: red;
+  color: #3f3a3a;
+  margin: 20px 20px 20px 20px;
 }
 
 .form-container {
@@ -34,7 +35,6 @@
 
 .list-container {
   display: flex;
-  background-color: aqua;
   width: 70vw;
   height: 70vh;
   margin-left: auto;
@@ -42,19 +42,62 @@
 }
 
 .income-list {
-  background-color: #c58817;
-  width: 35vw;
-  height: 35vh;
+  height: 240px;
+  width: 100%;
+  margin: 2em 2em;
+  font-weight: bold;
+  position: relative;
+}
+
+.income-list-item {
+  border: solid 4px #eef1f5;
+  /*線*/
+  border-radius: 15px;
+  /*角の丸み*/
+  height: 350px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: scroll;
 }
 
 .expense-list {
-  background-color: #c58817;
-  width: 35vw;
-  height: 35vh;
+  height: 240px;
+  width: 100%;
+  margin: 2em 2em;
+  font-weight: bold;
+  position: relative;
+}
+
+.expense-list-item {
+  border: solid 4px #eef1f5;
+  /*線*/
+  border-radius: 15px;
+  /*角の丸み*/
+  height: 350px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: scroll;
+}
+
+.thead-dark {
+  width: 100%;
+  height: 50px;
+  background-color: #96eaf5;
+  border-radius: 8px 10px 0 0;
+  /*角の丸み*/
+  margin: 0;
+  padding: 0;
+  position: absolute;
 }
 
 .income-item {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -105,6 +148,7 @@
     border-radius: 15px;
     /*角の丸み*/
     height: 230px;
+    width: 100%;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -123,6 +167,7 @@
     border-radius: 15px;
     /*角の丸み*/
     height: 230px;
+    width: 100%;
     margin: 0;
     padding: 0;
     text-align: center;
