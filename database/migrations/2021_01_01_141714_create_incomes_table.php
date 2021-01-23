@@ -17,6 +17,7 @@ class CreateIncomesTable extends Migration
             $table->id();
             $table->string('text')->comment('名前');
             $table->integer('amount')->nullable()->comment('金額');
+            $table->string('type')->nullable()->comment('タイプ');
             $table->string('date')->nullable()->comment('日時');
             $table->timestamps();
         });
