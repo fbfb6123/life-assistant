@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-  export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType,}) => {
+  export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType, reset}) => {
 
 
     const typeHandler = (e) => {
@@ -20,7 +20,7 @@ import employeeServices from "./Employee";
       <div className="row">
         <div className="col-md-6 mb-3">
           <label htmlFor="firstName">内容</label>
-          <input type="text" className="form-control" placeholder="Name"
+          <input type="text" value={text} className="form-control" placeholder="Name"
             onChange={(event)=>setText(event.target.value)}/>
         </div>
       </div>
@@ -28,7 +28,7 @@ import employeeServices from "./Employee";
       <div className="row">
         <div className="col-md-6 mb-3">
           <label htmlFor="address">金額</label>
-          <input type="text" className="form-control" placeholder="1234 Main St"
+          <input type="text" value={amount} className="form-control" placeholder="1234 Main St"
           onChange={(event)=>setAmount(event.target.value)}/>
         </div>
       </div>

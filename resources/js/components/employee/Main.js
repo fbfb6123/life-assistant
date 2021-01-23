@@ -12,8 +12,8 @@ import Expense from './Expense';
 
 function Main () {
 
-const [ text, setText ] = useState(null);
-const [ amount, setAmount ] = useState(null);
+const [ text, setText ] = useState("");
+const [ amount, setAmount ] = useState("");
 const [ incomelist, setIncomelist ] = useState([]);
 const [ expenselist, setExpenselist ] = useState([]);
 const [type, setType] = useState("inc")
@@ -47,6 +47,11 @@ useEffect(()=>{
 
 },[])
 
+const reset = () => {
+  setText("");
+  setAmount("");
+}
+
 //createアクション
 const saveEmployee = async () => {
 
@@ -65,6 +70,8 @@ const saveEmployee = async () => {
   console.log(hoge.data);
   console.log(`income/list/再レンダー`);
   setIncomelist(hoge.data)
+  reset();
+  console.log(`reset!!`);
 
 } else if ( type === 'exp' ) {
 
@@ -75,7 +82,9 @@ const saveEmployee = async () => {
   const hoge = await employeeServices.expense();
   console.log(hoge.data);
   console.log(`expense/list/再レンダー`);
-  setExpenselist(hoge.data)  
+  setExpenselist(hoge.data)
+  reset();
+  console.log(`reset!!`);
 
 }
 }
@@ -105,9 +114,9 @@ return(
       setAmount={setAmount}
       incomelist={incomelist}
       setIncomelist={setIncomelist}
-      saveEmployee={saveEmployee}
       type={type}
       setType={setType}
+      reset={reset}
       />
       <List 
       saveEmployee={saveEmployee}

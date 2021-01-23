@@ -74619,7 +74619,8 @@ var Form = function Form(_ref) {
       setAmount = _ref.setAmount,
       saveEmployee = _ref.saveEmployee,
       type = _ref.type,
-      setType = _ref.setType;
+      setType = _ref.setType,
+      reset = _ref.reset;
 
   var typeHandler = function typeHandler(e) {
     setType(e.target.value);
@@ -74643,6 +74644,7 @@ var Form = function Form(_ref) {
     htmlFor: "firstName"
   }, "\u5185\u5BB9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
+    value: text,
     className: "form-control",
     placeholder: "Name",
     onChange: function onChange(event) {
@@ -74656,6 +74658,7 @@ var Form = function Form(_ref) {
     htmlFor: "address"
   }, "\u91D1\u984D"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     type: "text",
+    value: amount,
     className: "form-control",
     placeholder: "1234 Main St",
     onChange: function onChange(event) {
@@ -74983,14 +74986,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Main() {
-  var _React$createElement;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState2 = _slicedToArray(_useState, 2),
       text = _useState2[0],
       setText = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState4 = _slicedToArray(_useState3, 2),
       amount = _useState4[0],
       setAmount = _useState4[1];
@@ -75075,7 +75076,13 @@ function Main() {
     }
 
     fetchDataExpense();
-  }, []); //createアクション
+  }, []);
+
+  var reset = function reset() {
+    setText("");
+    setAmount("");
+  }; //createアクション
+
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
@@ -75097,12 +75104,12 @@ function Main() {
               }
 
               alert('正しい内容を入力してください');
-              _context3.next = 31;
+              _context3.next = 35;
               break;
 
             case 5:
               if (!(type === 'inc')) {
-                _context3.next = 19;
+                _context3.next = 21;
                 break;
               }
 
@@ -75121,32 +75128,36 @@ function Main() {
               console.log(hoge.data);
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(hoge.data);
-              _context3.next = 31;
+              reset();
+              console.log("reset!!");
+              _context3.next = 35;
               break;
 
-            case 19:
+            case 21:
               if (!(type === 'exp')) {
-                _context3.next = 31;
+                _context3.next = 35;
                 break;
               }
 
-              _context3.next = 22;
+              _context3.next = 24;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
 
-            case 22:
+            case 24:
               _res = _context3.sent;
               console.log('expense/create!!');
               console.log(_res.data);
-              _context3.next = 27;
+              _context3.next = 29;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
 
-            case 27:
+            case 29:
               _hoge = _context3.sent;
               console.log(_hoge.data);
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setExpenselist(_hoge.data);
+              reset();
+              console.log("reset!!");
 
-            case 31:
+            case 35:
             case "end":
               return _context3.stop();
           }
@@ -75163,15 +75174,18 @@ function Main() {
     className: "maincontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "top"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], (_React$createElement = {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
     amount: amount,
     setAmount: setAmount,
     incomelist: incomelist,
-    setIncomelist: setIncomelist
-  }, _defineProperty(_React$createElement, "saveEmployee", saveEmployee), _defineProperty(_React$createElement, "type", type), _defineProperty(_React$createElement, "setType", setType), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], _defineProperty({
+    setIncomelist: setIncomelist,
+    type: type,
+    setType: setType,
+    reset: reset
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], _defineProperty({
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
