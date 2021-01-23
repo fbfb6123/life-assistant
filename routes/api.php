@@ -34,4 +34,6 @@ Route::get('/employee/income', [EmployeeController::class, 'incomelist']);
 Route::get('/employee/expense', [EmployeeController::class, 'expenselist']);
 
 
-Route::post('/employee/create', [EmployeeController::class, 'create']);
+Route::post('/employee/incomcreate', [EmployeeController::class, 'incomcreate']);
+
+Route::post('/employee/expensecreate', [EmployeeController::class, 'expensecreate']);

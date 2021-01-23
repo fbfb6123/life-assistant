@@ -43,7 +43,7 @@ class EmployeeController extends Controller
   
       }
 
-      public function create(Request $request){
+      public function incomcreate(Request $request){
           
         try {
   
@@ -52,6 +52,34 @@ class EmployeeController extends Controller
             Log::info($insert);
 
             DB::table('incomes')->insert($insert);
+
+            $response['data'] = $insert;
+            $response['message'] = '成功';
+            $response['success'] = true;
+
+            // $people = new Person();
+            // $people->name = $request->name;
+            // $people->email = $request->email;
+            // $people->age = $request->age;
+
+            // $people->save();
+    
+          } catch (\Exception $e) {
+            $response['message'] = $e->getMessage();
+            $response['success'] = false;
+          }
+          return $response;
+      }
+
+      public function expensecreate(Request $request){
+          
+        try {
+  
+            $insert['text'] = $request['text'];
+            $insert['amount'] = $request['amount'];
+            Log::info($insert);
+
+            DB::table('expenses')->insert($insert);
 
             $response['data'] = $insert;
             $response['message'] = '成功';
