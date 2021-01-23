@@ -51,18 +51,33 @@ useEffect(()=>{
 const saveEmployee = async () => {
 
   const data = {
-    text, amount
+    text, amount, type
   }
+  if (text == '' || amount == '0' || !(amount > 0 && amount <= 10000000)) {
+    alert ('正しい内容を入力してください')
+  } else if ( type === 'inc') {
 
-  const res = await employeeServices.save(data);
-  console.log('create!!');
+  const res = await employeeServices.incomesave(data);
+  console.log('income/create!!');
   console.log(res.data);
 
   const hoge = await employeeServices.income();
-    console.log(hoge.data);
-    console.log(`list/再レンダー`);
-    setIncomelist(hoge.data)
+  console.log(hoge.data);
+  console.log(`income/list/再レンダー`);
+  setIncomelist(hoge.data)
 
+} else if ( type === 'exp' ) {
+
+  const res = await employeeServices.expensesave(data);
+  console.log('expense/create!!');
+  console.log(res.data);
+  
+  const hoge = await employeeServices.expense();
+  console.log(hoge.data);
+  console.log(`expense/list/再レンダー`);
+  setExpenselist(hoge.data)  
+
+}
 }
 
 return(

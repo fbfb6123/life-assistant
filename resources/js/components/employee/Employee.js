@@ -24,9 +24,18 @@ employee.expense = async () => {
 }
 
 //Formのcreateaction定義
-//await employeeServices.save(data)でアクセス
-employee.save = async (data) => {
-  const urlSave = baseUrl+"/create"
+//await employeeServices.incomesave(data)でアクセス
+employee.incomesave = async (data) => {
+  const urlSave = baseUrl+"/incomcreate"
+  const res = await axios.post(urlSave,data)
+  .then(response=>{ return response.data; })
+  .catch(error=>{ return error; })
+  return res;
+}
+
+//await employeeServices.expensesave(data)でアクセス
+employee.expensesave = async (data) => {
+  const urlSave = baseUrl+"/expensecreate"
   const res = await axios.post(urlSave,data)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })

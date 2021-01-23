@@ -74489,16 +74489,16 @@ employee.expense = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_r
     }
   }, _callee2);
 })); //Formのcreateaction定義
-//await employeeServices.save(data)でアクセス
+//await employeeServices.incomesave(data)でアクセス
 
-employee.save = /*#__PURE__*/function () {
+employee.incomesave = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(data) {
     var urlSave, res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            urlSave = baseUrl + "/create";
+            urlSave = baseUrl + "/incomcreate";
             _context3.next = 3;
             return axios.post(urlSave, data).then(function (response) {
               return response.data;
@@ -74520,6 +74520,39 @@ employee.save = /*#__PURE__*/function () {
 
   return function (_x) {
     return _ref3.apply(this, arguments);
+  };
+}(); //await employeeServices.expensesave(data)でアクセス
+
+
+employee.expensesave = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(data) {
+    var urlSave, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            urlSave = baseUrl + "/expensecreate";
+            _context4.next = 3;
+            return axios.post(urlSave, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 3:
+            res = _context4.sent;
+            return _context4.abrupt("return", res);
+
+          case 5:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function (_x2) {
+    return _ref4.apply(this, arguments);
   };
 }();
 
@@ -75046,32 +75079,74 @@ function Main() {
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-      var data, res, hoge;
+      var data, res, hoge, _res, _hoge;
+
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
               data = {
                 text: text,
-                amount: amount
+                amount: amount,
+                type: type
               };
-              _context3.next = 3;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save(data);
 
-            case 3:
-              res = _context3.sent;
-              console.log('create!!');
-              console.log(res.data);
+              if (!(text == '' || amount == '0' || !(amount > 0 && amount <= 10000000))) {
+                _context3.next = 5;
+                break;
+              }
+
+              alert('正しい内容を入力してください');
+              _context3.next = 31;
+              break;
+
+            case 5:
+              if (!(type === 'inc')) {
+                _context3.next = 19;
+                break;
+              }
+
               _context3.next = 8;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].incomesave(data);
 
             case 8:
+              res = _context3.sent;
+              console.log('income/create!!');
+              console.log(res.data);
+              _context3.next = 13;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
+
+            case 13:
               hoge = _context3.sent;
               console.log(hoge.data);
-              console.log("list/\u518D\u30EC\u30F3\u30C0\u30FC");
+              console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(hoge.data);
+              _context3.next = 31;
+              break;
 
-            case 12:
+            case 19:
+              if (!(type === 'exp')) {
+                _context3.next = 31;
+                break;
+              }
+
+              _context3.next = 22;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
+
+            case 22:
+              _res = _context3.sent;
+              console.log('expense/create!!');
+              console.log(_res.data);
+              _context3.next = 27;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
+
+            case 27:
+              _hoge = _context3.sent;
+              console.log(_hoge.data);
+              console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
+              setExpenselist(_hoge.data);
+
+            case 31:
             case "end":
               return _context3.stop();
           }
