@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-export const Expense = ({expenselist, setExpenselist}) => {
+export const Expense = ({expenselist, setExpenselist, selectedMonth, thisMonth}) => {
 
   return (
     <section>

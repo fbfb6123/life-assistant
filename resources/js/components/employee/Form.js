@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-  export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType, reset}) => {
+  export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType,}) => {
 
 
     const typeHandler = (e) => {
