@@ -74432,37 +74432,44 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var baseUrl = "http://localhost/api/employee"; //"http://localhost:8000/api/employee" local用
+var baseUrl = "http://localhost:8000/api/employee"; //"http://localhost:8000/api/employee" local用
 
 var employee = {}; //...//
 //List一覧表示
 //Main.js/await employeeServices.income()でアクセス
 
-employee.income = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-  var urlList, res;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          urlList = baseUrl + "/income";
-          _context.next = 3;
-          return axios.get(urlList).then(function (response) {
-            return response.data;
-          })["catch"](function (error) {
-            return error;
-          });
+employee.income = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(data) {
+    var urlList, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            urlList = baseUrl + "/income";
+            _context.next = 3;
+            return axios.post(urlList, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
 
-        case 3:
-          res = _context.sent;
-          return _context.abrupt("return", res);
+          case 3:
+            res = _context.sent;
+            return _context.abrupt("return", res);
 
-        case 5:
-        case "end":
-          return _context.stop();
+          case 5:
+          case "end":
+            return _context.stop();
+        }
       }
-    }
-  }, _callee);
-})); //Main.js/await employeeServices.expense()でアクセス
+    }, _callee);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}(); //Main.js/await employeeServices.expense()でアクセス
+
 
 employee.expense = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
   var urlList, res;
@@ -74518,7 +74525,7 @@ employee.incomesave = /*#__PURE__*/function () {
     }, _callee3);
   }));
 
-  return function (_x) {
+  return function (_x2) {
     return _ref3.apply(this, arguments);
   };
 }(); //await employeeServices.expensesave(data)でアクセス
@@ -74551,7 +74558,7 @@ employee.expensesave = /*#__PURE__*/function () {
     }, _callee4);
   }));
 
-  return function (_x2) {
+  return function (_x3) {
     return _ref4.apply(this, arguments);
   };
 }();
@@ -74577,7 +74584,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var Expense = function Expense(_ref) {
   var expenselist = _ref.expenselist,
-      setExpenselist = _ref.setExpenselist;
+      setExpenselist = _ref.setExpenselist,
+      selectedMonth = _ref.selectedMonth,
+      thisMonth = _ref.thisMonth;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74619,8 +74628,7 @@ var Form = function Form(_ref) {
       setAmount = _ref.setAmount,
       saveEmployee = _ref.saveEmployee,
       type = _ref.type,
-      setType = _ref.setType,
-      reset = _ref.reset;
+      setType = _ref.setType;
 
   var typeHandler = function typeHandler(e) {
     setType(e.target.value);
@@ -74690,73 +74698,29 @@ var Form = function Form(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Header", function() { return Header; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Employee__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Employee */ "./resources/js/components/employee/Employee.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
-
-
- // function Form(){
-//   const [ name, setName ] = useState(null);
-//   const [ email, setEmail ] = useState(null);
-//   const [ age, setAge ] = useState(null);
-//   const [ listEmployee, setListEmployee ] = useState([]);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
 var Header = function Header(_ref) {
-  _objectDestructuringEmpty(_ref);
-
-  var saveEmployee = /*#__PURE__*/function () {
-    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var data, res, hoge;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              data = {
-                name: name,
-                email: email,
-                age: age
-              };
-              _context.next = 3;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].save(data);
-
-            case 3:
-              res = _context.sent;
-              console.log('create!!');
-              console.log(res.data);
-              _context.next = 8;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].listEmployee();
-
-            case 8:
-              hoge = _context.sent;
-              console.log(hoge.data);
-              console.log("list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setListEmployee(hoge.data);
-
-            case 12:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, _callee);
-    }));
-
-    return function saveEmployee() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-    className: "container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, "\u30D8\u30C3\u30C0\u30FC"));
+  var date = _ref.date,
+      setPrevMonth = _ref.setPrevMonth,
+      setNextMonth = _ref.setNextMonth;
+  var today = date;
+  var year = today.getFullYear();
+  var month = today.getMonth() + 1;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "head"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "showMonth"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return setPrevMonth();
+    }
+  }, "\u2190\u524D\u6708 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, year, "\u5E74", month, "\u6708"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    onClick: function onClick() {
+      return setNextMonth();
+    }
+  }, " \u6B21\u6708\u2192")));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Header);
 
@@ -74779,7 +74743,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var Income = function Income(_ref) {
   var incomelist = _ref.incomelist,
-      setIncomelist = _ref.setIncomelist;
+      setIncomelist = _ref.setIncomelist,
+      selectedMonth = _ref.selectedMonth,
+      thisMonth = _ref.thisMonth;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74907,7 +74873,9 @@ var List = function List(_ref) {
       setIncomelist = _ref.setIncomelist,
       expenselist = _ref.expenselist,
       setExpenselist = _ref.setExpenselist,
-      fetchDataEmployee = _ref.fetchDataEmployee;
+      fetchDataEmployee = _ref.fetchDataEmployee,
+      selectedMonth = _ref.selectedMonth,
+      thisMonth = _ref.thisMonth;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -74918,7 +74886,9 @@ var List = function List(_ref) {
     className: "thead-dark"
   }, "\u53CE\u5165\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Income__WEBPACK_IMPORTED_MODULE_1__["default"], {
     incomelist: incomelist,
-    setIncomelist: setIncomelist
+    setIncomelist: setIncomelist,
+    selectedMonth: selectedMonth,
+    thisMonth: thisMonth
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "expense-list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -74927,7 +74897,9 @@ var List = function List(_ref) {
     className: "thead-dark"
   }, "\u652F\u51FA\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
     expenselist: expenselist,
-    setExpenselist: setExpenselist
+    setExpenselist: setExpenselist,
+    selectedMonth: selectedMonth,
+    thisMonth: thisMonth
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (List);
@@ -74986,6 +74958,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Main() {
+  var _React$createElement;
+
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       _useState2 = _slicedToArray(_useState, 2),
       text = _useState2[0],
@@ -75009,12 +74983,52 @@ function Main() {
   var _useState9 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])("inc"),
       _useState10 = _slicedToArray(_useState9, 2),
       type = _useState10[0],
-      setType = _useState10[1]; // useEffect(()=>{
-  // },[])
-  //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
+      setType = _useState10[1];
 
+  var _useState11 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(new Date()),
+      _useState12 = _slicedToArray(_useState11, 2),
+      date = _useState12[0],
+      setDate = _useState12[1]; //先月
+
+
+  var setPrevMonth = function setPrevMonth() {
+    var year = date.getFullYear();
+    var month = date.getMonth() - 1;
+    var day = date.getDate();
+    setDate(new Date(year, month, day));
+  }; //来月
+
+
+  var setNextMonth = function setNextMonth() {
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    setDate(new Date(year, month, day));
+  }; //12月1日
+
+
+  var startOfMonth = function startOfMonth(date) {
+    return new Date(date.getFullYear(), date.getMonth(), 1);
+  }; //1月1日
+
+
+  var endOfMonth = function endOfMonth(date) {
+    return new Date(date.getFullYear(), date.getMonth() + 1, 0);
+  }; //operate add form and income/expense list
+
+
+  var selectedMonth = date.getMonth() + 1;
+  var today = new Date();
+  var thisMonth = today.getMonth() + 1; //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var data = {
+      text: text,
+      amount: amount,
+      type: type,
+      date: date
+    };
+
     function fetchDataIncome() {
       return _fetchDataIncome.apply(this, arguments);
     }
@@ -75027,14 +75041,22 @@ function Main() {
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
+                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
               case 2:
                 res = _context.sent;
+                console.log(res); //resにsetDateとdateカラムが一致するもののみresに代入
+                // const filter_include_a = res.filter(function( data ) {
+                //   //5よりも小さい数値だけを抽出
+                //   return res.data == date;
+                // })
+                // console.log( filter_include_a );
+
+                console.log(date);
                 console.log("list\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
                 setIncomelist(res.data);
 
-              case 5:
+              case 7:
               case "end":
                 return _context.stop();
             }
@@ -75076,7 +75098,7 @@ function Main() {
     }
 
     fetchDataExpense();
-  }, []);
+  }, [date]);
 
   var reset = function reset() {
     setText("");
@@ -75095,7 +75117,8 @@ function Main() {
               data = {
                 text: text,
                 amount: amount,
-                type: type
+                type: type,
+                date: date
               };
 
               if (!(text == '' || amount == '0' || !(amount > 0 && amount <= 10000000))) {
@@ -75174,7 +75197,11 @@ function Main() {
     className: "maincontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "top"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Header__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    date: date,
+    setPrevMonth: setPrevMonth,
+    setNextMonth: setNextMonth
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
@@ -75184,8 +75211,11 @@ function Main() {
     setIncomelist: setIncomelist,
     type: type,
     setType: setType,
-    reset: reset
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], _defineProperty({
+    date: date,
+    setDate: setDate,
+    selectedMonth: selectedMonth,
+    thisMonth: thisMonth
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], (_React$createElement = {
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
@@ -75195,7 +75225,7 @@ function Main() {
     setIncomelist: setIncomelist,
     expenselist: expenselist,
     setExpenselist: setExpenselist
-  }, "saveEmployee", saveEmployee)));
+  }, _defineProperty(_React$createElement, "saveEmployee", saveEmployee), _defineProperty(_React$createElement, "selectedMonth", selectedMonth), _defineProperty(_React$createElement, "thisMonth", thisMonth), _React$createElement)));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);

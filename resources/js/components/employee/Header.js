@@ -1,40 +1,19 @@
 import React from 'react';
-import employeeServices from "./Employee";
 
-// function Form(){
+export const Header = ({date, setPrevMonth, setNextMonth}) => {
 
-  
-//   const [ name, setName ] = useState(null);
-//   const [ email, setEmail ] = useState(null);
-//   const [ age, setAge ] = useState(null);
-//   const [ listEmployee, setListEmployee ] = useState([]);
-
-  export const Header = ({ }) => {
-  
-
-  const saveEmployee = async () => {
-
-    const data = {
-      name, email, age
-    }
-
-    const res = await employeeServices.save(data);
-    console.log('create!!');
-    console.log(res.data);
-
-    const hoge = await employeeServices.listEmployee();
-      console.log(hoge.data);
-      console.log(`list/再レンダー`);
-      setListEmployee(hoge.data)
-    
-  }
+  const today = date;
+  const year = today.getFullYear();
+  const month = today.getMonth()+1;
 
   return (
-    <div className="container">
-      <div>
-        ヘッダー   
+    <div className="head">
+      <div className="showMonth">
+        <button onClick={() => setPrevMonth()}>←前月 </button>
+        <h1>{year}年{month}月</h1>
+        <button onClick={() => setNextMonth()}> 次月→</button>
       </div>
     </div>
-  );
+  )
 }
 export default Header;
