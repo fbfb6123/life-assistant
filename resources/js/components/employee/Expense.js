@@ -13,7 +13,7 @@ export const Expense = ({expenselist, setExpenselist, selectedMonth, thisMonth})
             return(
               <div className="income-item" key={expense.id}>
                 <div className="income-item-text">{expense.text}</div>
-                <div className="income-item-amount">{expense.amount}</div>
+                <div className="income-item-amount">{Number(expense.amount).toLocaleString()}円</div>
               </div>
             )
           })
