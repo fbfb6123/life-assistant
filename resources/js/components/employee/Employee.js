@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost/api/employee"
+const baseUrl = "http://localhost:8000/api/employee"
 //"http://localhost:8000/api/employee" local用
 
 const employee = {};
@@ -6,9 +6,9 @@ const employee = {};
 //...//
 //List一覧表示
 //Main.js/await employeeServices.income()でアクセス
-employee.income = async () => {
+employee.income = async (data) => {
   const urlList = baseUrl+"/income"
-  const res = await  axios.get(urlList)
+  const res = await axios.post(urlList,data)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;

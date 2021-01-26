@@ -11,11 +11,21 @@ use Illuminate\Support\Facades\DB;
 
 class EmployeeController extends Controller
 {
-    public function incomelist(){
+    public function incomelist(Request $request){
+
+      Log::info($request);
 
         try {
   
-          $data = Income::get();
+          $year = $request->year;
+          $month = $request->month;
+          // Log::info($year);
+          // Log::info($month);
+
+          $data = Income::where('year', '=', "$year")
+                         ->where('month', '=',"$month")
+                         ->get();
+          Log::debug($data);
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -32,6 +42,7 @@ class EmployeeController extends Controller
         try {
   
           $data = Expense::get();
+          Log::debug($data);
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -45,24 +56,35 @@ class EmployeeController extends Controller
 
       public function incomcreate(Request $request){
           
+        // Log::debug($request);
+        
         try {
   
-            $insert['text'] = $request['text'];
-            $insert['amount'] = $request['amount'];
-            Log::info($insert);
+            // $insert['text'] = $request['text'];
+            // $insert['amount'] = $request['amount'];
+            // Log::info($insert);
 
-            DB::table('incomes')->insert($insert);
+            // DB::table('incomes')->insert($insert);
 
-            $response['data'] = $insert;
+            $year = $request->year;
+
+            $month = $request->month;
+
+            Log::info($year);
+
+            $incomes = new Income();
+            $incomes->text = $request->text;
+            $incomes->amount = $request->amount;
+            $incomes->date = $request->date;
+            $incomes->year = $request->year;
+            $incomes->month = $request->month;
+            $incomes->save();
+            
+            $response['data'] = $request;
             $response['message'] = '成功';
             $response['success'] = true;
 
-            // $people = new Person();
-            // $people->name = $request->name;
-            // $people->email = $request->email;
-            // $people->age = $request->age;
-
-            // $people->save();
+            
     
           } catch (\Exception $e) {
             $response['message'] = $e->getMessage();
@@ -75,22 +97,20 @@ class EmployeeController extends Controller
           
         try {
   
-            $insert['text'] = $request['text'];
-            $insert['amount'] = $request['amount'];
-            Log::info($insert);
+            // $insert['text'] = $request['text'];
+            // $insert['amount'] = $request['amount'];
+            // Log::info($insert);
 
-            DB::table('expenses')->insert($insert);
+            // DB::table('expenses')->insert($insert);
 
-            $response['data'] = $insert;
+            $incomes = new Expense();
+            $incomes->text = $request->text;
+            $incomes->amount = $request->amount;
+            $incomes->save();
+
+            $response['data'] = $request;
             $response['message'] = '成功';
             $response['success'] = true;
-
-            // $people = new Person();
-            // $people->name = $request->name;
-            // $people->email = $request->email;
-            // $people->age = $request->age;
-
-            // $people->save();
     
           } catch (\Exception $e) {
             $response['message'] = $e->getMessage();

@@ -61,7 +61,7 @@ useEffect(()=>{
   const year = todays.getFullYear();
   const month = todays.getMonth()+1;
   console.log(month);
-  
+
   const data = {
     text, amount, type, date, year,
     month,
@@ -100,8 +100,13 @@ const reset = () => {
 //createアクション
 const saveEmployee = async () => {
 
+  const todays = date;
+  const year = todays.getFullYear();
+  const month = todays.getMonth()+1;
+
   const data = {
-    text, amount, type, date
+    text, amount, type, date, year,
+    month,
   }
   if (text == '' || amount == '0' || !(amount > 0 && amount <= 10000000)) {
     alert ('正しい内容を入力してください')
@@ -111,7 +116,7 @@ const saveEmployee = async () => {
   console.log('income/create!!');
   console.log(res.data);
 
-  const hoge = await employeeServices.income();
+  const hoge = await employeeServices.income(data);
   console.log(hoge.data);
   console.log(`income/list/再レンダー`);
   setIncomelist(hoge.data)
