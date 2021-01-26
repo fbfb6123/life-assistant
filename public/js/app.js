@@ -74599,7 +74599,7 @@ var Expense = function Expense(_ref) {
       className: "income-item-text"
     }, expense.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "income-item-amount"
-    }, expense.amount));
+    }, Number(expense.amount).toLocaleString(), "\u5186"));
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Expense);
@@ -74746,20 +74746,42 @@ var Income = function Income(_ref) {
       setIncomelist = _ref.setIncomelist,
       selectedMonth = _ref.selectedMonth,
       thisMonth = _ref.thisMonth;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "table"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "tbody"
-  }, incomelist.map(function (income) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "income-item",
-      key: income.id
+
+  var showThisMonth = function showThisMonth() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "table"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "income-item-text"
-    }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "income-item-amount"
-    }, income.amount));
-  }))));
+      className: "tbody"
+    }, incomelist.map(function (income) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item",
+        key: income.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item-text"
+      }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item-amount"
+      }, Number(income.amount).toLocaleString(), "\u5186"));
+    }))));
+  };
+
+  var showPastMonth = function showPastMonth() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "table"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      className: "tbody"
+    }, incomelist.map(function (income) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item",
+        key: income.id
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item-text"
+      }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "income-item-amount"
+      }, Number(income.amount).toLocaleString(), "\u5186"));
+    }))));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, thisMonth === selectedMonth ? showThisMonth() : showPastMonth());
 };
 /* harmony default export */ __webpack_exports__["default"] = (Income);
 
@@ -75004,12 +75026,12 @@ function Main() {
     var month = date.getMonth() + 1;
     var day = date.getDate();
     setDate(new Date(year, month, day));
-  }; //12月1日
+  }; //月初
 
 
   var startOfMonth = function startOfMonth(date) {
     return new Date(date.getFullYear(), date.getMonth(), 1);
-  }; //1月1日
+  }; //月末
 
 
   var endOfMonth = function endOfMonth(date) {
@@ -75022,11 +75044,17 @@ function Main() {
   var thisMonth = today.getMonth() + 1; //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
 
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var todays = date;
+    var year = todays.getFullYear();
+    var month = todays.getMonth() + 1;
+    console.log(month);
     var data = {
       text: text,
       amount: amount,
       type: type,
-      date: date
+      date: date,
+      year: year,
+      month: month
     };
 
     function fetchDataIncome() {
@@ -75045,13 +75073,7 @@ function Main() {
 
               case 2:
                 res = _context.sent;
-                console.log(res); //resにsetDateとdateカラムが一致するもののみresに代入
-                // const filter_include_a = res.filter(function( data ) {
-                //   //5よりも小さい数値だけを抽出
-                //   return res.data == date;
-                // })
-                // console.log( filter_include_a );
-
+                console.log(res);
                 console.log(date);
                 console.log("list\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
                 setIncomelist(res.data);
@@ -75108,71 +75130,76 @@ function Main() {
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-      var data, res, hoge, _res, _hoge;
+      var todays, year, month, data, res, hoge, _res, _hoge;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
+              todays = date;
+              year = todays.getFullYear();
+              month = todays.getMonth() + 1;
               data = {
                 text: text,
                 amount: amount,
                 type: type,
-                date: date
+                date: date,
+                year: year,
+                month: month
               };
 
               if (!(text == '' || amount == '0' || !(amount > 0 && amount <= 10000000))) {
-                _context3.next = 5;
+                _context3.next = 8;
                 break;
               }
 
               alert('正しい内容を入力してください');
-              _context3.next = 35;
+              _context3.next = 38;
               break;
 
-            case 5:
+            case 8:
               if (!(type === 'inc')) {
-                _context3.next = 21;
+                _context3.next = 24;
                 break;
               }
 
-              _context3.next = 8;
+              _context3.next = 11;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].incomesave(data);
 
-            case 8:
+            case 11:
               res = _context3.sent;
               console.log('income/create!!');
               console.log(res.data);
-              _context3.next = 13;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income();
+              _context3.next = 16;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
-            case 13:
+            case 16:
               hoge = _context3.sent;
               console.log(hoge.data);
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(hoge.data);
               reset();
               console.log("reset!!");
-              _context3.next = 35;
+              _context3.next = 38;
               break;
 
-            case 21:
+            case 24:
               if (!(type === 'exp')) {
-                _context3.next = 35;
+                _context3.next = 38;
                 break;
               }
 
-              _context3.next = 24;
+              _context3.next = 27;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
 
-            case 24:
+            case 27:
               _res = _context3.sent;
               console.log('expense/create!!');
               console.log(_res.data);
-              _context3.next = 29;
+              _context3.next = 32;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
 
-            case 29:
+            case 32:
               _hoge = _context3.sent;
               console.log(_hoge.data);
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
@@ -75180,7 +75207,7 @@ function Main() {
               reset();
               console.log("reset!!");
 
-            case 35:
+            case 38:
             case "end":
               return _context3.stop();
           }
