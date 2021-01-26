@@ -19,6 +19,8 @@ class CreateIncomesTable extends Migration
             $table->integer('amount')->nullable()->comment('金額');
             $table->string('type')->nullable()->comment('タイプ');
             $table->string('date')->nullable()->comment('日時');
+            $table->unsignedInteger('year')->nullable()->comment('ログイン・年');
+            $table->unsignedInteger('month')->nullable()->comment('ログイン・月');
             $table->timestamps();
         });
     }
