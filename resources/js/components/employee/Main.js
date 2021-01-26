@@ -18,6 +18,11 @@ const [ incomelist, setIncomelist ] = useState([]);
 const [ expenselist, setExpenselist ] = useState([]);
 const [type, setType] = useState("inc");
 const [date, setDate] = useState(new Date);
+ 
+
+  
+
+
 
 //先月
 const setPrevMonth = () => {
@@ -34,12 +39,12 @@ const setNextMonth = () => {
   setDate(new Date(year, month, day));
 }
 
-//12月1日
+//月初
 const startOfMonth = (date) => {
   return new Date(date.getFullYear(), date.getMonth(), 1);
 }
 
-//1月1日
+//月末
 const endOfMonth = (date) => {
   return new Date(date.getFullYear(), date.getMonth() + 1, 0);
 }
@@ -52,22 +57,21 @@ const thisMonth = today.getMonth() + 1;
 //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
 useEffect(()=>{
 
+  const todays = date;
+  const year = todays.getFullYear();
+  const month = todays.getMonth()+1;
+  console.log(month);
+  
   const data = {
-    text, amount, type, date
+    text, amount, type, date, year,
+    month,
   }
+
+  
   async function fetchDataIncome(){
     
     const res = await employeeServices.income(data);
     console.log(res);
-    //resにsetDateとdateカラムが一致するもののみresに代入
-    // const filter_include_a = res.filter(function( data ) {
- 
-    //   //5よりも小さい数値だけを抽出
-    //   return res.data == date;
-   
-    // })
-   
-    // console.log( filter_include_a );
 
     
     console.log(date);
