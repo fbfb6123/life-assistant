@@ -3,17 +3,12 @@ import employeeServices from "./Employee";
 
   export const Form = ({ text, setText, amount, setAmount,  saveEmployee, type, setType,}) => {
 
-
-    const typeHandler = (e) => {
-      setType(e.target.value);
-    }
-
   return(
     <div className="form-container">
       <div className="row">
-        <select onChange={typeHandler}>
-          <option value="inc">+</option>
-          <option value="exp">-</option>
+        <select onChange={(event)=>setType(event.target.value)}>
+          <option value="inc">収入</option>
+          <option value="exp">支出</option>
         </select>
       </div>  
 

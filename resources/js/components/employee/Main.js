@@ -5,9 +5,6 @@ import List from "./List";
 import Header from './Header';
 import Balance from './Balance';
 import IncomeExpense from './IncomeExpense';
-import Income from './Income';
-import Expense from './Expense';
-
 
 
 function Main () {
@@ -19,11 +16,6 @@ const [ expenselist, setExpenselist ] = useState([]);
 const [type, setType] = useState("inc");
 const [date, setDate] = useState(new Date);
  
-
-  
-
-
-
 //先月
 const setPrevMonth = () => {
   const year = date.getFullYear();
@@ -39,58 +31,40 @@ const setNextMonth = () => {
   setDate(new Date(year, month, day));
 }
 
-//月初
-const startOfMonth = (date) => {
-  return new Date(date.getFullYear(), date.getMonth(), 1);
-}
-
-//月末
-const endOfMonth = (date) => {
-  return new Date(date.getFullYear(), date.getMonth() + 1, 0);
-}
-
 //operate add form and income/expense list
 const selectedMonth = date.getMonth() + 1;
 const today = new Date();
 const thisMonth = today.getMonth() + 1;
 
-//Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
+const todays = date;
+const year = todays.getFullYear();
+const month = todays.getMonth()+1;
+console.log(month);
+
+const data = {
+  text, amount, type, date, year, month,
+}
+
+
 useEffect(()=>{
-
-  const todays = date;
-  const year = todays.getFullYear();
-  const month = todays.getMonth()+1;
-  console.log(month);
-
-  const data = {
-    text, amount, type, date, year,
-    month,
-  }
+  fetchDataIncome();
+  fetchDataExpense();
+},[date])
 
   
-  async function fetchDataIncome(){
+async function fetchDataIncome(){
     
-    const res = await employeeServices.income(data);
-    console.log(res);
+  const res = await employeeServices.income(data);
+  console.log(`incomeレンダー`);
+  setIncomelist(res.data)
+}
 
+async function fetchDataExpense(){
     
-    console.log(date);
-    console.log(`listの再レンダーされました`);
-    setIncomelist(res.data)
-  }
-
-  fetchDataIncome();
-
-  async function fetchDataExpense(){
-    
-    const res = await employeeServices.expense();
-    console.log(`expenseレンダーされました`);
-    setExpenselist(res.data)
-  }
-
-  fetchDataExpense();
-
-},[date])
+  const res = await employeeServices.expense(data);
+  console.log(`expenseレンダー`);
+  setExpenselist(res.data)
+}
 
 const reset = () => {
   setText("");
@@ -100,14 +74,6 @@ const reset = () => {
 //createアクション
 const saveEmployee = async () => {
 
-  const todays = date;
-  const year = todays.getFullYear();
-  const month = todays.getMonth()+1;
-
-  const data = {
-    text, amount, type, date, year,
-    month,
-  }
   if (text == '' || amount == '0' || !(amount > 0 && amount <= 10000000)) {
     alert ('正しい内容を入力してください')
   } else if ( type === 'inc') {
@@ -129,7 +95,7 @@ const saveEmployee = async () => {
   console.log('expense/create!!');
   console.log(res.data);
   
-  const hoge = await employeeServices.expense();
+  const hoge = await employeeServices.expense(data);
   console.log(hoge.data);
   console.log(`expense/list/再レンダー`);
   setExpenselist(hoge.data)
@@ -189,9 +155,6 @@ return(
         />
   </div>
 
-
-
-)
-      }
+)}
 
 export default Main;
