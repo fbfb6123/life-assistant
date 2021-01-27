@@ -88253,6 +88253,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Balance__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Balance */ "./resources/js/components/employee/Balance.js");
 /* harmony import */ var _IncomeExpense__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IncomeExpense */ "./resources/js/components/employee/IncomeExpense.js");
 /* harmony import */ var _TotalIncome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TotalIncome */ "./resources/js/components/employee/TotalIncome.js");
+/* harmony import */ var _TotalExpense__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./TotalExpense */ "./resources/js/components/employee/TotalExpense.js");
 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -88498,7 +88499,7 @@ function Main() {
   }();
 
   var incomeTotal = Object(_TotalIncome__WEBPACK_IMPORTED_MODULE_8__["default"])(incomelist);
-  var expenseTotal = Object(_TotalIncome__WEBPACK_IMPORTED_MODULE_8__["default"])(expenselist);
+  var expenseTotal = Object(_TotalExpense__WEBPACK_IMPORTED_MODULE_9__["default"])(expenselist);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
     className: "maincontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -88538,6 +88539,31 @@ function Main() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Main);
+
+/***/ }),
+
+/***/ "./resources/js/components/employee/TotalExpense.js":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/employee/TotalExpense.js ***!
+  \**********************************************************/
+/*! exports provided: totalExpenseCalc, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "totalExpenseCalc", function() { return totalExpenseCalc; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var totalExpenseCalc = function totalExpenseCalc(expenselist) {
+  var expenseAmounts = expenselist.map(function (expenselist) {
+    return expenselist.amount;
+  });
+  return expenseAmounts.reduce(function (acc, cur) {
+    return acc += cur;
+  }, 0);
+};
+/* harmony default export */ __webpack_exports__["default"] = (totalExpenseCalc);
 
 /***/ }),
 

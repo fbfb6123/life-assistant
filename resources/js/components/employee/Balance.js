@@ -1,37 +1,12 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-// function Form(){
+  export const Balance = ({ text, setText, amount, setAmount, incomelist, setIncomelist, expenselist, setExpenselist,fetchDataEmployee }) => {
 
-  
-//   const [ name, setName ] = useState(null);
-//   const [ email, setEmail ] = useState(null);
-//   const [ age, setAge ] = useState(null);
-//   const [ listEmployee, setListEmployee ] = useState([]);
-
-  export const Balance = ({ }) => {
-  
-
-  const saveEmployee = async () => {
-
-    const data = {
-      name, email, age
-    }
-
-    const res = await employeeServices.save(data);
-    console.log('create!!');
-    console.log(res.data);
-
-    const hoge = await employeeServices.listEmployee();
-      console.log(hoge.data);
-      console.log(`list/再レンダー`);
-      setListEmployee(hoge.data)
-    
-  }
 
   return (
-    <div className="container">
-      <div>
+    <div className="balancecontainer">
+      <div className="balancelist">
         <h1>残高</h1>   
       </div>
     </div>
