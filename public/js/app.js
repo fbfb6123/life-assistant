@@ -74471,32 +74471,39 @@ employee.income = /*#__PURE__*/function () {
 }(); //Main.js/await employeeServices.expense()でアクセス
 
 
-employee.expense = /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-  var urlList, res;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-    while (1) {
-      switch (_context2.prev = _context2.next) {
-        case 0:
-          urlList = baseUrl + "/expense";
-          _context2.next = 3;
-          return axios.get(urlList).then(function (response) {
-            return response.data;
-          })["catch"](function (error) {
-            return error;
-          });
+employee.expense = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
+    var urlList, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            urlList = baseUrl + "/expense";
+            _context2.next = 3;
+            return axios.post(urlList, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
 
-        case 3:
-          res = _context2.sent;
-          return _context2.abrupt("return", res);
+          case 3:
+            res = _context2.sent;
+            return _context2.abrupt("return", res);
 
-        case 5:
-        case "end":
-          return _context2.stop();
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
       }
-    }
-  }, _callee2);
-})); //Formのcreateaction定義
+    }, _callee2);
+  }));
+
+  return function (_x2) {
+    return _ref2.apply(this, arguments);
+  };
+}(); //Formのcreateaction定義
 //await employeeServices.incomesave(data)でアクセス
+
 
 employee.incomesave = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(data) {
@@ -74525,7 +74532,7 @@ employee.incomesave = /*#__PURE__*/function () {
     }, _callee3);
   }));
 
-  return function (_x2) {
+  return function (_x3) {
     return _ref3.apply(this, arguments);
   };
 }(); //await employeeServices.expensesave(data)でアクセス
@@ -74558,7 +74565,7 @@ employee.expensesave = /*#__PURE__*/function () {
     }, _callee4);
   }));
 
-  return function (_x3) {
+  return function (_x4) {
     return _ref4.apply(this, arguments);
   };
 }();
@@ -74629,22 +74636,19 @@ var Form = function Form(_ref) {
       saveEmployee = _ref.saveEmployee,
       type = _ref.type,
       setType = _ref.setType;
-
-  var typeHandler = function typeHandler(e) {
-    setType(e.target.value);
-  };
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "form-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-    onChange: typeHandler
+    onChange: function onChange(event) {
+      return setType(event.target.value);
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "inc"
-  }, "+"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+  }, "\u53CE\u5165"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
     value: "exp"
-  }, "-"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "\u652F\u51FA"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-6 mb-3"
@@ -74811,11 +74815,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 function _objectDestructuringEmpty(obj) { if (obj == null) throw new TypeError("Cannot destructure undefined"); }
 
 
- // function Form(){
-//   const [ name, setName ] = useState(null);
-//   const [ email, setEmail ] = useState(null);
-//   const [ age, setAge ] = useState(null);
-//   const [ listEmployee, setListEmployee ] = useState([]);
 
 var IncomeExpense = function IncomeExpense(_ref) {
   _objectDestructuringEmpty(_ref);
@@ -74947,8 +74946,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header */ "./resources/js/components/employee/Header.js");
 /* harmony import */ var _Balance__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Balance */ "./resources/js/components/employee/Balance.js");
 /* harmony import */ var _IncomeExpense__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IncomeExpense */ "./resources/js/components/employee/IncomeExpense.js");
-/* harmony import */ var _Income__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Income */ "./resources/js/components/employee/Income.js");
-/* harmony import */ var _Expense__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Expense */ "./resources/js/components/employee/Expense.js");
 
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -74968,8 +74965,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
 
 
 
@@ -75026,101 +75021,86 @@ function Main() {
     var month = date.getMonth() + 1;
     var day = date.getDate();
     setDate(new Date(year, month, day));
-  }; //月初
-
-
-  var startOfMonth = function startOfMonth(date) {
-    return new Date(date.getFullYear(), date.getMonth(), 1);
-  }; //月末
-
-
-  var endOfMonth = function endOfMonth(date) {
-    return new Date(date.getFullYear(), date.getMonth() + 1, 0);
   }; //operate add form and income/expense list
 
 
   var selectedMonth = date.getMonth() + 1;
   var today = new Date();
-  var thisMonth = today.getMonth() + 1; //Employeeのincome/expenseにアクセスしてaxiosでレコード取得。
-
+  var thisMonth = today.getMonth() + 1;
+  var todays = date;
+  var year = todays.getFullYear();
+  var month = todays.getMonth() + 1;
+  console.log(month);
+  var data = {
+    text: text,
+    amount: amount,
+    type: type,
+    date: date,
+    year: year,
+    month: month
+  };
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    var todays = date;
-    var year = todays.getFullYear();
-    var month = todays.getMonth() + 1;
-    console.log(month);
-    var data = {
-      text: text,
-      amount: amount,
-      type: type,
-      date: date,
-      year: year,
-      month: month
-    };
-
-    function fetchDataIncome() {
-      return _fetchDataIncome.apply(this, arguments);
-    }
-
-    function _fetchDataIncome() {
-      _fetchDataIncome = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
-
-              case 2:
-                res = _context.sent;
-                console.log(res);
-                console.log(date);
-                console.log("list\u306E\u518D\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
-                setIncomelist(res.data);
-
-              case 7:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }));
-      return _fetchDataIncome.apply(this, arguments);
-    }
-
     fetchDataIncome();
-
-    function fetchDataExpense() {
-      return _fetchDataExpense.apply(this, arguments);
-    }
-
-    function _fetchDataExpense() {
-      _fetchDataExpense = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                _context2.next = 2;
-                return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
-
-              case 2:
-                res = _context2.sent;
-                console.log("expense\u30EC\u30F3\u30C0\u30FC\u3055\u308C\u307E\u3057\u305F");
-                setExpenselist(res.data);
-
-              case 5:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }));
-      return _fetchDataExpense.apply(this, arguments);
-    }
-
     fetchDataExpense();
   }, [date]);
+
+  function fetchDataIncome() {
+    return _fetchDataIncome.apply(this, arguments);
+  }
+
+  function _fetchDataIncome() {
+    _fetchDataIncome = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              _context2.next = 2;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
+
+            case 2:
+              res = _context2.sent;
+              console.log("income\u30EC\u30F3\u30C0\u30FC");
+              setIncomelist(res.data);
+
+            case 5:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _fetchDataIncome.apply(this, arguments);
+  }
+
+  function fetchDataExpense() {
+    return _fetchDataExpense.apply(this, arguments);
+  }
+
+  function _fetchDataExpense() {
+    _fetchDataExpense = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+        while (1) {
+          switch (_context3.prev = _context3.next) {
+            case 0:
+              _context3.next = 2;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
+
+            case 2:
+              res = _context3.sent;
+              console.log("expense\u30EC\u30F3\u30C0\u30FC");
+              setExpenselist(res.data);
+
+            case 5:
+            case "end":
+              return _context3.stop();
+          }
+        }
+      }, _callee3);
+    }));
+    return _fetchDataExpense.apply(this, arguments);
+  }
 
   var reset = function reset() {
     setText("");
@@ -75129,90 +75109,78 @@ function Main() {
 
 
   var saveEmployee = /*#__PURE__*/function () {
-    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-      var todays, year, month, data, res, hoge, _res, _hoge;
+    var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+      var res, hoge, _res, _hoge;
 
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context.prev = _context.next) {
             case 0:
-              todays = date;
-              year = todays.getFullYear();
-              month = todays.getMonth() + 1;
-              data = {
-                text: text,
-                amount: amount,
-                type: type,
-                date: date,
-                year: year,
-                month: month
-              };
-
               if (!(text == '' || amount == '0' || !(amount > 0 && amount <= 10000000))) {
-                _context3.next = 8;
+                _context.next = 4;
                 break;
               }
 
               alert('正しい内容を入力してください');
-              _context3.next = 38;
+              _context.next = 34;
               break;
 
-            case 8:
+            case 4:
               if (!(type === 'inc')) {
-                _context3.next = 24;
+                _context.next = 20;
                 break;
               }
 
-              _context3.next = 11;
+              _context.next = 7;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].incomesave(data);
 
-            case 11:
-              res = _context3.sent;
+            case 7:
+              res = _context.sent;
               console.log('income/create!!');
               console.log(res.data);
-              _context3.next = 16;
+              _context.next = 12;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
-            case 16:
-              hoge = _context3.sent;
+            case 12:
+              hoge = _context.sent;
               console.log(hoge.data);
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(hoge.data);
               reset();
               console.log("reset!!");
-              _context3.next = 38;
+              _context.next = 34;
               break;
 
-            case 24:
+            case 20:
               if (!(type === 'exp')) {
-                _context3.next = 38;
+                _context.next = 34;
                 break;
               }
 
-              _context3.next = 27;
+              _context.next = 23;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
 
-            case 27:
-              _res = _context3.sent;
+            case 23:
+              _res = _context.sent;
               console.log('expense/create!!');
               console.log(_res.data);
-              _context3.next = 32;
-              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense();
+              _context.next = 28;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
-            case 32:
-              _hoge = _context3.sent;
+            case 28:
+              _hoge = _context.sent;
               console.log(_hoge.data);
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setExpenselist(_hoge.data);
               reset();
               console.log("reset!!");
 
-            case 38:
+            case 34:
             case "end":
-              return _context3.stop();
+              return _context.stop();
           }
         }
-      }, _callee3);
+      }, _callee);
     }));
 
     return function saveEmployee() {
