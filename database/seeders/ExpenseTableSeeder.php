@@ -21,6 +21,8 @@ class ExpenseTableSeeder extends Seeder
                 DB::table('expenses')->insert([
                     'text' => $income,
                     'amount' => rand(1000,5000),
+                    'year' => 2021,
+                    'month' => 1,
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                     ]);
