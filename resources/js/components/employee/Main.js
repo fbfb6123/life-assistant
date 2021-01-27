@@ -5,6 +5,8 @@ import List from "./List";
 import Header from './Header';
 import Balance from './Balance';
 import IncomeExpense from './IncomeExpense';
+import totalIncomeCalc from './TotalIncome';
+import totalExpenseCalc from './TotalExpense';
 
 
 function Main () {
@@ -16,6 +18,7 @@ const [ expenselist, setExpenselist ] = useState([]);
 const [type, setType] = useState("inc");
 const [date, setDate] = useState(new Date);
  
+
 //先月
 const setPrevMonth = () => {
   const year = date.getFullYear();
@@ -105,6 +108,9 @@ const saveEmployee = async () => {
 }
 }
 
+const incomeTotal = totalIncomeCalc(incomelist);
+const expenseTotal = totalExpenseCalc(expenselist);
+
 return(
   <div className="maincontainer">
     <div className="top">
@@ -118,7 +124,8 @@ return(
       />
 
       <IncomeExpense 
-       
+       incomeTotal={incomeTotal}
+       expenseTotal={expenseTotal}
       />
 
         
