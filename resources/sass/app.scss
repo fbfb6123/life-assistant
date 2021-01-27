@@ -73,6 +73,20 @@ body {
   margin: 30px 20px 20px 30px;
 }
 
+
+//残高
+.balancecontainer {
+  width: 100%;
+  height: 70px;
+  background-color: #f44355;
+}
+
+.balancelist {
+  width: 100%;
+  height: 70px;
+  background-color: #f44355;
+}
+
 //income/expenseの中身を管理するテーブル
 .tbody {
   margin-top: 60px;
