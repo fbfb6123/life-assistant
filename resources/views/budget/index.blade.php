@@ -10,10 +10,10 @@
       rel="stylesheet" type="text/css">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-<body class=maincontainer>
-      <div id="mycomponent"></div>
-    </div>  
-      <script src="{{asset('/js/app.js')}}"></script>
+<body class=container>
+  <div id="mycomponent"></div>
+
+<script src="{{asset('/js/app.js')}}"></script>
 </body>
 </html>            
 @endsection

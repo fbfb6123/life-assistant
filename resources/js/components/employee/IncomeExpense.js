@@ -1,14 +1,6 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-// function Form(){
-
-  
-//   const [ name, setName ] = useState(null);
-//   const [ email, setEmail ] = useState(null);
-//   const [ age, setAge ] = useState(null);
-//   const [ listEmployee, setListEmployee ] = useState([]);
-
   export const IncomeExpense = ({ }) => {
   
 

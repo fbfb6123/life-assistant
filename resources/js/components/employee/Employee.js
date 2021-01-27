@@ -15,9 +15,9 @@ employee.income = async (data) => {
 }
 
 //Main.js/await employeeServices.expense()でアクセス
-employee.expense = async () => {
+employee.expense = async (data) => {
   const urlList = baseUrl+"/expense"
-  const res = await  axios.get(urlList)
+  const res = await  axios.post(urlList,data)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;

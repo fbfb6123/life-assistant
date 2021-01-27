@@ -37,11 +37,18 @@ class EmployeeController extends Controller
   
       }
 
-    public function expenselist(){
+    public function expenselist(Request $request){
 
         try {
-  
-          $data = Expense::get();
+          $year = $request->year;
+          $month = $request->month;
+          // Log::info($year);
+          // Log::info($month);
+
+          $data = Expense::where('year', '=', "$year")
+                         ->where('month', '=',"$month")
+                         ->get();
+
           Log::debug($data);
           $response['data'] = $data;
           $response['success'] = true;
@@ -97,15 +104,16 @@ class EmployeeController extends Controller
           
         try {
   
-            // $insert['text'] = $request['text'];
-            // $insert['amount'] = $request['amount'];
-            // Log::info($insert);
+            $year = $request->year;
 
-            // DB::table('expenses')->insert($insert);
+            $month = $request->month;
 
             $incomes = new Expense();
             $incomes->text = $request->text;
             $incomes->amount = $request->amount;
+            $incomes->date = $request->date;
+            $incomes->year = $request->year;
+            $incomes->month = $request->month;
             $incomes->save();
 
             $response['data'] = $request;
