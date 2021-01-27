@@ -120,12 +120,13 @@ return(
       setNextMonth={setNextMonth}
       />
       <Balance 
-          
+      incomeTotal={incomeTotal}
+      expenseTotal={expenseTotal}
       />
 
       <IncomeExpense 
-       incomeTotal={incomeTotal}
-       expenseTotal={expenseTotal}
+      incomeTotal={incomeTotal}
+      expenseTotal={expenseTotal}
       />
 
         

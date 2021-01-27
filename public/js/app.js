@@ -87718,20 +87718,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Balance = function Balance(_ref) {
-  var text = _ref.text,
-      setText = _ref.setText,
-      amount = _ref.amount,
-      setAmount = _ref.setAmount,
-      incomelist = _ref.incomelist,
-      setIncomelist = _ref.setIncomelist,
-      expenselist = _ref.expenselist,
-      setExpenselist = _ref.setExpenselist,
-      fetchDataEmployee = _ref.fetchDataEmployee;
+  var incomeTotal = _ref.incomeTotal,
+      expenseTotal = _ref.expenseTotal;
+  var balance = incomeTotal - expenseTotal;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "balancecontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "balancelist"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "\u6B8B\u9AD8")));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "balance"
+  }, Number(balance).toLocaleString(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " \u5186"))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Balance);
 
@@ -88508,7 +88504,10 @@ function Main() {
     date: date,
     setPrevMonth: setPrevMonth,
     setNextMonth: setNextMonth
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Balance__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    incomeTotal: incomeTotal,
+    expenseTotal: expenseTotal
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_IncomeExpense__WEBPACK_IMPORTED_MODULE_7__["default"], {
     incomeTotal: incomeTotal,
     expenseTotal: expenseTotal
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Form__WEBPACK_IMPORTED_MODULE_3__["default"], {

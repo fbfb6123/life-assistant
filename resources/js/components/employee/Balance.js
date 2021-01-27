@@ -1,13 +1,14 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-  export const Balance = ({ text, setText, amount, setAmount, incomelist, setIncomelist, expenselist, setExpenselist,fetchDataEmployee }) => {
+  export const Balance = ({ incomeTotal, expenseTotal}) => {
 
+    const balance = incomeTotal - expenseTotal
 
   return (
     <div className="balancecontainer">
       <div className="balancelist">
-        <h1>残高</h1>   
+        <div className="balance">{Number(balance).toLocaleString()}<span > 円</span></div>
       </div>
     </div>
   );
