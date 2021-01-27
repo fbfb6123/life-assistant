@@ -8,12 +8,20 @@
 // @import '~bootstrap/scss/bootstrap';
 
 
+
 //PCサイズ
 
 body {
   margin: initial;  /* 0 */
   font-size: initial;  /* 100% */
   font-weight: initial;  /* normal */
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #f44355;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .maincontainer {
@@ -45,16 +53,24 @@ body {
   margin: 0 auto;
 }
 
+
 .showMonth {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  height:60px;
+  padding-top: 15px;
+}
+
+.today{
+  font-weight: bold;
+  font-size: 40px;
 }
 
 //income/expense
 .table {
   color: rgb(63, 58, 58);
-  margin: 20px 20px 20px 20px;
+  margin: 30px 20px 20px 30px;
 }
 
 //income/expenseの中身を管理するテーブル
@@ -131,7 +147,13 @@ body {
 .income-item{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 15px; 
+  border-bottom: dashed 2px #82aaeb;
+}
+
+.income-item-text {
+  margin-left: 10px;
+  text-align: center;
 }
 
 //スマホサイズ
