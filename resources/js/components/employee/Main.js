@@ -123,7 +123,6 @@ return(
       incomeTotal={incomeTotal}
       expenseTotal={expenseTotal}
       />
-
       <IncomeExpense 
       incomeTotal={incomeTotal}
       expenseTotal={expenseTotal}

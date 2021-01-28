@@ -7,8 +7,8 @@ import employeeServices from "./Employee";
 
   return (
     <div className="balancecontainer">
-      <div className="balancelist">
-        <div className="balance">{Number(balance).toLocaleString()}<span > 円</span></div>
+      <div className="balance-list">残高
+        <div className="balance-item">{Number(balance).toLocaleString()}<span > 円</span></div>
       </div>
     </div>
   );

@@ -29,21 +29,15 @@ body {
   height: 100%;
   margin-right: auto;
   margin-left: auto;
-  background-color: #36cfee;
 }
 
 .maincontainer-item{
   width: 900px;
   height: 250px;
-  
-  
-  background-color: rgb(255, 213, 196);
 }
 
 .top {
   width: 100%;
-  height: 250px;
-  background-color: bisque;
   margin-left: auto;
   margin-right: auto;
 }
@@ -77,14 +71,63 @@ body {
 //残高
 .balancecontainer {
   width: 100%;
-  height: 70px;
-  background-color: #f44355;
+  height: 170px;
+  margin-top: 20px;
+  line-height: 40px;
 }
 
-.balancelist {
-  width: 100%;
-  height: 70px;
-  background-color: #f44355;
+.balance-list {
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.balance-item{
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+//収支・支出の合計
+.inc-exp-container{
+  display: flex;
+  justify-content: center;
+}
+
+.inc-container{
+  width: 300px;
+  margin-right: 80px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #82eb94;
+}
+
+.left {
+  display: flex;
+  margin-top: 5px;
+  color: #eef1f5;
+}
+
+.exp-container{
+  width: 300px;
+  margin-right: 40px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #eb5034;
+}
+
+.right {
+  display: flex;
+  margin-top: 5px;
+  color: #eef1f5;
+}
+
+.totalPercentage {
+  height: 20px;
+  margin-top: 18px;
+  margin-left: 20px;
+  background-color: #f3c2ba;
+  color: red;
 }
 
 //income/expenseの中身を管理するテーブル
