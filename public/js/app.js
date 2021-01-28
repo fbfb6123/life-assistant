@@ -87724,9 +87724,9 @@ var Balance = function Balance(_ref) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "balancecontainer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "balancelist"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "balance"
+    className: "balance-list"
+  }, "\u6B8B\u9AD8", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "balance-item"
   }, Number(balance).toLocaleString(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " \u5186"))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Balance);
