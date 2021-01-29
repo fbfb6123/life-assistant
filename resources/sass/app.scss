@@ -17,6 +17,18 @@ body {
   font-weight: initial;  /* normal */
 }
 
+p {
+  margin-top: 10px;
+}
+h5 {
+  margin: initial;  /* 0 */
+  font-size: initial;  /* 100% */
+  font-weight: initial;  /* normal */
+  margin-top: 13px;
+  margin-right: 250px;
+  position: absolute;
+}
+
 .header {
   width: 100%;
   height: 70px;
@@ -90,44 +102,78 @@ body {
 
 //収支・支出の合計
 .inc-exp-container{
+  height: 50px;
   display: flex;
   justify-content: center;
 }
 
 .inc-container{
-  width: 300px;
-  margin-right: 80px;
+  width: 350px;
+  margin-right: 120px;
+  border-radius: 10px;/*角の丸み*/
   display: flex;
   justify-content: space-around;
   background-color: #82eb94;
+  position:relative
 }
 
 .left {
+  width: 250px;
   display: flex;
-  margin-top: 5px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px;
   color: #eef1f5;
+}
+
+.income-total {
+  height: 30px;
+  font-size: 20px;
+}
+.income-total span{
+
 }
 
 .exp-container{
-  width: 300px;
+  width: 350px;
+  margin-left: 40px;
   margin-right: 40px;
   display: flex;
+  border-radius: 10px;/*角の丸み*/
   justify-content: space-around;
   background-color: #eb5034;
+  position: relative;
 }
 
 .right {
+  width: 250px;
+  margin-top: 8px;
   display: flex;
-  margin-top: 5px;
+  justify-content: flex-end;
+  align-items: center;
   color: #eef1f5;
+}
+
+.expense-total {
+  height: 30px;
+  font-size: 20px;
+}
+
+.expense-total span{
+  
 }
 
 .totalPercentage {
   height: 20px;
-  margin-top: 18px;
-  margin-left: 20px;
-  background-color: #f3c2ba;
-  color: red;
+  text-align: center;
+  background-color: #b93622;
+  border-radius: 3px;/*角の丸み*/
+  font-size: 13px;
+  text-align: center;
+  position: absolute;
+  top:15px;
+  right: 5px;
+
 }
 
 //income/expenseの中身を管理するテーブル
