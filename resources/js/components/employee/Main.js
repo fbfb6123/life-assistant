@@ -23,16 +23,17 @@ const [date, setDate] = useState(new Date);
 const setPrevMonth = () => {
   const year = date.getFullYear();
   const month = date.getMonth()-1;
-  const day = date.getDate();
-  setDate(new Date(year, month, day));
+  setDate(new Date(year, month));
 }
 //来月
 const setNextMonth = () => {
   const year = date.getFullYear();
   const month = date.getMonth()+1;
-  const day = date.getDate();
-  setDate(new Date(year, month, day));
+  setDate(new Date(year, month));
 }
+    console.log("年=" + date.getFullYear());
+    console.log("月=" + date.getMonth());
+    console.log("日=" + date.getDate());
 
 //operate add form and income/expense list
 const selectedMonth = date.getMonth() + 1;
@@ -42,7 +43,7 @@ const thisMonth = today.getMonth() + 1;
 const todays = date;
 const year = todays.getFullYear();
 const month = todays.getMonth()+1;
-console.log(month);
+
 
 const data = {
   text, amount, type, date, year, month,
@@ -55,6 +56,7 @@ useEffect(()=>{
 },[date])
 
   
+
 async function fetchDataIncome(){
     
   const res = await employeeServices.income(data);
