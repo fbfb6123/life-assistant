@@ -8,6 +8,8 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import AddIcon from '@material-ui/icons/Add';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -88,20 +90,14 @@ const useStyles = makeStyles((theme) => ({
         </form>
       </div>
 
-
-
-      <div className="row">
       
-        <div className="col-md-6 mb-3">
-          <button
-          className="btn btn-primary btn-block" type="submit"
-          onClick={()=>saveEmployee()}>Save</button>
-        </div>
-      
+      <div className="form-row">
+        <Fab color="primary" aria-label="add"
+          type="submit"
+          onClick={()=>saveEmployee()}>
+         <AddIcon />
+        </Fab>
       </div>
-
-      
-
       
     </div>
 

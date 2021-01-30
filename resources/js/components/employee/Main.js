@@ -31,9 +31,6 @@ const setNextMonth = () => {
   const month = date.getMonth()+1;
   setDate(new Date(year, month));
 }
-    console.log("年=" + date.getFullYear());
-    console.log("月=" + date.getMonth());
-    console.log("日=" + date.getDate());
 
 //operate add form and income/expense list
 const selectedMonth = date.getMonth() + 1;

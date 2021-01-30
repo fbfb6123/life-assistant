@@ -109,7 +109,6 @@ h5 {
 
 .inc-container{
   width: 350px;
-  margin-right: 120px;
   border-radius: 10px;/*角の丸み*/
   display: flex;
   justify-content: space-around;
@@ -137,7 +136,6 @@ h5 {
 .exp-container{
   width: 350px;
   margin-left: 40px;
-  margin-right: 40px;
   display: flex;
   border-radius: 10px;/*角の丸み*/
   justify-content: space-around;
@@ -180,7 +178,12 @@ h5 {
 //Form
 .form-container{
   height:90px;
-  background-color: #82aaeb;
+  margin-top: 50px;
+}
+
+.form-row{
+  margin-top: 9px;
+  margin-left: 5px;
 }
 
 
