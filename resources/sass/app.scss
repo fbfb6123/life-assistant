@@ -52,11 +52,14 @@ h5 {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 20px;;
+  background: radial-gradient(#163052, #c7d8d5);
 }
 
 .head {
   width: 70%;
   margin: 0 auto;
+  color: #eef1f5;
 }
 
 
@@ -86,6 +89,7 @@ h5 {
   height: 170px;
   margin-top: 20px;
   line-height: 40px;
+  color: #eef1f5;
 }
 
 .balance-list {
@@ -177,12 +181,14 @@ h5 {
 
 //Form
 .form-container{
-  height:90px;
-  margin-top: 50px;
+  background-color: #DDDDDD	;
 }
 
+.row {
+  margin-top: 15px;
+}
 .form-row{
-  margin-top: 9px;
+  margin-top: 23px;
   margin-left: 5px;
 }
 
@@ -195,29 +201,30 @@ h5 {
 .form-container{
   display: flex;
   justify-content: center;
+  height: 100px;
 }
 
 //list.js
 .list-container{
   display: flex;
-  width: 70vw;
-  height: 70vh;
+  justify-content: center;
+  height: 60vh;
   margin-left: auto;
   margin-right: auto;
+  background-color: #EEEEEE;
 }
 
 .income-list{
-  height: 240px;
-  width: 100%;
+  width: 35%;
   margin: 2em 2em;
   font-weight: bold;
   position: relative;
 }
 
 .income-list-item{
-  border: solid 4px #eef1f5;/*線*/
+  border: solid 4px #3f51b5;/*線*/
   border-radius: 15px;/*角の丸み*/
-  height: 350px;
+  height: 400px;
   width: 100%;
   margin: 0; 
   padding: 0;
@@ -227,17 +234,16 @@ h5 {
 
 
 .expense-list{
-  height: 240px;
-  width: 100%;
+  width: 35%;
   margin: 2em 2em;
   font-weight: bold;
   position: relative;
 }
 
 .expense-list-item{
-  border: solid 4px #eef1f5;/*線*/
+  border: solid 4px #3f51b5;/*線*/
   border-radius: 15px;/*角の丸み*/
-  height: 350px;
+  height: 400px;
   width: 100%;
   margin: 0; 
   padding: 0;
@@ -250,11 +256,12 @@ h5 {
 .thead-dark{
   width: 100%;
   height: 50px;
-  background-color: rgb(150, 234, 245);
+  background-color: #3f51b5;
   border-radius: 8px 10px 0 0;/*角の丸み*/
   margin: 0; 
   padding: 0;
   position: absolute;
+  color: #eef1f5;
 }
 
 //income.js 20~23
@@ -262,13 +269,14 @@ h5 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px; 
-  border-bottom: dashed 2px #82aaeb;
+  border-bottom: solid 2px #82aaeb;
 }
 
 .income-item-text {
-  margin-left: 10px;
+  margin-left: 20px;
   text-align: center;
 }
+
 
 //スマホサイズ
 @media screen and (max-width: 480px) { 
