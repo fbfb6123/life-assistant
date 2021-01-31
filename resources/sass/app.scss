@@ -53,7 +53,7 @@ h5 {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;;
-  background: radial-gradient(#163052, #c7d8d5);
+  background: radial-gradient(#5588ca, #aad1ca);
 }
 
 .head {
@@ -276,6 +276,16 @@ h5 {
   margin-left: 20px;
   text-align: center;
 }
+
+.income-item-amount {
+  color: #4fa05e;
+}
+
+.expense-item-amount {
+  color: red;
+}
+
+
 
 
 //スマホサイズ
