@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:8000/api/employee"
+const baseUrl = "http://localhost/api/employee"
 //"http://localhost:8000/api/employee" local用
 
 const employee = {};
