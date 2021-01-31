@@ -16,7 +16,7 @@ class IncomeTableSeeder extends Seeder
      */
     public function run()
     {
-        $income = ['収入','お小遣い','アルバイト'];
+        $income = ['仕事','お小遣い','アルバイト'];
         foreach ($income as $income) {
             DB::table('incomes')->insert([
                 'text' => $income,
