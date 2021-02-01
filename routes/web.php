@@ -15,15 +15,6 @@ use App\Http\Controllers\BudgetController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/hello', [HelloController::class, 'index']);
-Route::get('/hello/json/{id}', [HelloController::class, 'json']);
-
-
-Route::get('/budget', [BudgetController::class, 'index']);
+Route::get('/', [BudgetController::class, 'index']);
 Route::get('/budget/json/{id}', [BudgetController::class, 'json']);
 

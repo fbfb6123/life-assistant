@@ -97482,7 +97482,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var baseUrl = "http://localhost/api/employee"; //"http://localhost:8000/api/employee" local用
+var baseUrl = "http://3.114.220.168/api/employee"; //"http://localhost:8000/api/employee" local用
 
 var employee = {}; //...//
 //List一覧表示
@@ -98459,8 +98459,8 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/ikedahikaritarou/Desktop/APP/lifeassistant/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/ikedahikaritarou/Desktop/APP/lifeassistant/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
