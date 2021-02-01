@@ -97483,6 +97483,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 var baseUrl = "http://3.114.220.168/api/employee"; //"http://localhost:8000/api/employee" local用
+//"http://3.114.220.168/api/employee" 本番環境用
 
 var employee = {}; //...//
 //List一覧表示
@@ -97497,7 +97498,11 @@ employee.income = /*#__PURE__*/function () {
           case 0:
             urlList = baseUrl + "/income";
             _context.next = 3;
-            return axios.post(urlList, data).then(function (response) {
+            return axios.post(urlList, data, {
+              headers: {
+                "Content-Type": "application/json"
+              }
+            }).then(function (response) {
               return response.data;
             })["catch"](function (error) {
               return error;
@@ -98128,14 +98133,14 @@ function Main() {
   var todays = date;
   var year = todays.getFullYear();
   var month = todays.getMonth() + 1;
-  var data = {
+  var data = JSON.stringify({
     text: text,
     amount: amount,
     type: type,
     date: date,
     year: year,
     month: month
-  };
+  });
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     fetchDataIncome();
     fetchDataExpense();

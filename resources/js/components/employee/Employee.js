@@ -1,5 +1,6 @@
 const baseUrl = "http://3.114.220.168/api/employee"
 //"http://localhost:8000/api/employee" local用
+//"http://3.114.220.168/api/employee" 本番環境用
 
 const employee = {};
 
@@ -8,7 +9,7 @@ const employee = {};
 //Main.js/await employeeServices.income()でアクセス
 employee.income = async (data) => {
   const urlList = baseUrl+"/income"
-  const res = await axios.post(urlList,data)
+  const res = await axios.post(urlList,data,{headers:{"Content-Type" : "application/json"}})
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;

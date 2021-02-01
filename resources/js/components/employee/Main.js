@@ -42,9 +42,14 @@ const year = todays.getFullYear();
 const month = todays.getMonth()+1;
 
 
-const data = {
-  text, amount, type, date, year, month,
-}
+const data = JSON.stringify({
+  text: text, 
+  amount: amount, 
+  type, 
+  date, 
+  year, 
+  month,
+});
 
 
 useEffect(()=>{
