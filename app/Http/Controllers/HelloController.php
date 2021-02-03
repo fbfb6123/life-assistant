@@ -12,14 +12,9 @@ class HelloController extends Controller
 {
     public function index()
     {
-        $person = Person::all();
+        
 
-        $data = [
-            'msg' =>'これはReactのアプリケーションです',
-            'person' => $person,
-        ];
-
-        return view('hello.index', $data);
+        return view('hello.index');
     }
 
     public function json($id = -1)
