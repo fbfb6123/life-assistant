@@ -10,7 +10,7 @@ const employee = {};
 //Main.js/await employeeServices.income()でアクセス
 employee.income = async (data) => {
   const urlList = baseUrl+"/income"
-  const res = await axios.post(urlList,data,{headers:{"Content-Type" : "application/json"}})
+  const res = await axios.post(urlList,data)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;

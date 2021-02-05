@@ -97499,11 +97499,7 @@ employee.income = /*#__PURE__*/function () {
           case 0:
             urlList = baseUrl + "/income";
             _context.next = 3;
-            return axios.post(urlList, data, {
-              headers: {
-                "Content-Type": "application/json"
-              }
-            }).then(function (response) {
+            return axios.post(urlList, data).then(function (response) {
               return response.data;
             })["catch"](function (error) {
               return error;
@@ -98134,14 +98130,14 @@ function Main() {
   var todays = date;
   var year = todays.getFullYear();
   var month = todays.getMonth() + 1;
-  var data = JSON.stringify({
+  var data = {
     text: text,
     amount: amount,
     type: type,
     date: date,
     year: year,
     month: month
-  });
+  };
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     fetchDataIncome();
     fetchDataExpense();
