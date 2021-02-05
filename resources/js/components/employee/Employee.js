@@ -14,7 +14,7 @@ console.log(url);
 var protocol = location.protocol;
 console.log(protocol);
 
-const baseUrl = url;
+const baseUrl = url + 'api/employee';
 console.log(baseUrl);
 
 const employee = {};
