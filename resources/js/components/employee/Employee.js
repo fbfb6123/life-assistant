@@ -1,7 +1,21 @@
-const baseUrl = "http://3.114.220.168/api/employee"
+// const baseUrl = "http://3.114.220.168/api/employee"
 //"http://127.0.0.1:8000/api/employee" local用
 //"http://localhost/api/employee" local/Docker用
 //"http://3.114.220.168/api/employee" 本番環境用
+
+
+
+console.log(location);
+// urlを取得
+var url = location.href;
+console.log(url);
+
+// プロトコルを取得
+var protocol = location.protocol;
+console.log(protocol);
+
+const baseUrl = url;
+console.log(baseUrl);
 
 const employee = {};
 
