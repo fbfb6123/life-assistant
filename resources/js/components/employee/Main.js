@@ -42,6 +42,19 @@ const year = todays.getFullYear();
 const month = todays.getMonth()+1;
 
 
+
+console.log(location);
+    // urlを取得
+    var url = location.href;
+    console.log(url);
+
+    // プロトコルを取得
+    var protocol = location.protocol;
+    console.log(protocol);
+
+
+
+
 const data = {
   text, 
   amount, 

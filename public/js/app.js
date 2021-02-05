@@ -98130,6 +98130,13 @@ function Main() {
   var todays = date;
   var year = todays.getFullYear();
   var month = todays.getMonth() + 1;
+  console.log(location); // urlを取得
+
+  var url = location.href;
+  console.log(url); // プロトコルを取得
+
+  var protocol = location.protocol;
+  console.log(protocol);
   var data = {
     text: text,
     amount: amount,
