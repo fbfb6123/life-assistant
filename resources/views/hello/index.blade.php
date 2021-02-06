@@ -12,7 +12,12 @@
 </head>
 <body style="padding:10px;">
 
-      <div>aaa</div>
+      <div>income</div>
+      @foreach($data as $item)
+      <tr>
+            <th>{{$item->text}}</th>
+      </tr>
+      @endforeach      
 
       <script src="{{asset('/js/app.js')}}"></script>
 </body>

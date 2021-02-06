@@ -6,15 +6,21 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use App\Models\Person;
+use App\Models\Income;
 
 
 class HelloController extends Controller
 {
     public function index()
     {
-        
+        $income = Income::get();
 
-        return view('hello.index');
+        $data =[
+            'data' => $income,
+        ];
+
+
+        return view('hello.index',$data);
     }
 
     public function json($id = -1)
