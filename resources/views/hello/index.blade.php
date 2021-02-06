@@ -12,7 +12,7 @@
 </head>
 <body style="padding:10px;">
 
-      <div>test</div>
+      <div>aaa</div>
 
       <script src="{{asset('/js/app.js')}}"></script>
 </body>
