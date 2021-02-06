@@ -97470,9 +97470,168 @@ var Balance = function Balance(_ref) {
   !*** ./resources/js/components/employee/Employee.js ***!
   \******************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/ikedahikaritarou/Desktop/APP/lifeassistant/resources/js/components/employee/Employee.js: Identifier 'baseUrl' has already been declared (17:6)\n\n\u001b[0m \u001b[90m 15 | \u001b[39mconsole\u001b[33m.\u001b[39mlog(protocol)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 | \u001b[39m\u001b[36mconst\u001b[39m baseUrl \u001b[33m=\u001b[39m url \u001b[33m+\u001b[39m \u001b[32m'api/employee'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 18 | \u001b[39mconsole\u001b[33m.\u001b[39mlog(baseUrl)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 19 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m\u001b[36mconst\u001b[39m employee \u001b[33m=\u001b[39m {}\u001b[33m;\u001b[39m\u001b[0m\n    at Object._raise (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:748:17)\n    at Object.raiseWithData (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.raise (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:735:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:4915:12)\n    at ScopeHandler.declareName (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:4881:12)\n    at Object.checkLVal (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:9562:24)\n    at Object.parseVarId (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:12338:10)\n    at Object.parseVar (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:12313:12)\n    at Object.parseVarStatement (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:12125:10)\n    at Object.parseStatementContent (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:11717:21)\n    at Object.parseStatement (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:11650:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:12232:25)\n    at Object.parseBlockBody (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:12218:10)\n    at Object.parseTopLevel (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:11581:10)\n    at Object.parse (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:13392:10)\n    at parse (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/parser/lib/index.js:13445:38)\n    at parser (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/core/lib/transformation/normalize-file.js:99:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/gensync/index.js:261:32)\n    at /Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/ikedahikaritarou/Desktop/APP/lifeassistant/node_modules/gensync/index.js:223:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+// const baseUrl = "http://localhost/api/employee"
+//"http://127.0.0.1:8000/api/employee" local用
+//"http://localhost/api/employee" local/Docker用
+//"http://3.114.220.168/api/employee" 本番環境用
+console.log(location); // urlを取得
+
+var url = location.href;
+console.log(url); // プロトコルを取得
+
+var protocol = location.protocol;
+console.log(protocol);
+var baseUrl = url + 'api/employee';
+console.log(baseUrl);
+var employee = {}; //...//
+//List一覧表示
+//Main.js/await employeeServices.income()でアクセス
+
+employee.income = /*#__PURE__*/function () {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(data) {
+    var urlList, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            urlList = baseUrl + "/income";
+            _context.next = 3;
+            return axios.post(urlList, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 3:
+            res = _context.sent;
+            return _context.abrupt("return", res);
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+
+  return function (_x) {
+    return _ref.apply(this, arguments);
+  };
+}(); //Main.js/await employeeServices.expense()でアクセス
+
+
+employee.expense = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
+    var urlList, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            urlList = baseUrl + "/expense";
+            _context2.next = 3;
+            return axios.post(urlList, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 3:
+            res = _context2.sent;
+            return _context2.abrupt("return", res);
+
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2);
+  }));
+
+  return function (_x2) {
+    return _ref2.apply(this, arguments);
+  };
+}(); //Formのcreateaction定義
+//await employeeServices.incomesave(data)でアクセス
+
+
+employee.incomesave = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(data) {
+    var urlSave, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            urlSave = baseUrl + "/incomcreate";
+            _context3.next = 3;
+            return axios.post(urlSave, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 3:
+            res = _context3.sent;
+            return _context3.abrupt("return", res);
+
+          case 5:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3);
+  }));
+
+  return function (_x3) {
+    return _ref3.apply(this, arguments);
+  };
+}(); //await employeeServices.expensesave(data)でアクセス
+
+
+employee.expensesave = /*#__PURE__*/function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(data) {
+    var urlSave, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            urlSave = baseUrl + "/expensecreate";
+            _context4.next = 3;
+            return axios.post(urlSave, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 3:
+            res = _context4.sent;
+            return _context4.abrupt("return", res);
+
+          case 5:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+
+  return function (_x4) {
+    return _ref4.apply(this, arguments);
+  };
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (employee);
 
 /***/ }),
 
