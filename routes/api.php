@@ -29,11 +29,11 @@ Route::post('/budget/postTodos', [BudgetController::class, 'postTodos']);
 
 
 
-Route::post('/employee/income', [EmployeeController::class, 'incomelist']);
+Route::match(['get', 'post'],'/employee/income', [EmployeeController::class, 'incomelist']);
 
-Route::post('/employee/expense', [EmployeeController::class, 'expenselist']);
+Route::match(['get', 'post'],'/employee/expense', [EmployeeController::class, 'expenselist']);
 
 
-Route::post('/employee/incomcreate', [EmployeeController::class, 'incomcreate']);
+Route::match(['get', 'post'],'/employee/incomcreate', [EmployeeController::class, 'incomcreate']);
 
-Route::post('/employee/expensecreate', [EmployeeController::class, 'expensecreate']);
+Route::match(['get', 'post'],'/employee/expensecreate', [EmployeeController::class, 'expensecreate']);
