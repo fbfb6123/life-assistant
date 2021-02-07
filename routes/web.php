@@ -18,6 +18,5 @@ use App\Http\Controllers\BudgetController;
 
 Route::get('/hello', [HelloController::class, 'index']);
 
-Route::get('/', [BudgetController::class, 'index']);
-Route::get('/budget/json/{id}', [BudgetController::class, 'json']);
+Route::match(['get', 'post'],'/', [BudgetController::class, 'index']);
 
