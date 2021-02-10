@@ -97916,7 +97916,10 @@ var Income = function Income(_ref) {
         className: "income-item-text"
       }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "income-item-amount"
-      }, "+", Number(income.amount).toLocaleString(), "\u5186"));
+      }, "+", Number(income.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "delete-btn",
+        onClick: deleteHandler
+      }, "\xD7"));
     }))));
   };
 
