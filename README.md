@@ -16,11 +16,11 @@ http://3.114.220.168/
 git clone https://github.com/fbfb6123/life-assistant.git
 cd life-assistant
 composer install
+
 php artisan preset react
 php artisan key:generate
 
 npm install
-
 
 # Build Static Pages(/public)
 npm run dev</pre><br>
@@ -33,4 +33,29 @@ npm run dev</pre><br>
 
 - MySQL 8
 - Docker 20.10.2
+
+
 ## Installation
+### composer.json
+<pre>"php": "^7.3|^8.0",
+     "fideloper/proxy": "^4.4",
+     "fruitcake/laravel-cors": "^2.0",
+     "guzzlehttp/guzzle": "^7.0.1",
+     "laravel/framework": "^8.12",</pre><br>
+
+
+### package.json
+<pre>"@babel/preset-react": "^7.12.10",
+        "axios": "^0.19",
+        "bootstrap": "^4.0.0",
+        "cross-env": "^7.0",
+        "jquery": "^3.2",
+        "laravel-mix": "^5.0.1",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.12",
+        "react": "^16.2.0",
+        "react-dom": "^16.2.0",
+        "redux-devtools": "^3.7.0",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0"</pre><br>
