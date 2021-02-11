@@ -3,7 +3,7 @@
 ## Overview
 This is SPA application to help your life
 
-## Link destination
+## Link 
 http://3.114.220.168/
 
 ## Demo
@@ -12,7 +12,19 @@ http://3.114.220.168/
 
 
 ## Development 
- 
+ <pre># Create Sample by life-assistant
+git clone https://github.com/fbfb6123/life-assistant.git
+cd life-assistant
+composer install
+php artisan preset react
+php artisan key:generate
+
+npm install
+
+
+# Build Static Pages(/public)
+npm run dev</pre><br>
+
 ## Requirements
 - PHP 7.3
 - Laravel 8
