@@ -59,3 +59,23 @@ npm run dev</pre><br>
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0"</pre><br>
+
+## movere DB
+
+## incomesTable
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|amount|integer|null: false
+|year|integer|null: false|
+|month|integer|null: false|
+
+
+
+## expensesTable
+|Column|Type|Options|
+|------|----|-------|
+|text|string|null: false|
+|amount|integer|null: false
+|year|integer|null: false|
+|month|integer|null: false|
