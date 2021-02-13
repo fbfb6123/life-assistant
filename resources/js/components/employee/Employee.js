@@ -3,23 +3,15 @@
 //"http://localhost/api/employee" local/Docker用
 //"http://3.114.220.168/api/employee" 本番環境用
 
-
-
-console.log(location);
 // urlを取得
 var url = location.href;
 console.log(url);
-
-// プロトコルを取得
-var protocol = location.protocol;
-console.log(protocol);
 
 const baseUrl = url + 'api/employee';
 console.log(baseUrl);
 
 const employee = {};
 
-//...//
 //List一覧表示
 //Main.js/await employeeServices.income()でアクセス
 employee.income = async (data) => {
