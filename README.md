@@ -79,3 +79,7 @@ npm run dev</pre><br>
 |amount|integer|null: false
 |year|integer|null: false|
 |month|integer|null: false|
+
+## Scheduled to be added
+- Delete function
+- Responsive design
