@@ -112,6 +112,10 @@ h5 {
   position: relative;
 }
 
+.inc-container-title {
+  line-height: 50px;
+}
+
 .left {
   width: 250px;
   display: flex;
@@ -149,6 +153,7 @@ h5 {
 .expense-total {
   height: 30px;
   font-size: 20px;
+  padding-right: 15%;
 }
 
 .totalPercentage {

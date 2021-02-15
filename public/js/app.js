@@ -97486,17 +97486,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //"http://127.0.0.1:8000/api/employee" local用
 //"http://localhost/api/employee" local/Docker用
 //"http://3.114.220.168/api/employee" 本番環境用
-console.log(location); // urlを取得
-
+// urlを取得
 var url = location.href;
-console.log(url); // プロトコルを取得
-
-var protocol = location.protocol;
-console.log(protocol);
+console.log(url);
 var baseUrl = url + 'api/employee';
 console.log(baseUrl);
-var employee = {}; //...//
-//List一覧表示
+var employee = {}; //List一覧表示
 //Main.js/await employeeServices.income()でアクセス
 
 employee.income = /*#__PURE__*/function () {
@@ -97957,13 +97952,17 @@ var IncomeExpense = function IncomeExpense(_ref) {
     className: "inc-exp-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "inc-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "\u53CE\u5165"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inc-container-title"
+  }, "\u53CE\u5165"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "income-total"
   }, "+ ", Number(incomeTotal).toLocaleString(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, " \u5186")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "exp-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "\u652F\u51FA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "inc-container-title"
+  }, "\u652F\u51FA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "expense-total"

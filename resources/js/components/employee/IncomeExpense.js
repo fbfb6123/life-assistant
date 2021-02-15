@@ -14,13 +14,13 @@ import employeeServices from "./Employee";
   return (
   <div className="inc-exp-container">
       <div className="inc-container">
-        <h5>収入</h5>
+        <div className="inc-container-title">収入</div>
         <div className="left">
           <p className="income-total">+ {Number(incomeTotal).toLocaleString()}<span> 円</span></p>
       </div>
     </div>
     <div className="exp-container">
-      <h5>支出</h5>
+      <div className="inc-container-title">支出</div>
       <div className="right">
           <p className="expense-total">- {Number(expenseTotal).toLocaleString()}<span> 円</span></p>
           <div className="totalPercentage">{percentage()}</div>
