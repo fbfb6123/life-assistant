@@ -14,7 +14,7 @@ export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth}) =>
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
                 <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={deleteHandler}>×</button>
+                <button className="delete-btn" onClick={()=>deleteEmployee()}>×</button>
               </div>
             )
           })
