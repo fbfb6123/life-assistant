@@ -118,6 +118,12 @@ const saveEmployee = async () => {
 }
 }
 
+onst deleteEmployee = async () => {
+  const res = await employeeServices.incomedelete(data);
+  console.log('income/delete!!');
+  console.log(res.data);
+}
+
 const incomeTotal = totalIncomeCalc(incomelist);
 const expenseTotal = totalExpenseCalc(expenselist);
 
@@ -142,6 +148,7 @@ return(
         
     </div>
       <Form 
+      deleteEmployee={deleteEmployee}
       saveEmployee={saveEmployee}
       text={text}
       setText={setText}
