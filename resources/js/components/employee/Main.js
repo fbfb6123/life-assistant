@@ -118,7 +118,7 @@ const saveEmployee = async () => {
 }
 }
 
-onst deleteEmployee = async () => {
+const deleteEmployee = async () => {
   const res = await employeeServices.incomedelete(data);
   console.log('income/delete!!');
   console.log(res.data);

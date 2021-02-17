@@ -126,4 +126,16 @@ class EmployeeController extends Controller
           }
           return $response;
       }
+
+    public function expensedelete($id){
+        
+      try {
+      $data = Expense::where('id', "$id")->delete();
+
+      } catch (\Exception $e) {
+        $response['message'] = $e->getMessage();
+        $response['success'] = false;
+      }
+      return $response;
+    }
 }
