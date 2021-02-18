@@ -97627,16 +97627,16 @@ employee.expensesave = /*#__PURE__*/function () {
 }();
 
 employee.expensedelete = /*#__PURE__*/function () {
-  var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(data) {
-    var urlSave, res;
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(id) {
+    var urlDelete, res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
       while (1) {
         switch (_context5.prev = _context5.next) {
           case 0:
             console.log('expense/test!!');
-            urlSave = baseUrl + "/expensdelete";
+            urlDelete = baseUrl + "/expensedelete/" + id;
             _context5.next = 4;
-            return axios["delete"](urlSave, data).then(function (response) {
+            return axios["delete"](urlDelete).then(function (response) {
               return response.data;
             })["catch"](function (error) {
               return error;
@@ -97699,7 +97699,7 @@ var Expense = function Expense(_ref) {
     }, "-", Number(expense.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "delete-btn",
       onClick: function onClick() {
-        return deleteEmployee();
+        return deleteEmployee(expense.id);
       }
     }, "\xD7"));
   }))));
@@ -98265,7 +98265,7 @@ function Main() {
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var res, hoge, _res, _hoge;
+      var res, _hoge, _res, _hoge2;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
@@ -98297,10 +98297,10 @@ function Main() {
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
             case 12:
-              hoge = _context.sent;
-              console.log(hoge.data);
+              _hoge = _context.sent;
+              console.log(_hoge.data);
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setIncomelist(hoge.data);
+              setIncomelist(_hoge.data);
               reset();
               console.log("reset!!");
               _context.next = 34;
@@ -98323,10 +98323,10 @@ function Main() {
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
             case 28:
-              _hoge = _context.sent;
-              console.log(_hoge.data);
+              _hoge2 = _context.sent;
+              console.log(_hoge2.data);
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setExpenselist(_hoge.data);
+              setExpenselist(_hoge2.data);
               reset();
               console.log("reset!!");
 
@@ -98358,8 +98358,9 @@ function Main() {
               res = _context2.sent;
               console.log('expense/delete!!');
               console.log(res.data);
+              setExpenselist(hoge.data);
 
-            case 6:
+            case 7:
             case "end":
               return _context2.stop();
           }

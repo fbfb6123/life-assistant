@@ -50,10 +50,10 @@ employee.expensesave = async (data) => {
   return res;
 }
 
-employee.expensedelete = async (data) => {
+employee.expensedelete = async (id) => {
   console.log('expense/test!!');
-  const urlSave = baseUrl+"/expensdelete"
-  const res = await axios.delete(urlSave,data)
+  const urlDelete = baseUrl+"/expensedelete/"+id
+  const res = await axios.delete(urlDelete)
   .then(response=>{ return response.data; })
   .catch(error=>{ return error; })
   return res;

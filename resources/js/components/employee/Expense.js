@@ -14,7 +14,7 @@ export const Expense = ({expenselist, setExpenselist, selectedMonth, thisMonth, 
               <div className="income-item" key={expense.id}>
                 <div className="income-item-text">{expense.text}</div>
                 <div className="expense-item-amount">-{Number(expense.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={()=>deleteEmployee()}>×</button>
+                <button className="delete-btn" onClick={()=>deleteEmployee(expense.id)}>×</button>
               </div>
             )
           })
