@@ -128,7 +128,8 @@ class EmployeeController extends Controller
       }
 
     public function expensedelete($id){
-        
+      Log::info($id);
+      
       try {
       $data = Expense::where('id', "$id")->delete();
 
