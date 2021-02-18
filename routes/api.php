@@ -26,8 +26,10 @@ Route::match(['get', 'post'],'/employee/income', [EmployeeController::class, 'in
 Route::match(['get', 'post'],'/employee/expense', [EmployeeController::class, 'expenselist']);
 
 
-Route::match(['get', 'post'],'/employee/incomcreate', [EmployeeController::class, 'incomcreate']);
+Route::match(['get', 'post'],'/employee/incomecreate', [EmployeeController::class, 'incomcreate']);
 
 Route::match(['get', 'post'],'/employee/expensecreate', [EmployeeController::class, 'expensecreate']);
+
+Route::delete('/employee/incomedelete/{id}', [EmployeeController::class, 'incomedelete']);
 
 Route::delete('/employee/expensedelete/{id}', [EmployeeController::class, 'expensedelete']);

@@ -61,7 +61,7 @@ class EmployeeController extends Controller
   
       }
 
-      public function incomcreate(Request $request){
+      public function incomecreate(Request $request){
           
         // Log::debug($request);
         
@@ -126,6 +126,21 @@ class EmployeeController extends Controller
           }
           return $response;
       }
+
+    public function incomedelete($id){
+      Log::info($id);
+      
+      try {
+      $data = Income::where('id', "$id")->delete();
+      $response['data'] = $request;
+      $response['message'] = '成功';
+      $response['success'] = true;
+      } catch (\Exception $e) {
+        $response['message'] = $e->getMessage();
+        $response['success'] = false;
+      }
+      return $response;
+    }
 
     public function expensedelete($id){
       Log::info($id);
