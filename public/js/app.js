@@ -97626,6 +97626,39 @@ employee.expensesave = /*#__PURE__*/function () {
   };
 }();
 
+employee.expensedelete = /*#__PURE__*/function () {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(data) {
+    var urlSave, res;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            console.log('expense/test!!');
+            urlSave = baseUrl + "/expensdelete";
+            _context5.next = 4;
+            return axios["delete"](urlSave, data).then(function (response) {
+              return response.data;
+            })["catch"](function (error) {
+              return error;
+            });
+
+          case 4:
+            res = _context5.sent;
+            return _context5.abrupt("return", res);
+
+          case 6:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5);
+  }));
+
+  return function (_x5) {
+    return _ref5.apply(this, arguments);
+  };
+}();
+
 /* harmony default export */ __webpack_exports__["default"] = (employee);
 
 /***/ }),
@@ -97649,7 +97682,8 @@ var Expense = function Expense(_ref) {
   var expenselist = _ref.expenselist,
       setExpenselist = _ref.setExpenselist,
       selectedMonth = _ref.selectedMonth,
-      thisMonth = _ref.thisMonth;
+      thisMonth = _ref.thisMonth,
+      deleteEmployee = _ref.deleteEmployee;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "table"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -97662,7 +97696,12 @@ var Expense = function Expense(_ref) {
       className: "income-item-text"
     }, expense.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "expense-item-amount"
-    }, "-", Number(expense.amount).toLocaleString(), "\u5186"));
+    }, "-", Number(expense.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      className: "delete-btn",
+      onClick: function onClick() {
+        return deleteEmployee();
+      }
+    }, "\xD7"));
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Expense);
@@ -97879,7 +97918,8 @@ var Income = function Income(_ref) {
   var incomelist = _ref.incomelist,
       setIncomelist = _ref.setIncomelist,
       selectedMonth = _ref.selectedMonth,
-      thisMonth = _ref.thisMonth;
+      thisMonth = _ref.thisMonth,
+      deleteEmployee = _ref.deleteEmployee;
 
   var showThisMonth = function showThisMonth() {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -97894,7 +97934,12 @@ var Income = function Income(_ref) {
         className: "income-item-text"
       }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "income-item-amount"
-      }, "+", Number(income.amount).toLocaleString(), "\u5186"));
+      }, "+", Number(income.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "delete-btn",
+        onClick: function onClick() {
+          return deleteEmployee();
+        }
+      }, "\xD7"));
     }))));
   };
 
@@ -98002,7 +98047,8 @@ var List = function List(_ref) {
       setExpenselist = _ref.setExpenselist,
       fetchDataEmployee = _ref.fetchDataEmployee,
       selectedMonth = _ref.selectedMonth,
-      thisMonth = _ref.thisMonth;
+      thisMonth = _ref.thisMonth,
+      deleteEmployee = _ref.deleteEmployee;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "list-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -98012,6 +98058,7 @@ var List = function List(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "thead-dark"
   }, "\u53CE\u5165\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Income__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    deleteEmployee: deleteEmployee,
     incomelist: incomelist,
     setIncomelist: setIncomelist,
     selectedMonth: selectedMonth,
@@ -98023,6 +98070,7 @@ var List = function List(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "thead-dark"
   }, "\u652F\u51FA\u4E00\u89A7"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Expense__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    deleteEmployee: deleteEmployee,
     expenselist: expenselist,
     setExpenselist: setExpenselist,
     selectedMonth: selectedMonth,
@@ -98156,26 +98204,26 @@ function Main() {
   }
 
   function _fetchDataIncome() {
-    _fetchDataIncome = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+    _fetchDataIncome = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
       var res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
-              _context2.next = 2;
+              _context3.next = 2;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
             case 2:
-              res = _context2.sent;
+              res = _context3.sent;
               console.log("income\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(res.data);
 
             case 5:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }));
     return _fetchDataIncome.apply(this, arguments);
   }
@@ -98185,26 +98233,26 @@ function Main() {
   }
 
   function _fetchDataExpense() {
-    _fetchDataExpense = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+    _fetchDataExpense = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
       var res;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
         while (1) {
-          switch (_context3.prev = _context3.next) {
+          switch (_context4.prev = _context4.next) {
             case 0:
-              _context3.next = 2;
+              _context4.next = 2;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
             case 2:
-              res = _context3.sent;
+              res = _context4.sent;
               console.log("expense\u30EC\u30F3\u30C0\u30FC");
               setExpenselist(res.data);
 
             case 5:
             case "end":
-              return _context3.stop();
+              return _context4.stop();
           }
         }
-      }, _callee3);
+      }, _callee4);
     }));
     return _fetchDataExpense.apply(this, arguments);
   }
@@ -98295,6 +98343,35 @@ function Main() {
     };
   }();
 
+  var deleteEmployee = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(data) {
+      var res;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              console.log('expense/delete!!');
+              _context2.next = 3;
+              return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensedelete(data);
+
+            case 3:
+              res = _context2.sent;
+              console.log('expense/delete!!');
+              console.log(res.data);
+
+            case 6:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+
+    return function deleteEmployee(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+
   var incomeTotal = Object(_TotalIncome__WEBPACK_IMPORTED_MODULE_8__["default"])(incomelist);
   var expenseTotal = Object(_TotalExpense__WEBPACK_IMPORTED_MODULE_9__["default"])(expenselist);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
@@ -98326,6 +98403,7 @@ function Main() {
     selectedMonth: selectedMonth,
     thisMonth: thisMonth
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_List__WEBPACK_IMPORTED_MODULE_4__["default"], (_React$createElement = {
+    deleteEmployee: deleteEmployee,
     saveEmployee: saveEmployee,
     text: text,
     setText: setText,
