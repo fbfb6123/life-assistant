@@ -98265,7 +98265,7 @@ function Main() {
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var res, _hoge, _res, _hoge2;
+      var res, hoge, _res, _hoge;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
@@ -98297,10 +98297,10 @@ function Main() {
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
             case 12:
-              _hoge = _context.sent;
-              console.log(_hoge.data);
+              hoge = _context.sent;
+              console.log(hoge.data);
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setIncomelist(_hoge.data);
+              setIncomelist(hoge.data);
               reset();
               console.log("reset!!");
               _context.next = 34;
@@ -98323,10 +98323,10 @@ function Main() {
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
             case 28:
-              _hoge2 = _context.sent;
-              console.log(_hoge2.data);
+              _hoge = _context.sent;
+              console.log(_hoge.data);
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setExpenselist(_hoge2.data);
+              setExpenselist(_hoge.data);
               reset();
               console.log("reset!!");
 
@@ -98350,17 +98350,15 @@ function Main() {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              console.log('expense/delete!!');
-              _context2.next = 3;
+              _context2.next = 2;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensedelete(data);
 
-            case 3:
+            case 2:
               res = _context2.sent;
               console.log('expense/delete!!');
-              console.log(res.data);
-              setExpenselist(hoge.data);
+              fetchDataExpense();
 
-            case 7:
+            case 5:
             case "end":
               return _context2.stop();
           }

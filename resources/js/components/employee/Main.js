@@ -119,11 +119,9 @@ const saveEmployee = async () => {
 }
 
 const deleteEmployee = async (data) => {
-  console.log('expense/delete!!');
   const res = await employeeServices.expensedelete(data);
   console.log('expense/delete!!');
-  console.log(res.data);
-  setExpenselist(hoge.data)
+  fetchDataExpense();
 }
 
 const incomeTotal = totalIncomeCalc(incomelist);
