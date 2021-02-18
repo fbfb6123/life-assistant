@@ -118,9 +118,10 @@ const saveEmployee = async () => {
 }
 }
 
-const deleteEmployee = async () => {
-  const res = await employeeServices.incomedelete(data);
-  console.log('income/delete!!');
+const deleteEmployee = async (data) => {
+  console.log('expense/delete!!');
+  const res = await employeeServices.expensedelete(data);
+  console.log('expense/delete!!');
   console.log(res.data);
 }
 
@@ -148,7 +149,6 @@ return(
         
     </div>
       <Form 
-      deleteEmployee={deleteEmployee}
       saveEmployee={saveEmployee}
       text={text}
       setText={setText}
@@ -164,6 +164,7 @@ return(
       thisMonth={thisMonth}
       />
       <List 
+      deleteEmployee={deleteEmployee}
       saveEmployee={saveEmployee}
       text={text}
       setText={setText}
