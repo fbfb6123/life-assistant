@@ -52,12 +52,6 @@ const useStyles = makeStyles((theme) => ({
       </FormControl>
       </div>  
 
-
-      
-      
-
-      
-
       <div className="row">
         <form className={classes.root} noValidate autoComplete="off">
           <label htmlFor="firstName"></label>

@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth}) => {
+export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth, deleteEmployee}) => {
 
   const showThisMonth = () => {
   return (
