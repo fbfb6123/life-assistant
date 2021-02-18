@@ -29,3 +29,5 @@ Route::match(['get', 'post'],'/employee/expense', [EmployeeController::class, 'e
 Route::match(['get', 'post'],'/employee/incomcreate', [EmployeeController::class, 'incomcreate']);
 
 Route::match(['get', 'post'],'/employee/expensecreate', [EmployeeController::class, 'expensecreate']);
+
+Route::delete('/employee/expensedelete/{id}', [EmployeeController::class, 'expensedelete']);
