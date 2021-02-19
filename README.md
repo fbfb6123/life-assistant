@@ -81,5 +81,4 @@ npm run dev</pre><br>
 |month|integer|null: false|
 
 ## Scheduled to be added
-- Delete function
-- Responsive design
+- Responsive

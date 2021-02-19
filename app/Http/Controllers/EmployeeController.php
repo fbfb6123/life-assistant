@@ -19,8 +19,7 @@ class EmployeeController extends Controller
   
           $year = $request->year;
           $month = $request->month;
-          // Log::info($year);
-          // Log::info($month);
+
 
           $data = Income::where('year', '=', "$year")
                          ->where('month', '=',"$month")
@@ -42,8 +41,6 @@ class EmployeeController extends Controller
         try {
           $year = $request->year;
           $month = $request->month;
-          // Log::info($year);
-          // Log::info($month);
 
           $data = Expense::where('year', '=', "$year")
                          ->where('month', '=',"$month")
@@ -62,17 +59,8 @@ class EmployeeController extends Controller
       }
 
       public function incomecreate(Request $request){
-          
-        // Log::debug($request);
-        
+                  
         try {
-  
-            // $insert['text'] = $request['text'];
-            // $insert['amount'] = $request['amount'];
-            // Log::info($insert);
-
-            // DB::table('incomes')->insert($insert);
-
             $year = $request->year;
 
             $month = $request->month;
