@@ -1,7 +1,7 @@
 import React from 'react';
 import employeeServices from "./Employee";
 
-export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth, deleteEmployee}) => {
+export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth, incomeDeleteEmployee}) => {
 
   const showThisMonth = () => {
   return (
@@ -14,7 +14,7 @@ export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth, del
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
                 <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={()=>deleteEmployee()}>×</button>
+                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button>
               </div>
             )
           })
@@ -36,7 +36,7 @@ const showPastMonth = () => {
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
                 <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={()=>deleteEmployee()}>×</button>
+                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button>
               </div>
             )
           })

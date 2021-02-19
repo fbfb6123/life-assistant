@@ -50,6 +50,16 @@ employee.expensesave = async (data) => {
   return res;
 }
 
+
+employee.incomedelete = async (id) => {
+  console.log('expense/test!!');
+  const urlDelete = baseUrl+"/incomedelete/"+id
+  const res = await axios.delete(urlDelete)
+  .then(response=>{ return response.data; })
+  .catch(error=>{ return error; })
+  return res;
+}
+
 employee.expensedelete = async (id) => {
   console.log('expense/test!!');
   const urlDelete = baseUrl+"/expensedelete/"+id
