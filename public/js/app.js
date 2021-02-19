@@ -97708,8 +97708,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Expense", function() { return Expense; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Employee__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Employee */ "./resources/js/components/employee/Employee.js");
-
 
 var Expense = function Expense(_ref) {
   var expenselist = _ref.expenselist,
@@ -98075,15 +98073,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var List = function List(_ref) {
-  var text = _ref.text,
-      setText = _ref.setText,
-      amount = _ref.amount,
-      setAmount = _ref.setAmount,
-      incomelist = _ref.incomelist,
+  var incomelist = _ref.incomelist,
       setIncomelist = _ref.setIncomelist,
       expenselist = _ref.expenselist,
       setExpenselist = _ref.setExpenselist,
-      fetchDataEmployee = _ref.fetchDataEmployee,
       selectedMonth = _ref.selectedMonth,
       thisMonth = _ref.thisMonth,
       incomeDeleteEmployee = _ref.incomeDeleteEmployee,
