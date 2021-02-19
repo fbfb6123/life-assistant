@@ -2,7 +2,7 @@ import React from 'react';
 import Income from './Income';
 import Expense from './Expense';
 
-export const List = ({ text, setText, amount, setAmount, incomelist, setIncomelist, expenselist, setExpenselist,fetchDataEmployee, selectedMonth, thisMonth, deleteEmployee}) => {
+export const List = ({ text, setText, amount, setAmount, incomelist, setIncomelist, expenselist, setExpenselist,fetchDataEmployee, selectedMonth, thisMonth, incomeDeleteEmployee, deleteEmployee}) => {
 
   return (
     <div className="list-container">
@@ -13,7 +13,7 @@ export const List = ({ text, setText, amount, setAmount, incomelist, setIncomeli
             </div>
          
               <Income
-              deleteEmployee={deleteEmployee}
+              incomeDeleteEmployee={incomeDeleteEmployee}
               incomelist={incomelist}
               setIncomelist={setIncomelist}
               selectedMonth={selectedMonth}

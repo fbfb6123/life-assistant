@@ -124,6 +124,12 @@ const deleteEmployee = async (data) => {
   fetchDataExpense();
 }
 
+const incomeDeleteEmployee = async (data) => {
+  const res = await employeeServices.incomedelete(data);
+  console.log('income/delete!!');
+  fetchDataIncome();
+}
+
 const incomeTotal = totalIncomeCalc(incomelist);
 const expenseTotal = totalExpenseCalc(expenselist);
 
@@ -163,6 +169,7 @@ return(
       thisMonth={thisMonth}
       />
       <List 
+      incomeDeleteEmployee={incomeDeleteEmployee}
       deleteEmployee={deleteEmployee}
       saveEmployee={saveEmployee}
       text={text}
