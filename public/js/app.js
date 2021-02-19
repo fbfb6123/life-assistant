@@ -97568,7 +97568,7 @@ employee.incomesave = /*#__PURE__*/function () {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            urlSave = baseUrl + "/incomcreate";
+            urlSave = baseUrl + "/incomecreate";
             _context3.next = 3;
             return axios.post(urlSave, data).then(function (response) {
               return response.data;
@@ -97956,7 +97956,12 @@ var Income = function Income(_ref) {
         className: "income-item-text"
       }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "income-item-amount"
-      }, "+", Number(income.amount).toLocaleString(), "\u5186"));
+      }, "+", Number(income.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "delete-btn",
+        onClick: function onClick() {
+          return deleteEmployee();
+        }
+      }, "\xD7"));
     }))));
   };
 

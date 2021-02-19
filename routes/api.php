@@ -26,7 +26,7 @@ Route::match(['get', 'post'],'/employee/income', [EmployeeController::class, 'in
 Route::match(['get', 'post'],'/employee/expense', [EmployeeController::class, 'expenselist']);
 
 
-Route::match(['get', 'post'],'/employee/incomecreate', [EmployeeController::class, 'incomcreate']);
+Route::match(['get', 'post'],'/employee/incomecreate', [EmployeeController::class, 'incomecreate']);
 
 Route::match(['get', 'post'],'/employee/expensecreate', [EmployeeController::class, 'expensecreate']);
 
