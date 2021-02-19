@@ -42,12 +42,6 @@ const year = todays.getFullYear();
 const month = todays.getMonth()+1;
 
 
-
-
-
-
-
-
 const data = {
   text, 
   amount, 
@@ -95,10 +89,9 @@ const saveEmployee = async () => {
   console.log('income/create!!');
   console.log(res.data);
 
-  const hoge = await employeeServices.income(data);
-  console.log(hoge.data);
+  const incomedata = await employeeServices.income(data);
   console.log(`income/list/再レンダー`);
-  setIncomelist(hoge.data)
+  setIncomelist(incomedata.data)
   reset();
   console.log(`reset!!`);
 
@@ -108,10 +101,9 @@ const saveEmployee = async () => {
   console.log('expense/create!!');
   console.log(res.data);
   
-  const hoge = await employeeServices.expense(data);
-  console.log(hoge.data);
+  const expensedata = await employeeServices.expense(data);
   console.log(`expense/list/再レンダー`);
-  setExpenselist(hoge.data)
+  setExpenselist(expensedata.data)
   reset();
   console.log(`reset!!`);
 

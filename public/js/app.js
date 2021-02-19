@@ -98304,7 +98304,7 @@ function Main() {
 
   var saveEmployee = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var res, hoge, _res, _hoge;
+      var res, incomedata, _res, expensedata;
 
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
@@ -98316,12 +98316,12 @@ function Main() {
               }
 
               alert('正しい内容を入力してください');
-              _context.next = 34;
+              _context.next = 32;
               break;
 
             case 4:
               if (!(type === 'inc')) {
-                _context.next = 20;
+                _context.next = 19;
                 break;
               }
 
@@ -98336,40 +98336,38 @@ function Main() {
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
             case 12:
-              hoge = _context.sent;
-              console.log(hoge.data);
+              incomedata = _context.sent;
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setIncomelist(hoge.data);
+              setIncomelist(incomedata.data);
               reset();
               console.log("reset!!");
-              _context.next = 34;
+              _context.next = 32;
               break;
 
-            case 20:
+            case 19:
               if (!(type === 'exp')) {
-                _context.next = 34;
+                _context.next = 32;
                 break;
               }
 
-              _context.next = 23;
+              _context.next = 22;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
 
-            case 23:
+            case 22:
               _res = _context.sent;
               console.log('expense/create!!');
               console.log(_res.data);
-              _context.next = 28;
+              _context.next = 27;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
-            case 28:
-              _hoge = _context.sent;
-              console.log(_hoge.data);
+            case 27:
+              expensedata = _context.sent;
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
-              setExpenselist(_hoge.data);
+              setExpenselist(expensedata.data);
               reset();
               console.log("reset!!");
 
-            case 34:
+            case 32:
             case "end":
               return _context.stop();
           }
