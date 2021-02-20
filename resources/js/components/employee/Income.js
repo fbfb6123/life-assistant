@@ -13,8 +13,8 @@ export const Income = ({incomelist, setIncomelist, selectedMonth, thisMonth, inc
             return(
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
-                <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button>
+                <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円
+                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button></div>
               </div>
             )
           })
@@ -35,8 +35,8 @@ const showPastMonth = () => {
             return(
               <div className="income-item" key={income.id}>
                 <div className="income-item-text">{income.text}</div>
-                <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円</div>
-                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button>
+                <div className="income-item-amount">+{Number(income.amount).toLocaleString()}円
+                <button className="delete-btn" onClick={()=>incomeDeleteEmployee(income.id)}>×</button></div>
               </div>
             )
           })

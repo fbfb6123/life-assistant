@@ -97727,12 +97727,12 @@ var Expense = function Expense(_ref) {
       className: "income-item-text"
     }, expense.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "expense-item-amount"
-    }, "-", Number(expense.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+    }, "-", Number(expense.amount).toLocaleString(), "\u5186", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
       className: "delete-btn",
       onClick: function onClick() {
         return deleteEmployee(expense.id);
       }
-    }, "\xD7"));
+    }, "\xD7")));
   }))));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Expense);
@@ -97959,12 +97959,12 @@ var Income = function Income(_ref) {
         className: "income-item-text"
       }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "income-item-amount"
-      }, "+", Number(income.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "+", Number(income.amount).toLocaleString(), "\u5186", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
           return incomeDeleteEmployee(income.id);
         }
-      }, "\xD7"));
+      }, "\xD7")));
     }))));
   };
 
@@ -97981,12 +97981,12 @@ var Income = function Income(_ref) {
         className: "income-item-text"
       }, income.text), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "income-item-amount"
-      }, "+", Number(income.amount).toLocaleString(), "\u5186"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "+", Number(income.amount).toLocaleString(), "\u5186", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "delete-btn",
         onClick: function onClick() {
           return incomeDeleteEmployee(income.id);
         }
-      }, "\xD7"));
+      }, "\xD7")));
     }))));
   };
 

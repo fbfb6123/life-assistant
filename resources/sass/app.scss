@@ -17,6 +17,12 @@ body {
   font-weight: initial;  /* normal */
 }
 
+button {
+  margin: initial;  /* 0 */
+  font-size: initial;  /* 100% */
+  font-weight: initial;  /* normal */
+}
+
 p {
   margin-top: 10px;
 }
@@ -286,10 +292,22 @@ h5 {
 
 .income-item-amount {
   color: #4fa05e;
+  align-items: center;
+  display: flex;
+  padding: 0 3px;
+  text-align: center;
+  margin-left: 5px;
+  border-radius: 5px;
 }
 
 .expense-item-amount {
+  align-items: center;
+  display: flex;
   color: red;
+  padding: 0 3px;
+  text-align: center;
+  margin-left: 5px;
+  border-radius: 5px;
 }
 
 .delete-btn {
@@ -305,6 +323,8 @@ h5 {
   background: var(--white-color);
   text-align: center;
   padding-top: 2px;
+  padding-left: 3.5px;
+  outline: none;
   cursor: pointer;
   font-size: 2rem;
 }
@@ -312,6 +332,7 @@ h5 {
 .income-item:hover .delete-btn {
   opacity: 1;
   transition : .3s;
+  margin-left: 5px;
 }
 
 
