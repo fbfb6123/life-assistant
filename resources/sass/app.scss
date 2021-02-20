@@ -292,6 +292,28 @@ h5 {
   color: red;
 }
 
+.delete-btn {
+  top: 25%;
+  right: 2%;
+  opacity: 0;
+  border-radius: 50%;
+  line-height: 20px;
+  width: 25px;
+  height: 25px; 
+  color: #F08080;
+  border: 1px solid #F08080;
+  background: var(--white-color);
+  text-align: center;
+  padding-top: 2px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.income-item:hover .delete-btn {
+  opacity: 1;
+  transition : .3s;
+}
+
 
 
 
