@@ -60,7 +60,6 @@ useEffect(()=>{
   
 
 async function fetchDataIncome(){
-    
   const res = await employeeServices.income(data);
   console.log(`incomeレンダー`);
   setIncomelist(res.data)
