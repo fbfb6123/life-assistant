@@ -13,8 +13,6 @@ class EmployeeController extends Controller
 {
     public function incomelist(Request $request){
 
-      Log::info($request);
-
         try {
   
           $year = $request->year;
@@ -24,7 +22,6 @@ class EmployeeController extends Controller
           $data = Income::where('year', '=', "$year")
                          ->where('month', '=',"$month")
                          ->get();
-          Log::debug($data);
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -46,7 +43,6 @@ class EmployeeController extends Controller
                          ->where('month', '=',"$month")
                          ->get();
 
-          Log::debug($data);
           $response['data'] = $data;
           $response['success'] = true;
   
@@ -65,7 +61,6 @@ class EmployeeController extends Controller
 
             $month = $request->month;
 
-            Log::info($year);
 
             $incomes = new Income();
             $incomes->text = $request->text;
@@ -116,7 +111,6 @@ class EmployeeController extends Controller
       }
 
     public function incomedelete($id){
-      Log::info($id);
       
       try {
       $data = Income::where('id', "$id")->delete();
@@ -131,7 +125,6 @@ class EmployeeController extends Controller
     }
 
     public function expensedelete($id){
-      Log::info($id);
       
       try {
       $data = Expense::where('id', "$id")->delete();
