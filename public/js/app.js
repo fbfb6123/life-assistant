@@ -98303,12 +98303,12 @@ function Main() {
               }
 
               alert('正しい内容を入力してください');
-              _context.next = 32;
+              _context.next = 33;
               break;
 
             case 4:
               if (!(type === 'inc')) {
-                _context.next = 19;
+                _context.next = 20;
                 break;
               }
 
@@ -98317,44 +98317,45 @@ function Main() {
 
             case 7:
               res = _context.sent;
+              console.log(res);
               console.log('income/create!!');
               console.log(res.data);
-              _context.next = 12;
+              _context.next = 13;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].income(data);
 
-            case 12:
+            case 13:
               incomedata = _context.sent;
               console.log("income/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setIncomelist(incomedata.data);
               reset();
               console.log("reset!!");
-              _context.next = 32;
+              _context.next = 33;
               break;
 
-            case 19:
+            case 20:
               if (!(type === 'exp')) {
-                _context.next = 32;
+                _context.next = 33;
                 break;
               }
 
-              _context.next = 22;
+              _context.next = 23;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expensesave(data);
 
-            case 22:
+            case 23:
               _res = _context.sent;
               console.log('expense/create!!');
               console.log(_res.data);
-              _context.next = 27;
+              _context.next = 28;
               return _Employee__WEBPACK_IMPORTED_MODULE_2__["default"].expense(data);
 
-            case 27:
+            case 28:
               expensedata = _context.sent;
               console.log("expense/list/\u518D\u30EC\u30F3\u30C0\u30FC");
               setExpenselist(expensedata.data);
               reset();
               console.log("reset!!");
 
-            case 32:
+            case 33:
             case "end":
               return _context.stop();
           }

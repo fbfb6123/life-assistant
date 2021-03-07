@@ -85,6 +85,7 @@ const saveEmployee = async () => {
   } else if ( type === 'inc') {
 
   const res = await employeeServices.incomesave(data);
+  console.log(res);
   console.log('income/create!!');
   console.log(res.data);
 

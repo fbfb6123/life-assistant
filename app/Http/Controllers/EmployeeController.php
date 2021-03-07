@@ -55,6 +55,7 @@ class EmployeeController extends Controller
       }
 
       public function incomecreate(Request $request){
+        Log::debug($request);
                   
         try {
             $year = $request->year;
@@ -70,7 +71,7 @@ class EmployeeController extends Controller
             $incomes->month = $request->month;
             $incomes->save();
             
-            $response['data'] = $request;
+            $response['data'] = $incomes;
             $response['message'] = '成功';
             $response['success'] = true;
 
