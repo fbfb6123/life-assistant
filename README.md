@@ -84,3 +84,4 @@ npm run dev</pre><br>
 
 ## Scheduled to be added
 - Responsive
+
